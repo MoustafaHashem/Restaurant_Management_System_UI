@@ -14,7 +14,6 @@ public abstract class Bill extends Table {
         for (y = 0; y < x; y++) {
             if (tableNum == Manager.getTables().get(y).getTableNum()) break;
         }
-
         System.out.println("\ni wish our food is delicious now time for paying :) \n"+"for cash press 1\nfor visa press2");
         Scanner in=new Scanner(System.in);
         int typeOfPay = in.nextInt();
