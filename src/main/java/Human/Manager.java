@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Manager extends Staff implements Restaurant {
     public Manager(String name, int age, String address, String phone, String password, int salary, String rank ) {
-        super(name, age, address, phone, password, salary, rank);
+        super(name, age, address, phone, salary, rank);
     }
 
     @Override

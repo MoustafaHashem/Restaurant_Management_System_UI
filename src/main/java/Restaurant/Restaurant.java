@@ -5,8 +5,8 @@ import Human.Staff;
 import java.util.ArrayList;
 
 public interface Restaurant {
-      String NAME="Gusteau’s Restaurant ";
-      String LOCATION="FEANCE";
+      String NAME="Gusteau";
+      String LOCATION="France";
       int STARS=5;
      ArrayList<Staff> employees=new ArrayList<>();
      ArrayList<Table> tables=new ArrayList<>();

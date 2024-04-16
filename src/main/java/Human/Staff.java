@@ -11,13 +11,12 @@ public class  Staff extends Person {
     private int salary;
     private String rank;
 
-    public Staff(String name, int age, String address, String phone, String password, int salary, String rank) {
+    public Staff(String name, int age, String address, String phone, int salary, String rank) {
         super(name, age, address, phone);
         this.joinedDate = LocalDate.now();
         this.employeeID = joinedDate.getYear() + Integer.toString(count);
         this.email = employeeID+"@Gusteau.ASU";
-        if (checkPassword(password)) this.password = password;
-        //Error exception handling
+         this.password = employeeID;
         this.salary = salary;
         this.rank = rank;
         count++;
@@ -40,7 +39,8 @@ public class  Staff extends Person {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if (checkPassword(password))this.password = password;
+       // else "exception handling";
     }
 
     public int getSalary() {
@@ -49,7 +49,7 @@ public class  Staff extends Person {
 
     public void setSalary(int salary) {
         this.salary = salary;
-    }
+    }// for manger only
 
     public String getRank() {
         return rank;
@@ -57,7 +57,7 @@ public class  Staff extends Person {
 
     public void setRank(String rank) {
         this.rank = rank;
-    }
+    }// for manger only
 
     @Override
         public void print() {

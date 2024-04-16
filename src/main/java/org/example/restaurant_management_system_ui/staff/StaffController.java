@@ -1,4 +1,4 @@
-package org.example.restaurant_management_system_ui;
+package org.example.restaurant_management_system_ui.staff;
 
 import Human.Manager;
 import javafx.event.ActionEvent;
@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
 import java.net.URL;
