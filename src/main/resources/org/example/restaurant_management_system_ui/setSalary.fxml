@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.staff.manager.AddEmployeeController">
+   <children>
+      <VBox prefHeight="626.0" prefWidth="163.0" spacing="20.0">
+         <children>
+            <Button fx:id="addEmployee" mnemonicParsing="false" onAction="#addEmployeePress" prefHeight="39.0" prefWidth="153.0" text="Add Employee" textAlignment="CENTER" />
+            <Button fx:id="removeEmployee" mnemonicParsing="false" onAction="#removeEmployeePress" prefHeight="39.0" prefWidth="153.0" text="Remove Employee" />
+            <Button fx:id="setSalary" mnemonicParsing="false" onAction="#setSalaryPress" prefHeight="39.0" prefWidth="153.0" text="Set Salary" />
+            <Button fx:id="setRank" mnemonicParsing="false" onAction="#printTablesPress" prefHeight="39.0" prefWidth="153.0" text="Set Rank" />
+            <Button fx:id="addMenu" mnemonicParsing="false" onAction="#addMenuPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu" />
+            <Button fx:id="addMenuSection" mnemonicParsing="false" onAction="#addMenuSection" prefHeight="39.0" prefWidth="153.0" text="Add Menu Section" />
+            <Button fx:id="addMenuITem" mnemonicParsing="false" onAction="#addMenuITemPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu Item" />
+            <Button fx:id="addTable" mnemonicParsing="false" onAction="#addTablePress" prefHeight="39.0" prefWidth="153.0" text="Add Table" />
+            <Button fx:id="changePassword" mnemonicParsing="false" onAction="#changePasswordPress" prefHeight="39.0" prefWidth="153.0" text="Change Password" />
+         </children>
+         <HBox.margin>
+            <Insets bottom="30.0" left="10.0" right="100.0" top="40.0" />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="30.0" left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+      <AnchorPane prefHeight="720.0" prefWidth="990.0">
+         <children>
+            <Button fx:id="setsalary" layoutX="139.0" layoutY="255.0" mnemonicParsing="false" onAction="#setsalaryPress" prefHeight="26.0" prefWidth="111.0" text="Set salary" />
+            <TextField fx:id="idfield" layoutX="124.0" layoutY="123.0" />
+            <Text layoutX="559.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text layoutX="60.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <Text layoutX="723.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee data">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="919.0" layoutY="600.0" onMouseClicked="#pressLogout" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/2.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="logoutText" layoutX="887.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
+            <MenuButton fx:id="employeeList" layoutX="716.0" layoutY="404.0" mnemonicParsing="false" onAction="#chooseEmployee" prefHeight="26.0" prefWidth="172.0" text="Employee list">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" text="Action 2" />
+               </items>
+            </MenuButton>
+            <TextFlow fx:id="printemployeedata" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
+            <Text layoutX="148.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set salary">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="379.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/9.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="adderrormessage" layoutX="117.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
+            <TextField fx:id="salaryfield" layoutX="124.0" layoutY="183.0" />
+            <Text layoutX="60.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

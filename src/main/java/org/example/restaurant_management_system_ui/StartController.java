@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ public class StartController {
 @FXML
     public ImageView start;
     public ImageView staff;
+    public Text staffMenu;
 
     public void click() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
@@ -27,5 +29,13 @@ public class StartController {
         Scene sceneStaff = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)start.getScene().getWindow();
         mainStage.setScene(sceneStaff);
+    }
+
+    public void show1() {
+        staffMenu.setText("Staff page");
+    }
+
+    public void hide1() {
+        staffMenu.setText("");
     }
 }

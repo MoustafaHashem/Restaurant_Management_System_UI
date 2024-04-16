@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class MainApplication extends Application {
     @Override
@@ -16,7 +17,7 @@ public class MainApplication extends Application {
         stage.setScene(startScene);
         stage.show();
         stage.setTitle(" Gusteau’s Restaurant ");
-        stage.getIcons().add(new Image(getClass().getResource("/Images/7.png").toExternalForm()));
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("/Images/7.png")).toExternalForm()));
         stage.setResizable(false);
 
     }

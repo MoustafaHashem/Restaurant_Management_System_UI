@@ -26,7 +26,8 @@ public class StaffController implements Initializable {
     public TextField password;
     public RadioButton showPassword;
     public Button login;
-    public TextField passwordshowed;
+    public TextField passwordShowed;
+    public Text incorrect;
 
     public void press() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("start.fxml"));
@@ -52,23 +53,24 @@ public class StaffController implements Initializable {
 
     public void showP() {
         if(showPassword.isSelected()){
-            passwordshowed.setText(password.getText());
+            passwordShowed.setText(password.getText());
             password.setVisible(false);
-            passwordshowed.setVisible(true);
+            passwordShowed.setVisible(true);
         }else {
-            password.setText(passwordshowed.getText());
-            passwordshowed.setVisible(false);
+            password.setText(passwordShowed.getText());
+            passwordShowed.setVisible(false);
             password.setVisible(true);
         }
     }
 
-    public void pressLogin(ActionEvent actionEvent) throws IOException {
+    public void pressLogin() throws IOException, InterruptedException {
         int i;
         int x=1;
         for (i=0;i<Manager.getEmployees().size();i++){
            int y= email.getText().compareTo(Manager.getEmployees().get(i).getEmail());
            int z=password.getText().compareTo(Manager.getEmployees().get(i).getPassword());
-        if(y==0&&z==0){
+           int w=passwordShowed.getText().compareTo(Manager.getEmployees().get(i).getPassword());
+        if(y==0&&(z==0||w==0)){
             x=0;
             break;}
         }
@@ -83,14 +85,17 @@ public class StaffController implements Initializable {
             Stage mainStage=(Stage)returnImage.getScene().getWindow();
             mainStage.setScene(employeeScene);
         }else {
-                    //except handling
-            System.out.println("error");
+            incorrect.setText("E-mail or password is incorrect\nTry again ");
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Manager owner=new Manager("Moustafa Ahmed Hashem",20,"el-obor city","01097963663","123456789",10000,"high");
+        Manager owner=new Manager("Moustafa Ahmed Hashem",20,"el-obor city","01097963663",10000,"high");
         owner.addEmployee(owner);
+    }
+
+    public void errorText1() {
+        incorrect.setText("");
     }
 }
