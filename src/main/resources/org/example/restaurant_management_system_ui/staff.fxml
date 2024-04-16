@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.StaffController">
+   <TextField fx:id="password" layoutX="565.0" layoutY="395.0" />
+   <TextField fx:id="email" layoutX="565.0" layoutY="334.0" />
+   <Text layoutX="479.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
+   <Button fx:id="login" layoutX="600.0" layoutY="468.0" mnemonicParsing="false" onAction="#pressLogin" prefHeight="26.0" prefWidth="79.0" text="Login" />
+   <RadioButton fx:id="showPassword" layoutX="758.0" layoutY="399.0" mnemonicParsing="false" onAction="#showP" text="Show password" />
+   <Text layoutX="479.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+   <ImageView fitHeight="800.0" fitWidth="500.0" layoutY="110.0" onMouseEntered="#show2" onMouseExited="#hide2" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../Images/1.png" />
+   </ImageView>
+   <ImageView fitHeight="286.0" fitWidth="433.0" layoutX="417.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true" rotate="-7.7">
+      <Image url="@../../../Images/3.png" />
+   </ImageView>
+   <ImageView fx:id="returnImage" fitHeight="114.0" fitWidth="100.0" layoutX="1192.0" layoutY="599.0" onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../Images/2.png" />
+   </ImageView>
+   <Text fx:id="returnText" layoutX="1161.0" layoutY="652.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995" />
+   <Text fx:id="returnText2" layoutX="305.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="131.7366943359375" />
+</AnchorPane>
