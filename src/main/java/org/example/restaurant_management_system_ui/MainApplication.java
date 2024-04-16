@@ -12,11 +12,10 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("start.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        stage.setScene(scene);
+        Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
+        stage.setScene(startScene);
         stage.show();
         stage.setTitle(" Gusteau’s Restaurant ");
-
         stage.getIcons().add(new Image(getClass().getResource("/Images/7.png").toExternalForm()));
         stage.setResizable(false);
 

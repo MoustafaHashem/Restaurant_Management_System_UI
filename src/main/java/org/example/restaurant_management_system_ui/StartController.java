@@ -16,16 +16,16 @@ public class StartController {
     public ImageView staff;
 
     public void click() throws IOException {
-        FXMLLoader fxmlLoader2 = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
-        Scene sceneServices = new Scene(fxmlLoader2.load(), 1280, 720);
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
+        Scene sceneServices = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)start.getScene().getWindow();
         mainStage.setScene(sceneServices);
     }
 
     public void clickStaff() throws IOException {
-        FXMLLoader fxmlLoader2 = new FXMLLoader(MainApplication.class.getResource("staff.fxml"));
-        Scene sceneServices = new Scene(fxmlLoader2.load(), 1280, 720);
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("staff.fxml"));
+        Scene sceneStaff = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)start.getScene().getWindow();
-        mainStage.setScene(sceneServices);
+        mainStage.setScene(sceneStaff);
     }
 }
