@@ -1,7 +1,7 @@
 package org.example.restaurant_management_system_ui.staff;
 
 import Human.Manager;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
@@ -44,10 +44,10 @@ public class StaffController implements Initializable {
         returnText.setText("");
     }
 
-    public void show2(MouseEvent mouseEvent) {
+    public void show2( ) {
         returnText2.setText("Staff Area");
     }
-    public void hide2(MouseEvent mouseEvent) {
+    public void hide2( ) {
         returnText2.setText("");
     }
 
@@ -63,7 +63,7 @@ public class StaffController implements Initializable {
         }
     }
 
-    public void pressLogin() throws IOException, InterruptedException {
+    public void pressLogin() throws IOException {
         int i;
         int x=1;
         for (i=0;i<Manager.getEmployees().size();i++){
@@ -79,7 +79,7 @@ public class StaffController implements Initializable {
             Scene managerScene = new Scene(fxmlLoader.load(), 1280, 720);
             Stage mainStage=(Stage)returnImage.getScene().getWindow();
             mainStage.setScene(managerScene);
-        } else if (x==0&&i!=0) {
+        } else if (x == 0) {
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("employee.fxml"));
             Scene employeeScene = new Scene(fxmlLoader.load(), 1280, 720);
             Stage mainStage=(Stage)returnImage.getScene().getWindow();
@@ -91,7 +91,7 @@ public class StaffController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Manager owner=new Manager("Moustafa Ahmed Hashem",20,"el-obor city","01097963663",10000,"high");
+        Manager owner=new Manager("Moustafa Ahmed Hashem",20,"el-obour city","01097963663",10000,"high");
         owner.addEmployee(owner);
     }
 

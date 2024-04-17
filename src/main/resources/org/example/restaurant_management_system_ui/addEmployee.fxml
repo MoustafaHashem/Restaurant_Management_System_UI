@@ -32,17 +32,17 @@
       <Button fx:id="addTable" mnemonicParsing="false" onAction="#addTablePress" prefHeight="39.0" prefWidth="153.0" text="Add Table" />
       <Button fx:id="profile" mnemonicParsing="false" onAction="#profilePress" prefHeight="39.0" prefWidth="153.0" text="Profile" />
    </VBox>
-   <AnchorPane fx:id="errorMassage" prefHeight="720.0" prefWidth="990.0">
+   <AnchorPane prefHeight="720.0" prefWidth="990.0">
       <Button fx:id="add" layoutX="143.0" layoutY="520.0" mnemonicParsing="false" onAction="#addPress" prefHeight="26.0" prefWidth="111.0" text="Add" />
-      <TextField fx:id="namefieldAdd" layoutX="124.0" layoutY="123.0" />
-      <TextField fx:id="agefieldAdd" layoutX="124.0" layoutY="183.0" />
-      <TextField fx:id="addressfieldAdd" layoutX="124.0" layoutY="243.0" />
-      <TextField fx:id="phonefieldAdd" layoutX="124.0" layoutY="303.0" />
+      <TextField fx:id="nameFieldAdd" layoutX="124.0" layoutY="123.0" />
+      <TextField fx:id="ageFieldAdd" layoutX="124.0" layoutY="183.0" />
+      <TextField fx:id="addressFieldAdd" layoutX="124.0" layoutY="243.0" />
+      <TextField fx:id="phoneFieldAdd" layoutX="124.0" layoutY="303.0" />
       <Text layoutX="60.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
       <Text layoutX="60.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" />
       <Text layoutX="60.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <TextField fx:id="salaryfieldAdd" layoutX="124.0" layoutY="363.0" />
-      <TextField fx:id="rankfieldAdd" layoutX="124.0" layoutY="423.0" />
+      <TextField fx:id="salaryFieldAdd" layoutX="124.0" layoutY="363.0" />
+      <TextField fx:id="rankFieldAdd" layoutX="124.0" layoutY="423.0" />
       <Text layoutX="60.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary" />
       <Text layoutX="60.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank" />
       <Text layoutX="60.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
@@ -61,7 +61,7 @@
             <MenuItem mnemonicParsing="false" text="Action 2" />
          </items>
       </MenuButton>
-      <TextFlow fx:id="printemployeedata" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
+      <TextFlow fx:id="printEmployeeData" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
       <Text layoutX="105.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new employee">
          <font>
             <Font size="22.0" />
@@ -70,6 +70,6 @@
       <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="379.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
          <Image url="@../../../Images/9.png" />
       </ImageView>
-      <Text fx:id="adderrormessage" layoutX="117.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
+      <Text fx:id="addErrorMessage" layoutX="117.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
    </AnchorPane>
 </HBox>

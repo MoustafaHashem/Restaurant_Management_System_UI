@@ -4,9 +4,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
@@ -26,7 +28,7 @@ public class StartController {
 
     public void clickStaff() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("staff.fxml"));
-        Scene sceneStaff = new Scene(fxmlLoader.load(), 1280, 720);
+        Scene sceneStaff = new Scene(fxmlLoader.load(), 1280, 720, Color.TRANSPARENT);
         Stage mainStage=(Stage)start.getScene().getWindow();
         mainStage.setScene(sceneStaff);
     }

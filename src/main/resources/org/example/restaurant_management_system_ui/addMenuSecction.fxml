@@ -32,9 +32,9 @@
       <Button fx:id="addTable" mnemonicParsing="false" onAction="#addTablePress" prefHeight="39.0" prefWidth="153.0" text="Add Table" />
       <Button fx:id="profile" mnemonicParsing="false" onAction="#profilePress" prefHeight="39.0" prefWidth="153.0" text="Profile" />
    </VBox>
-   <AnchorPane fx:id="errorMassage" prefHeight="720.0" prefWidth="990.0">
-      <Button fx:id="addm" layoutX="143.0" layoutY="271.0" mnemonicParsing="false" onAction="#removePress" prefHeight="26.0" prefWidth="111.0" text="Add" />
-      <TextField fx:id="titlems" layoutX="124.0" layoutY="123.0" />
+   <AnchorPane  prefHeight="720.0" prefWidth="990.0">
+      <Button fx:id="addM" layoutX="143.0" layoutY="271.0" mnemonicParsing="false" onAction="#removePress" prefHeight="26.0" prefWidth="111.0" text="Add" />
+      <TextField fx:id="titleMS" layoutX="124.0" layoutY="123.0" />
       <Text layoutX="60.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
       <Text layoutX="712.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu section data">
          <font>
@@ -51,7 +51,7 @@
             <MenuItem mnemonicParsing="false" text="Action 2" />
          </items>
       </MenuButton>
-      <TextFlow fx:id="printmenuSectiondata" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
+      <TextFlow fx:id="printMenuSectionData" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
       <Text layoutX="110.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add menu section">
          <font>
             <Font size="22.0" />
@@ -60,7 +60,7 @@
       <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="330.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <Image url="@../../../Images/11.png" />
       </ImageView>
-      <Text fx:id="adderrormessage" layoutX="116.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
+      <Text fx:id="addErrorMessage" layoutX="116.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
       <MenuButton fx:id="chooseMenu" layoutX="129.0" layoutY="175.0" mnemonicParsing="false" onAction="#menuChoosed" prefHeight="26.0" prefWidth="143.0" text="Menus">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />

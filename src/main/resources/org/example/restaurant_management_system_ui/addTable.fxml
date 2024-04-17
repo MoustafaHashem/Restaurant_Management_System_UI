@@ -31,8 +31,8 @@
       <Button fx:id="addTable" mnemonicParsing="false" onAction="#addTablePress" prefHeight="39.0" prefWidth="153.0" text="Add Table" />
       <Button fx:id="profile" mnemonicParsing="false" onAction="#profilePress" prefHeight="39.0" prefWidth="153.0" text="Profile" />
    </VBox>
-   <AnchorPane fx:id="errorMassage" prefHeight="720.0" prefWidth="990.0">
-      <Button fx:id="addtable" layoutX="136.0" layoutY="100.0" mnemonicParsing="false" onAction="#addtablePress" prefHeight="74.0" prefWidth="137.0" text="Add" />
+   <AnchorPane prefHeight="720.0" prefWidth="990.0">
+      <Button fx:id="addTableToArrayList" layoutX="136.0" layoutY="100.0" mnemonicParsing="false" onAction="#addTableToArrayListPress" prefHeight="74.0" prefWidth="137.0" text="Add" />
       <Text layoutX="750.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table data">
          <font>
             <Font size="22.0" />
@@ -48,7 +48,7 @@
             <MenuItem mnemonicParsing="false" text="Action 2" />
          </items>
       </MenuButton>
-      <TextFlow fx:id="printTabledata" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
+      <TextFlow fx:id="printTableData" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
       <Text layoutX="172.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table">
          <font>
             <Font size="22.0" />
@@ -57,8 +57,7 @@
       <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="330.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <Image url="@../../../Images/11.png" />
       </ImageView>
-      <Button fx:id="removetable" layoutX="136.0" layoutY="218.0" mnemonicParsing="false" onAction="#removetablepress" prefHeight="74.0" prefWidth="137.0" text="Remove" />
-      <Text fx:id="adderrormessage1" layoutX="123.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
+      <Button fx:id="removeTable" layoutX="136.0" layoutY="218.0" mnemonicParsing="false" onAction="#removeTablePress" prefHeight="74.0" prefWidth="137.0" text="Remove" />
+      <Text fx:id="addErrorMessage" layoutX="123.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
    </AnchorPane>
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
 </HBox>

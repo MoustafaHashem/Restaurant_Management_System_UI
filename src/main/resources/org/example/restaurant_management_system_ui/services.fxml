@@ -9,46 +9,51 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.customer.ServicesController">
-   <children>
-      <Text layoutX="310.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Which type of services do you need?" textAlignment="CENTER">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.restaurant_management_system_ui.customer.ServicesController">
+   <Text layoutX="310.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0"
+         text="Which type of services do you need?" textAlignment="CENTER">
+      <font>
+         <Font size="41.0"/>
+      </font>
+   </Text>
+   <HBox layoutX="1.0" layoutY="224.0" prefHeight="258.0" prefWidth="1280.0" spacing="100.0">
+      <padding>
+         <Insets bottom="30.0" left="250.0" right="250.0" top="30.0"/>
+      </padding>
+      <Button fx:id="reservation" mnemonicParsing="false" onAction="#reservationPress" prefHeight="200.0"
+              prefWidth="200.0" text="Reservation">
          <font>
-            <Font size="41.0" />
+            <Font size="29.0"/>
          </font>
-      </Text>
-      <HBox layoutX="1.0" layoutY="224.0" prefHeight="258.0" prefWidth="1280.0" spacing="100.0">
-         <children>
-            <Button fx:id="reservation" mnemonicParsing="false" onAction="#reservationpress" prefHeight="200.0" prefWidth="200.0" text="Reservation">
-               <font>
-                  <Font size="29.0" />
-               </font>
-            </Button>
-            <Button fx:id="order" mnemonicParsing="false" onAction="#orderpress" prefHeight="200.0" prefWidth="200.0" text="Order">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="payment" mnemonicParsing="false" onAction="#paymentpress" prefHeight="200.0" prefWidth="200.0" text="Payment">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-         </children>
-         <padding>
-            <Insets bottom="30.0" left="250.0" right="250.0" top="30.0" />
-         </padding>
-      </HBox>
-      <ImageView fx:id="returnImage" fitHeight="114.0" fitWidth="100.0" layoutX="1202.0" layoutY="609.0" onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Images/2.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="returnText" layoutX="1171.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995" />
-      <Text layoutX="404.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Gusteau restaurant" textAlignment="CENTER">
+      </Button>
+      <Button fx:id="order" mnemonicParsing="false" onAction="#orderPress" prefHeight="200.0" prefWidth="200.0"
+              text="Order">
          <font>
-            <Font size="34.0" />
+            <Font size="30.0"/>
          </font>
-      </Text>
-      <ImageView fitHeight="453.0" fitWidth="200.0" layoutX="24.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" />
-   </children>
+      </Button>
+      <Button fx:id="payment" mnemonicParsing="false" onAction="#paymentPress" prefHeight="200.0" prefWidth="200.0"
+              text="Payment">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Button>
+   </HBox>
+   <ImageView fx:id="returnImage" fitHeight="114.0" fitWidth="100.0" layoutX="1202.0" layoutY="609.0"
+              onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true"
+              preserveRatio="true">
+      <Image url="@../../../Images/2.png"/>
+   </ImageView>
+   <Text fx:id="returnText" layoutX="1171.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0"
+         wrappingWidth="104.79999999999995"/>
+   <Text layoutX="404.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Gusteau restaurant"
+         textAlignment="CENTER">
+      <font>
+         <Font size="34.0"/>
+      </font>
+   </Text>
+   <ImageView fitHeight="453.0" fitWidth="200.0" layoutX="24.0" layoutY="135.0" pickOnBounds="true"
+              preserveRatio="true"/>
 </AnchorPane>

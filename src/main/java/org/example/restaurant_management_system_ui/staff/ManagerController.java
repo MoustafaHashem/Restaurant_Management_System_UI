@@ -1,11 +1,10 @@
 package org.example.restaurant_management_system_ui.staff;
 
-import javafx.event.ActionEvent;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
@@ -21,50 +20,53 @@ public class ManagerController {
     public Button profile;
     public ImageView logout;
     public Text logoutText;
-    public AnchorPane errorMassage;
     public Button add;
     public MenuButton employeeList;
-    public TextFlow printemployeedata;
+    public TextFlow printEmployeeData;
     public Button remove;
-    public Button setrank;
-    public Button setsalary;
+    public TextField rankFieldAdd;
+    public TextField salaryFieldAdd;
+    public TextField phoneFieldAdd;
+    public TextField addressFieldAdd;
+    public TextField ageFieldAdd;
+    public TextField nameFieldAdd;
 
-    public TextField rankfieldAdd;
-    public TextField salaryfieldAdd;
-    public TextField phonefieldAdd;
-    public TextField addressfieldAdd;
-    public TextField agefieldAdd;
-    public TextField namefieldAdd;
+    public TextField iDFieldRemove;
+    public TextField IDFieldRank;
 
-    public TextField idfieldremove;
-    public TextField idfieldRank;
 
-    public TextField rankfieldrank;
-    public TextField idfieldSalary;
+    public TextField iDFieldSalary;
 
-    public TextField salaryfieldSalary;
-    public Text adderrormessage;
-    public Button addm;
-    public TextField titlemi;
+    public Text addErrorMessage;
+    public Button addM;
+    public TextField titleMi;
     public MenuButton menuItemList;
-    public TextFlow printmenuitemdata;
+    public TextFlow printMenuItemData;
     public MenuButton chooseMenuSection;
-    public TextField titlem;
+    public TextField titleM;
     public MenuButton menuList;
-    public TextFlow printmenudata;
-    public TextField titlems;
+    public TextFlow printMenuData;
+    public TextField titleMS;
     public MenuButton menuSectionList;
-    public TextFlow printmenuSectiondata;
+    public TextFlow printMenuSectionData;
     public MenuButton chooseMenu;
     public MenuButton tableList;
-    public TextFlow printTabledata;
+    public TextFlow printTableData;
     public TextField newPassword;
     public Button change;
     public TextField price;
     public Button update;
-    public TextField idupdateprice;
-    public Text adderrormessage1;
-    public TextField newprice;
+    public TextField IDUpdatePrice;
+    public Text addErrorMessage1;
+    public TextField newPrice;
+    public Button removeTable;
+    public Button addTableToArrayList;
+    public TextFlow mangerProfileData;
+    public Button setNewRank;
+
+    public TextField rankFieldRank;
+    public Button setNewSalary;
+    public TextField salaryFieldSalary;
 
     public void addEmployeePress() {
     }
@@ -111,33 +113,43 @@ public class ManagerController {
     public void removePress( ) {
     }
 
-    public void setrankPress( ) {
+
+
+
+    public void chooseMenuItem( ) {
     }
 
-    public void setsalaryPress( ) {
+    public void menuSectionChoosed( ) {
     }
 
-    public void chooseMenuItem(ActionEvent actionEvent) {
+    public void chooseMenu( ) {
     }
 
-    public void menuSectionChoosed(ActionEvent actionEvent) {
+    public void chooseMenuSection( ) {
     }
 
-    public void chooseMenu(ActionEvent actionEvent) {
+    public void menuChoosed( ) {
     }
 
-    public void chooseMenuSection(ActionEvent actionEvent) {
+
+    public void chooseTable( ) {
     }
 
-    public void menuChoosed(ActionEvent actionEvent) {
+    public void changePress( ) {
     }
 
-    public void chooseTable(ActionEvent actionEvent) {
+    public void updatePress( ) {
     }
 
-    public void changepress(ActionEvent actionEvent) {
+    public void removeTablePress( ) {
     }
 
-    public void updatepress(ActionEvent actionEvent) {
+    public void addTableToArrayListPress( ) {
+    }
+
+    public void setNewRankPress( ) {
+    }
+
+    public void setNewSalaryPress( ) {
     }
 }
