@@ -10,6 +10,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
@@ -138,14 +139,14 @@ public class ManagerController {
         Scene profileScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
         mainStage.setScene(profileScene);
-        // add manager data
+
+        mangerProfileData.setTextAlignment(te);
     }
     public void pressLogout( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("staff.fxml"));
         Scene staffScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)logout.getScene().getWindow();
         mainStage.setScene(staffScene);
-
     }
     public void show1( ) {
         logoutText.setText("Logout");

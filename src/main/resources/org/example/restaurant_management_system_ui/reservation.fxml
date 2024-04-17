@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.customer.ReservationController">
    <children>
@@ -20,16 +19,12 @@
             <Image url="@../../../Images/17.png" />
          </image>
       </ImageView>
-      <TextField layoutX="572.0" layoutY="354.0" />
       <MenuButton layoutX="1089.0" layoutY="354.0" mnemonicParsing="false" text="Available tables">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
       </MenuButton>
-      <TextField layoutX="572.0" layoutY="424.0" />
-      <TextField layoutX="572.0" layoutY="214.0" />
-      <TextField layoutX="572.0" layoutY="284.0" />
       <Text layoutX="475.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
       <Text layoutX="480.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
       <Text layoutX="475.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
@@ -50,8 +45,12 @@
          </image>
       </ImageView>
       <Text fx:id="returnText1" layoutX="1180.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995" />
-      <TextField layoutX="572.0" layoutY="494.0" />
       <Text layoutX="452.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of People" />
       <Text layoutX="905.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleect date" />
+      <TextField layoutX="571.0" layoutY="214.0" />
+      <TextField layoutX="571.0" layoutY="284.0" />
+      <TextField layoutX="572.0" layoutY="354.0" />
+      <TextField layoutX="573.0" layoutY="424.0" />
+      <TextField layoutX="571.0" layoutY="494.0" />
    </children>
 </AnchorPane>
