@@ -17,6 +17,5 @@ module org.example.restaurant_management_system_ui {
     opens org.example.restaurant_management_system_ui.staff to javafx.fxml;
     exports org.example.restaurant_management_system_ui.customer;
     opens org.example.restaurant_management_system_ui.customer to javafx.fxml;
-    exports org.example.restaurant_management_system_ui.staff.manager;
-    opens org.example.restaurant_management_system_ui.staff.manager to javafx.fxml;
+
 }
