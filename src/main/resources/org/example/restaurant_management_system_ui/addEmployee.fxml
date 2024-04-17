@@ -28,7 +28,7 @@
       <Button fx:id="setRank" mnemonicParsing="false" onAction="#setRankPress" prefHeight="39.0" prefWidth="153.0" text="Set Rank" />
       <Button fx:id="addMenu" mnemonicParsing="false" onAction="#addMenuPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu" />
       <Button fx:id="addMenuSection" mnemonicParsing="false" onAction="#addMenuSectionPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu Section" />
-      <Button fx:id="addMenuITem" mnemonicParsing="false" onAction="#addMenuITemPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu Item" />
+      <Button fx:id="addMenuITem" mnemonicParsing="false" onAction="#addMenuItemPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu Item" />
       <Button fx:id="addTable" mnemonicParsing="false" onAction="#addTablePress" prefHeight="39.0" prefWidth="153.0" text="Add Table" />
       <Button fx:id="profile" mnemonicParsing="false" onAction="#profilePress" prefHeight="39.0" prefWidth="153.0" text="Profile" />
    </VBox>

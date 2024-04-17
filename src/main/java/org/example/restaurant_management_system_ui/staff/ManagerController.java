@@ -1,6 +1,7 @@
 package org.example.restaurant_management_system_ui.staff;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -73,6 +74,8 @@ public class ManagerController {
     public TextField rankFieldRank;
     public Button setNewSalary;
     public TextField salaryFieldSalary;
+    public Button addMI;
+    public Button addMS;
 
     public void addEmployeePress() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addEmployee.fxml"));
@@ -116,7 +119,7 @@ public class ManagerController {
         mainStage.setScene(removeEmployeeScene);
     }
 
-    public void addMenuITemPress( ) throws IOException {
+    public void addMenuItemPress( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addMenuItem.fxml"));
         Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
@@ -193,5 +196,11 @@ public class ManagerController {
     }
 
     public void setNewSalaryPress( ) {
+    }
+
+    public void addMIPress(ActionEvent actionEvent) {
+    }
+
+    public void addMSPress(ActionEvent actionEvent) {
     }
 }
