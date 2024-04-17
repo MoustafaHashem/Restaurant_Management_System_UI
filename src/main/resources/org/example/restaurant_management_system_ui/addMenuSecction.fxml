@@ -30,13 +30,13 @@
       <Button fx:id="addMenuSection" mnemonicParsing="false" onAction="#addMenuSection" prefHeight="39.0" prefWidth="153.0" text="Add Menu Section" />
       <Button fx:id="addMenuITem" mnemonicParsing="false" onAction="#addMenuITemPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu Item" />
       <Button fx:id="addTable" mnemonicParsing="false" onAction="#addTablePress" prefHeight="39.0" prefWidth="153.0" text="Add Table" />
-      <Button fx:id="profile" mnemonicParsing="false" onAction="#profilePress" prefHeight="39.0" prefWidth="153.0" text="Change Password" />
+      <Button fx:id="profile" mnemonicParsing="false" onAction="#profilePress" prefHeight="39.0" prefWidth="153.0" text="Profile" />
    </VBox>
-   <AnchorPane prefHeight="720.0" prefWidth="990.0">
-      <Button fx:id="setrank" layoutX="139.0" layoutY="255.0" mnemonicParsing="false" onAction="#setrankPress" prefHeight="26.0" prefWidth="111.0" text="Set rank" />
-      <TextField fx:id="idfieldRank" layoutX="124.0" layoutY="123.0" />
-      <Text layoutX="60.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
-      <Text layoutX="723.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee data">
+   <AnchorPane fx:id="errorMassage" prefHeight="720.0" prefWidth="990.0">
+      <Button fx:id="addm" layoutX="143.0" layoutY="271.0" mnemonicParsing="false" onAction="#removePress" prefHeight="26.0" prefWidth="111.0" text="Add" />
+      <TextField fx:id="titlems" layoutX="124.0" layoutY="123.0" />
+      <Text layoutX="60.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+      <Text layoutX="712.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu section data">
          <font>
             <Font size="22.0" />
          </font>
@@ -45,23 +45,28 @@
          <Image url="@../../../Images/2.png" />
       </ImageView>
       <Text fx:id="logoutText" layoutX="887.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
-      <MenuButton fx:id="employeeList" layoutX="716.0" layoutY="404.0" mnemonicParsing="false" onAction="#chooseEmployee" prefHeight="26.0" prefWidth="172.0" text="Employee list">
+      <MenuButton fx:id="menuSectionList" layoutX="716.0" layoutY="404.0" mnemonicParsing="false" onAction="#chooseMenuSection" prefHeight="26.0" prefWidth="172.0" text="Menu section list">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
             <MenuItem mnemonicParsing="false" text="Action 2" />
          </items>
       </MenuButton>
-      <TextFlow fx:id="printemployeedata" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
-      <Text layoutX="148.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set rank">
+      <TextFlow fx:id="printmenuSectiondata" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
+      <Text layoutX="110.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add menu section">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="379.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
-         <Image url="@../../../Images/9.png" />
+      <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="330.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../../../Images/11.png" />
       </ImageView>
-      <Text fx:id="adderrormessage" layoutX="117.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
-      <TextField fx:id="rankfieldrank" layoutX="124.0" layoutY="183.0" />
-      <Text layoutX="60.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank" />
+      <Text fx:id="adderrormessage" layoutX="116.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
+      <MenuButton fx:id="chooseMenu" layoutX="129.0" layoutY="175.0" mnemonicParsing="false" onAction="#menuChoosed" prefHeight="26.0" prefWidth="143.0" text="Menus">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+      </MenuButton>
+      <Text layoutX="34.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose menu" />
    </AnchorPane>
 </HBox>

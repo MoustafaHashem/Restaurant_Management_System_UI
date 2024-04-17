@@ -30,7 +30,7 @@
       <Button fx:id="addMenuSection" mnemonicParsing="false" onAction="#addMenuSection" prefHeight="39.0" prefWidth="153.0" text="Add Menu Section" />
       <Button fx:id="addMenuITem" mnemonicParsing="false" onAction="#addMenuITemPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu Item" />
       <Button fx:id="addTable" mnemonicParsing="false" onAction="#addTablePress" prefHeight="39.0" prefWidth="153.0" text="Add Table" />
-      <Button fx:id="changePassword" mnemonicParsing="false" onAction="#changePasswordPress" prefHeight="39.0" prefWidth="153.0" text="Change Password" />
+      <Button fx:id="profile" mnemonicParsing="false" onAction="#profilePress" prefHeight="39.0" prefWidth="153.0" text="Change Password" />
    </VBox>
    <AnchorPane prefHeight="720.0" prefWidth="990.0">
       <Button fx:id="setsalary" layoutX="139.0" layoutY="255.0" mnemonicParsing="false" onAction="#setsalaryPress" prefHeight="26.0" prefWidth="111.0" text="Set salary" />

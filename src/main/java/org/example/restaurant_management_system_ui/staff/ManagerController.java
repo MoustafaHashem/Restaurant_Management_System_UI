@@ -5,7 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -19,7 +18,7 @@ public class ManagerController {
     public Button addMenuSection;
     public Button addMenuITem;
     public Button addTable;
-    public Button changePassword;
+    public Button profile;
     public ImageView logout;
     public Text logoutText;
     public AnchorPane errorMassage;
@@ -45,6 +44,27 @@ public class ManagerController {
 
     public TextField salaryfieldSalary;
     public Text adderrormessage;
+    public Button addm;
+    public TextField titlemi;
+    public MenuButton menuItemList;
+    public TextFlow printmenuitemdata;
+    public MenuButton chooseMenuSection;
+    public TextField titlem;
+    public MenuButton menuList;
+    public TextFlow printmenudata;
+    public TextField titlems;
+    public MenuButton menuSectionList;
+    public TextFlow printmenuSectiondata;
+    public MenuButton chooseMenu;
+    public MenuButton tableList;
+    public TextFlow printTabledata;
+    public TextField newPassword;
+    public Button change;
+    public TextField price;
+    public Button update;
+    public TextField idupdateprice;
+    public Text adderrormessage1;
+    public TextField newprice;
 
     public void addEmployeePress() {
     }
@@ -70,7 +90,7 @@ public class ManagerController {
     public void addTablePress( ) {
     }
 
-    public void changePasswordPress( ) {
+    public void profilePress( ) {
     }
 
     public void show1( ) {
@@ -95,5 +115,29 @@ public class ManagerController {
     }
 
     public void setsalaryPress( ) {
+    }
+
+    public void chooseMenuItem(ActionEvent actionEvent) {
+    }
+
+    public void menuSectionChoosed(ActionEvent actionEvent) {
+    }
+
+    public void chooseMenu(ActionEvent actionEvent) {
+    }
+
+    public void chooseMenuSection(ActionEvent actionEvent) {
+    }
+
+    public void menuChoosed(ActionEvent actionEvent) {
+    }
+
+    public void chooseTable(ActionEvent actionEvent) {
+    }
+
+    public void changepress(ActionEvent actionEvent) {
+    }
+
+    public void updatepress(ActionEvent actionEvent) {
     }
 }

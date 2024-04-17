@@ -19,6 +19,8 @@ public class MainApplication extends Application {
         stage.setTitle(" Gusteau’s Restaurant ");
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("/Images/7.png")).toExternalForm()));
         stage.setResizable(false);
+        stage.centerOnScreen();
+
 
     }
 
