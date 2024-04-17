@@ -1,7 +1,7 @@
 package org.example.restaurant_management_system_ui.staff;
 
 
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -198,9 +198,9 @@ public class ManagerController {
     public void setNewSalaryPress( ) {
     }
 
-    public void addMIPress(ActionEvent actionEvent) {
+    public void addMIPress( ) {
     }
 
-    public void addMSPress(ActionEvent actionEvent) {
+    public void addMSPress( ) {
     }
 }
