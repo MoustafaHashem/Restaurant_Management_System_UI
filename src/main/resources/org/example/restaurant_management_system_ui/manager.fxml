@@ -41,7 +41,7 @@
             <Blend mode="ADD" />
          </effect>
       </Text>
-      <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="920.0" layoutY="599.0" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="920.0" layoutY="599.0" onMouseClicked="#pressLogout" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
          <Image url="@../../../Images/2.png" />
       </ImageView>
       <Text fx:id="logoutText" layoutX="888.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />

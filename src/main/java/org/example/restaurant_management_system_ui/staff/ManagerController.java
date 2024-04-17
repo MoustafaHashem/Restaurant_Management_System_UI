@@ -2,6 +2,7 @@ package org.example.restaurant_management_system_ui.staff;
 
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -93,114 +94,110 @@ public class ManagerController {
 
     public void setSalaryPress() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("setSalary.fxml"));
-        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Scene setSalaryScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
-        mainStage.setScene(removeEmployeeScene);
+        mainStage.setScene(setSalaryScene);
     }
-
     public void setRankPress( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("setRank.fxml"));
-        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Scene setRankScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
-        mainStage.setScene(removeEmployeeScene);
+        mainStage.setScene(setRankScene);
     }
 
     public void addMenuPress( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addMenu.fxml"));
-        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Scene addMenuScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
-        mainStage.setScene(removeEmployeeScene);
+        mainStage.setScene(addMenuScene);
     }
 
     public void addMenuSectionPress( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addMenuSection.fxml"));
-        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Scene addMenuSectionScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
-        mainStage.setScene(removeEmployeeScene);
+        mainStage.setScene(addMenuSectionScene);
     }
 
     public void addMenuItemPress( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addMenuItem.fxml"));
-        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Scene addMenuItemScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
-        mainStage.setScene(removeEmployeeScene);
+        mainStage.setScene(addMenuItemScene);
     }
 
     public void addTablePress( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addTable.fxml"));
-        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Scene addTableScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
-        mainStage.setScene(removeEmployeeScene);
+        mainStage.setScene(addTableScene);
     }
 
     public void profilePress( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("profile.fxml"));
-        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Scene profileScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
-        mainStage.setScene(removeEmployeeScene);
+        mainStage.setScene(profileScene);
+        // add manager data
     }
+    public void pressLogout( ) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("staff.fxml"));
+        Scene staffScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)logout.getScene().getWindow();
+        mainStage.setScene(staffScene);
 
+    }
     public void show1( ) {
+        logoutText.setText("Logout");
     }
-
     public void hide1( ) {
-    }
-
-    public void addPress( ) {
-    }
-
-    public void pressLogout( ) {
+        logoutText.setText("");
     }
 
     public void chooseEmployee( ) {
     }
-
-    public void removePress( ) {
-    }
-
-
-
-
-    public void chooseMenuItem( ) {
-    }
-
-    public void menuSectionChoosed( ) {
-    }
-
-    public void chooseMenu( ) {
-    }
-
-    public void chooseMenuSection( ) {
-    }
-
     public void menuChoosed( ) {
     }
-
-
+    public void menuSectionChoosed( ) {
+    }
+    public void chooseMenuItem( ) {
+    }
     public void chooseTable( ) {
     }
-
+    public void addPress( ) {
+    }
+    public void removePress( ) {
+    }
+    public void setNewSalaryPress( ) {
+    }
+    public void setNewRankPress( ) {
+    }
+    public void addMPress(ActionEvent actionEvent) {
+    }
+    public void chooseMenu( ) {
+    }
+    public void addMSPress( ) {
+    }
+    public void chooseMenuSection( ) {
+    }
+    public void addMIPress( ) {
+    }
+    public void updatePress( ) {
+    }
+    public void removeTablePress( ) {
+    }
+    public void addTableToArrayListPress( ) {
+    }
     public void changePress( ) {
     }
 
-    public void updatePress( ) {
-    }
 
-    public void removeTablePress( ) {
-    }
 
-    public void addTableToArrayListPress( ) {
-    }
 
-    public void setNewRankPress( ) {
-    }
 
-    public void setNewSalaryPress( ) {
-    }
 
-    public void addMIPress( ) {
-    }
 
-    public void addMSPress( ) {
-    }
+
+
+
 }
