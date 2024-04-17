@@ -1,12 +1,18 @@
 package org.example.restaurant_management_system_ui.staff;
 
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
+import org.example.restaurant_management_system_ui.MainApplication;
+
+import java.io.IOException;
 
 public class ManagerController {
     public Button addEmployee;
@@ -68,31 +74,67 @@ public class ManagerController {
     public Button setNewSalary;
     public TextField salaryFieldSalary;
 
-    public void addEmployeePress() {
+    public void addEmployeePress() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addEmployee.fxml"));
+        Scene addEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)addEmployee.getScene().getWindow();
+        mainStage.setScene(addEmployeeScene);
     }
 
-    public void removeEmployeePress() {
+    public void removeEmployeePress() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("removeEmployee.fxml"));
+        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)addEmployee.getScene().getWindow();
+        mainStage.setScene(removeEmployeeScene);
     }
 
-    public void setSalaryPress() {
+    public void setSalaryPress() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("setSalary.fxml"));
+        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)addEmployee.getScene().getWindow();
+        mainStage.setScene(removeEmployeeScene);
     }
 
-    public void printTablesPress( ) {
+    public void setRankPress( ) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("setRank.fxml"));
+        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)addEmployee.getScene().getWindow();
+        mainStage.setScene(removeEmployeeScene);
     }
 
-    public void addMenuPress( ) {
+    public void addMenuPress( ) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addMenu.fxml"));
+        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)addEmployee.getScene().getWindow();
+        mainStage.setScene(removeEmployeeScene);
     }
 
-    public void addMenuSection( ) {
+    public void addMenuSectionPress( ) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addMenuSection.fxml"));
+        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)addEmployee.getScene().getWindow();
+        mainStage.setScene(removeEmployeeScene);
     }
 
-    public void addMenuITemPress( ) {
+    public void addMenuITemPress( ) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addMenuItem.fxml"));
+        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)addEmployee.getScene().getWindow();
+        mainStage.setScene(removeEmployeeScene);
     }
 
-    public void addTablePress( ) {
+    public void addTablePress( ) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addTable.fxml"));
+        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)addEmployee.getScene().getWindow();
+        mainStage.setScene(removeEmployeeScene);
     }
 
-    public void profilePress( ) {
+    public void profilePress( ) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("profile.fxml"));
+        Scene removeEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)addEmployee.getScene().getWindow();
+        mainStage.setScene(removeEmployeeScene);
     }
 
     public void show1( ) {

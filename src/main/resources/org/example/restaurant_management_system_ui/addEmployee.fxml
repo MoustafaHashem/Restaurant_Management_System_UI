@@ -25,9 +25,9 @@
       <Button fx:id="addEmployee" mnemonicParsing="false" onAction="#addEmployeePress" prefHeight="39.0" prefWidth="153.0" text="Add Employee" textAlignment="CENTER" />
       <Button fx:id="removeEmployee" mnemonicParsing="false" onAction="#removeEmployeePress" prefHeight="39.0" prefWidth="153.0" text="Remove Employee" />
       <Button fx:id="setSalary" mnemonicParsing="false" onAction="#setSalaryPress" prefHeight="39.0" prefWidth="153.0" text="Set Salary" />
-      <Button fx:id="setRank" mnemonicParsing="false" onAction="#printTablesPress" prefHeight="39.0" prefWidth="153.0" text="Set Rank" />
+      <Button fx:id="setRank" mnemonicParsing="false" onAction="#setRankPress" prefHeight="39.0" prefWidth="153.0" text="Set Rank" />
       <Button fx:id="addMenu" mnemonicParsing="false" onAction="#addMenuPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu" />
-      <Button fx:id="addMenuSection" mnemonicParsing="false" onAction="#addMenuSection" prefHeight="39.0" prefWidth="153.0" text="Add Menu Section" />
+      <Button fx:id="addMenuSection" mnemonicParsing="false" onAction="#addMenuSectionPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu Section" />
       <Button fx:id="addMenuITem" mnemonicParsing="false" onAction="#addMenuITemPress" prefHeight="39.0" prefWidth="153.0" text="Add Menu Item" />
       <Button fx:id="addTable" mnemonicParsing="false" onAction="#addTablePress" prefHeight="39.0" prefWidth="153.0" text="Add Table" />
       <Button fx:id="profile" mnemonicParsing="false" onAction="#profilePress" prefHeight="39.0" prefWidth="153.0" text="Profile" />
