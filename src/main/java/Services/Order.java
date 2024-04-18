@@ -76,7 +76,7 @@ public class Order {
             System.out.println("meal added");
         }
         System.out.println("order is cooking");
-        Order.orders.add(order);
+        //Order.orders.add(order);
 
         // add order to table
         Manager.getTables().get(y).addOrder(order);
@@ -89,7 +89,7 @@ public class Order {
         for (y = 0; y < x; y++) {
             if (tableNum == Manager.getTables().get(y).getTableNum()) break;
         }
-        Order.orders.remove(Manager.getTables().get(y).getOrder());
+        //Order.orders.remove(Manager.getTables().get(y).getOrder());
         int num = Manager.getTables().get(y).getReservation().getNumberOfPeoples();
         int i;
         for (i = 1; i <= num; i++) {
@@ -102,7 +102,7 @@ public class Order {
         MenuItem mi=addMeal(newMeal);
         Manager.getTables().get(y).getOrder().getMeals().add(mi);
         Manager.getTables().get(y).getOrder().setCost(Manager.getTables().get(y).getOrder().getCost()+mi.getPrice());
-        Order.orders.add(Manager.getTables().get(y).getOrder());
+        //Order.orders.add(Manager.getTables().get(y).getOrder());
     }
     /*
     public static String printOrder() {
