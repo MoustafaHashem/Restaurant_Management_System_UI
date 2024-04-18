@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class ManagerController implements Initializable {
+public class ManagerController   {
     public Button addEmployee;
     public Button removeEmployee;
     public Button setSalary;
@@ -150,7 +150,7 @@ boolean y=true;
     public void showDataButtonPress( ) {
         if(y){
             y=false;
-          mangerProfileData.getChildren().add(new Text(Manager.getEmployees().get(0).print()));
+          mangerProfileData.getChildren().add(new Text(Manager.getEmployees().getFirst().print()));
         }
     }
     public void pressLogout( ) throws IOException {
@@ -167,6 +167,7 @@ boolean y=true;
     }
 
     public void chooseEmployee( ) {
+        x=true;
         for(int i=0;employeeList.getItems().size()>i;i++){
             int finalI = i;
             employeeList.getItems().get(finalI).setOnAction(event ->{
@@ -177,6 +178,7 @@ boolean y=true;
 
     }
     public void chooseMenu( ) {
+        c=true;
         for(int i=0;menuList.getItems().size()>i;i++){
             int finalI = i;
             menuList.getItems().get(finalI).setOnAction(event ->{
@@ -186,6 +188,7 @@ boolean y=true;
         }
     }
     public void  chooseMenuSection( ) {
+        a=true;
         for(int i=0;menuSectionList.getItems().size()>i;i++){
             int finalI = i;
             menuSectionList.getItems().get(finalI).setOnAction(event ->{
@@ -195,6 +198,7 @@ boolean y=true;
         }
     }
     public void chooseMenuItem( ) {
+        b=true;
         for(int i=0;menuItemList.getItems().size()>i;i++){
             int finalI = i;
             menuItemList.getItems().get(finalI).setOnAction(event ->{
@@ -204,6 +208,7 @@ boolean y=true;
         }
     }
     public void chooseTable( ) {
+        z=true;
         for(int i=0;tableList.getItems().size()>i;i++){
             int finalI = i;
             tableList.getItems().get(finalI).setOnAction(event ->{
@@ -273,43 +278,86 @@ boolean y=true;
         }
     }
     public void addMPress() {
+        printMenuData.getChildren().clear();
         Manager.getMenus().add(new Restaurant.Menu(titleM.getText()));
+        addErrorMessage.setText("Added done");
+        addErrorMessage.setVisible(true);
     }
     public void  menuChoosed( ) {
-
-
-    }
-    public void addMSPress( ) {
-        int x;
+        addErrorMessage.setVisible(false);
         for(int i=0;chooseMenu.getItems().size()>i;i++){
             int finalI = i;
             chooseMenu.getItems().get(i).setOnAction(event ->{
                 addErrorMessage.setText(Manager.getMenus().get(finalI).getTitle());
             });
         }
-        for( x=0;Manager.getMenus().size()>x;x++){System.out.println(addErrorMessage.getText());
+    }
+    public void addMSPress( ) {
+        printMenuSectionData.getChildren().clear();
+        int x;
+
+        for( x=0;Manager.getMenus().size()>x;x++){
             if(addErrorMessage.getText().compareTo(Manager.getMenus().get(x).getTitle())==0)break;
         }
+        if(x!=Manager.getMenus().size()){
         Manager.getMenuSections().add(new Restaurant.MenuSection(Manager.getMenus().get(x), titleMS.getText()));
+        addErrorMessage.setText("Added done");
+        addErrorMessage.setVisible(true);}else{addErrorMessage.setText("Invalid input. please try again.");
+            addErrorMessage.setVisible(true);}
     }
     public void menuSectionChoosed( ) {
+        addErrorMessage.setVisible(false);
+        for(int i=0;chooseMenuSection.getItems().size()>i;i++){
+            int finalI = i;
+            chooseMenuSection.getItems().get(i).setOnAction(event ->{
+                addErrorMessage.setText(Manager.getMenuSections().get(finalI).getTitle());
+            });
+        }
     }
     public void addMIPress( ) {
+        printMenuItemData.getChildren().clear();
+        int x;
+        for( x=0;Manager.getMenuSections().size()>x;x++){
+            if(addErrorMessage.getText().compareTo(Manager.getMenuSections().get(x).getTitle())==0)break;
+        }
+        if(x!=Manager.getMenuSections().size()){
+        try {
+            Manager manager=new Manager();
+            Manager.getMenuItems().add(new Restaurant.MenuItem(Manager.getMenuSections().get(x),titleMi.getText(),Integer.parseInt(price.getText())));
+            addErrorMessage.setText("Added done");
+            addErrorMessage.setVisible(true);
+        }catch (NumberFormatException e){
+            addErrorMessage.setText("Invalid input. please try again.");
+            addErrorMessage.setVisible(true);}}else{addErrorMessage.setText("Invalid input. please try again.");
+            addErrorMessage.setVisible(true);}
     }
     public void updatePress( ) {
+        printMenuItemData.getChildren().clear();
+        try {
+            int i;
+            for ( i=0;i<=Manager.getMenuItems().size();i++){
+                int z=  IDUpdatePrice.getText().compareTo(Integer.toString(Manager.getMenuItems().get(i).getID()));
+                if(z==0)break;
+            }
+            Manager.getMenuItems().get(i).setPrice(Integer.parseInt(newPrice.getText()));
+            addErrorMessage.setText("Updated done");
+            addErrorMessage.setVisible(true);
+        }catch (Exception e){
+            addErrorMessage.setVisible(true);
+        }
     }
     public void removeTablePress( ) {
+
     }
     public void addTableToArrayListPress( ) {
+
     }
     public void changePress( ) {
-    }
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+
+
     boolean x=true;
     public void addList( ) {
 
