@@ -4,6 +4,7 @@ package org.example.restaurant_management_system_ui.staff;
 
 import Human.Manager;
 import Human.Staff;
+import Restaurant.Table;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -340,20 +341,39 @@ boolean y=true;
                 if(z==0)break;
             }
             Manager.getMenuItems().get(i).setPrice(Integer.parseInt(newPrice.getText()));
-            addErrorMessage.setText("Updated done");
-            addErrorMessage.setVisible(true);
+            addErrorMessage1.setText("Updated done");
+            addErrorMessage1.setVisible(true);
         }catch (Exception e){
-            addErrorMessage.setVisible(true);
+            addErrorMessage1.setVisible(true);
         }
     }
     public void removeTablePress( ) {
-
+        addErrorMessage.setVisible(false);
+        printTableData.getChildren().clear();
+        Manager.getTables().remove(Manager.getTables().size()-1);
+        addErrorMessage.setText("Removed done");
+        addErrorMessage.setVisible(true);
     }
     public void addTableToArrayListPress( ) {
-
+        addErrorMessage.setVisible(false);
+        printTableData.getChildren().clear();
+        Manager.getTables().add(Manager.getTables().size(),new Table());
+        addErrorMessage.setText("Added done");
+        addErrorMessage.setVisible(true);
     }
     public void changePress( ) {
-
+        mangerProfileData.getChildren().clear();
+        String oldPassword=Manager.getEmployees().get(0).getPassword();
+        Manager.getEmployees().getFirst().setPassword(newPassword.getText());
+        String newPassword1=Manager.getEmployees().get(0).getPassword();
+        if(oldPassword==newPassword1){addErrorMessage.setText("Invalid input. please try again.");
+            addErrorMessage.setVisible(true);}
+        else{
+        Manager.getEmployees().getFirst().setPassword(newPassword.getText());
+        System.out.println(Manager.getEmployees().getFirst().getPassword());
+        addErrorMessage.setText("Changed done");
+        addErrorMessage.setVisible(true);
+        mangerProfileData.getChildren().add(new Text(Manager.getEmployees().getFirst().print()));}
     }
 
 
