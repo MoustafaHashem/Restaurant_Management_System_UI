@@ -376,8 +376,6 @@ boolean y=true;
         mangerProfileData.getChildren().add(new Text(Manager.getEmployees().getFirst().print()));}
     }
 
-
-
     boolean x=true;
     public void addList( ) {
 

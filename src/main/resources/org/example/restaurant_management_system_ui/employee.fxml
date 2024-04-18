@@ -22,10 +22,10 @@
       <Image url="@../../../Images/2.png" />
    </ImageView>
    <Text fx:id="logoutText" layoutX="1167.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
-   <ImageView fitHeight="372.0" fitWidth="584.0" layoutX="453.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@../../../Images/5.png" />
-      </image></ImageView>
+   <ImageView fitHeight="372.0" fitWidth="584.0" layoutX="453.0" layoutY="174.0" pickOnBounds="true"
+              preserveRatio="true">
+      <Image url="@../../../Images/5.png"/>
+   </ImageView>
    <Text layoutX="382.0" layoutY="621.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Gusteau restaurant">
       <font>
          <Font size="37.0" />
