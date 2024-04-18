@@ -31,7 +31,7 @@
         <Button fx:id="profile" mnemonicParsing="false" onAction="#profilePress" prefHeight="39.0" prefWidth="153.0" text="Profile" />
     </VBox>
     <AnchorPane prefHeight="720.0" prefWidth="990.0">
-        <Button fx:id="change" layoutX="139.0" layoutY="212.0" mnemonicParsing="false" onAction="#changePress" prefHeight="26.0" prefWidth="111.0" text="change" />
+        <Button fx:id="change" layoutX="139.0" layoutY="212.0" mnemonicParsing="false" onAction="#changePress" prefHeight="26.0" prefWidth="111.0" text="Change" />
         <TextField fx:id="newPassword" layoutX="124.0" layoutY="123.0" />
         <Text layoutX="27.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New password" />
         <Text layoutX="747.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile data">
@@ -52,7 +52,7 @@
             <Image url="@../../../Images/11.png" />
         </ImageView>
         <Text fx:id="addErrorMessage" layoutX="117.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
-      <TextFlow fx:id="mangerProfileData" layoutX="702.0" layoutY="138.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="showDataButton" layoutX="762.0" layoutY="369.0" mnemonicParsing="false" onAction="#showDataButtonPress" prefHeight="26.0" prefWidth="79.0" text="showData" />
+      <TextFlow fx:id="mangerProfileData" layoutX="702.0" layoutY="108.0" prefHeight="230.0" prefWidth="200.0" />
+      <Button fx:id="showDataButton" layoutX="746.0" layoutY="355.0" mnemonicParsing="false" onAction="#showDataButtonPress" prefHeight="26.0" prefWidth="111.0" text="Show " />
     </AnchorPane>
 </HBox>
