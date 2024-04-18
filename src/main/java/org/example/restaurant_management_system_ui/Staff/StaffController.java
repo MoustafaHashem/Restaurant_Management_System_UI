@@ -3,10 +3,12 @@ package org.example.restaurant_management_system_ui.Staff;
 import Human.Manager;
 
 import Human.Staff;
+import java.time.LocalDate;
 import Restaurant.Menu;
 import Restaurant.MenuItem;
 import Restaurant.MenuSection;
 import Restaurant.Table;
+import Services.Reservation;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -114,6 +116,9 @@ public class StaffController implements Initializable {
         for (int i=0;i<5;i++) {
             owner.addTable(new Table());
         }
+        //Reservation.makeReservation(LocalDate.now(),3,1);
+        //Reservation.makeReservation(LocalDate.now(),2,2);
+        //Reservation.makeReservation(LocalDate.now(),5,3);
     }
 
     public void errorText1() {

@@ -67,19 +67,55 @@ public class EmployeeController {
         }
     }
 
-    public void printIDOrderPress() {
+    public void printIDOrderPress() { //need fixing
+        orderData.getChildren().clear();
+        addErrorMessage.setVisible(false);
+        try {
+            int id = Integer.parseInt(IDOrder.getText());
+            int size = Reservation.getReservations().size();
+            int i;
+            for (i = 0; i < size; i++) {
+                if (Reservation.getReservations().get(i).getID() == id) break;
+            }
+            if (i == size) addErrorMessage.setVisible(true);
+            else reservationData.getChildren().add(new Text(("Reservation ID: "+Reservation.getReservations().get(i).getID()
+                    + "\nNumber of people: "+Reservation.getReservations().get(i).getNumberOfPeoples()
+                    + "\nReservation date: "+ Reservation.getReservations().get(i).getDate()
+                    +"\n************************************************************\n")));
+        } catch (Exception e) {
+            addErrorMessage.setVisible(true);
+        }
 
     }
 
-    public void printAllOrderPress() {
-        //Manager.getTables().get(1).getOrder().
+    public void printAllOrderPress() { //need fixing
+        orderData.getChildren().clear();
+        orderData.getChildren().add(new Text(Reservation.printReservation()));
     }
 
     public void printIDReservationPress() {
+        reservationData.getChildren().clear();
+        addErrorMessage.setVisible(false);
+        try {
+        int id = Integer.parseInt(IDReservation.getText());
+        int size = Reservation.getReservations().size();
+        int i;
+        for (i = 0; i < size; i++) {
+            if (Reservation.getReservations().get(i).getID() == id) break;
+        }
+        if (i == size) addErrorMessage.setVisible(true);
+        else reservationData.getChildren().add(new Text(("Reservation ID: "+Reservation.getReservations().get(i).getID()
+                    + "\nNumber of people: "+Reservation.getReservations().get(i).getNumberOfPeoples()
+                    + "\nReservation date: "+ Reservation.getReservations().get(i).getDate()
+                    +"\n************************************************************\n")));
+        } catch (Exception e) {
+            addErrorMessage.setVisible(true);
+        }
     }
 
     public void printAllReservationPress() {
-        profileDateText.getChildren().add(new Text(Reservation.printReservation()));
+        reservationData.getChildren().clear();
+        reservationData.getChildren().add(new Text(Reservation.printReservation()));
     }
 
     public void profileButtonPress() throws IOException {

@@ -127,14 +127,26 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         System.out.println("reservation done");
     }
 
-    public static String printReservation()
-    {
-        for(Reservation r: reservations)
-        {
-            return ("Reservation ID: "+r.getID())+
-                    ("\nNumber of people: "+r.getNumberOfPeoples())+
-                    ("\nReservation date: "+ r.getDate())+
-                    ("\n************************************************************\n");
+    public static String printReservation(int id) {
+        int size = reservations.size();
+        int i;
+        for (i = 0; i < size; i++) {
+            if (reservations.get(i).getID() == id) break;
+        }
+        if (i == size) return null;
+        else return ("Reservation ID: "+reservations.get(i).getID()
+                + "\nNumber of people: "+reservations.get(i).getNumberOfPeoples()
+                + "\nReservation date: "+ reservations.get(i).getDate()
+                +"\n************************************************************\n");
+    }
+
+
+    public static String printReservation() {
+        for(Reservation r: reservations) {
+            return ("Reservation ID: "+r.getID()
+                    + "\nNumber of people: "+r.getNumberOfPeoples()
+                    + "\nReservation date: "+ r.getDate()
+                    +"\n************************************************************\n");
         }
         return null;
     }
