@@ -360,16 +360,16 @@ boolean y=true;
     public void changePress( ) {
         mangerProfileData.getChildren().clear();
         String oldPassword=Manager.getEmployees().get(0).getPassword();
-        Manager.getEmployees().getFirst().setPassword(newPassword.getText());
+        Manager.getEmployees().get(0).setPassword(newPassword.getText());
         String newPassword1=Manager.getEmployees().get(0).getPassword();
         if(oldPassword==newPassword1){addErrorMessage.setText("Invalid input. please try again.");
             addErrorMessage.setVisible(true);}
         else{
-        Manager.getEmployees().getFirst().setPassword(newPassword.getText());
-        System.out.println(Manager.getEmployees().getFirst().getPassword());
+        Manager.getEmployees().get(0).setPassword(newPassword.getText());
+        System.out.println(Manager.getEmployees().get(0).getPassword());
         addErrorMessage.setText("Changed done");
         addErrorMessage.setVisible(true);
-        mangerProfileData.getChildren().add(new Text(Manager.getEmployees().getFirst().print()));}
+        mangerProfileData.getChildren().add(new Text(Manager.getEmployees().get(0).print()));}
     }
 
     boolean x=true;
