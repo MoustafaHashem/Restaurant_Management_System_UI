@@ -1,4 +1,4 @@
-package org.example.restaurant_management_system_ui.staff;
+package org.example.restaurant_management_system_ui.Staff;
 
 import Human.Manager;
 
@@ -72,12 +72,12 @@ public class StaffController implements Initializable {
         int i;
         int x=1;
         for (i=0;i<Manager.getEmployees().size();i++){
-           int y= email.getText().compareTo(Manager.getEmployees().get(i).getEmail());
-           int z=password.getText().compareTo(Manager.getEmployees().get(i).getPassword());
-           int w=passwordShowed.getText().compareTo(Manager.getEmployees().get(i).getPassword());
-        if(y==0&&(z==0||w==0)){
-            x=0;
-            break;}
+            int y= email.getText().compareTo(Manager.getEmployees().get(i).getEmail());
+            int z=password.getText().compareTo(Manager.getEmployees().get(i).getPassword());
+            int w=passwordShowed.getText().compareTo(Manager.getEmployees().get(i).getPassword());
+            if(y==0&&(z==0||w==0)){
+                x=0;
+                break;}
         }
         if(x==0&&i==0){
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manager.fxml"));

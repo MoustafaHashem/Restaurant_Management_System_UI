@@ -1,4 +1,4 @@
-package org.example.restaurant_management_system_ui.staff;
+package org.example.restaurant_management_system_ui.Staff;
 
 
 
@@ -6,7 +6,6 @@ import Human.Manager;
 import Human.Staff;
 import Restaurant.Table;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -16,9 +15,6 @@ import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class ManagerController   {
     public Button addEmployee;

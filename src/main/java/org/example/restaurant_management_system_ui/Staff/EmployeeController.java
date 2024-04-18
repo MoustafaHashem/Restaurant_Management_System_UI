@@ -1,4 +1,4 @@
-package org.example.restaurant_management_system_ui.staff;
+package org.example.restaurant_management_system_ui.Staff;
 
 
 import javafx.scene.control.Button;
@@ -15,12 +15,12 @@ public class EmployeeController {
     public TextField IDNewPassword;
     public Text addErrorMessage;
     public TextField newPassword;
-    
+
     public TextFlow orderData;
     public Button printIDOrder;
     public TextField IDOrder;
     public Button printAllOrder;
-    
+
     public TextFlow reservationData;
     public Button printIDReservation;
     public Button printAllReservation;
