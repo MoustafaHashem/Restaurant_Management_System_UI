@@ -51,7 +51,7 @@
         <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="330.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../../../Images/11.png" />
         </ImageView>
-        <Text fx:id="addErrorMessage" layoutX="117.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
+        <Text fx:id="addErrorMessage" layoutX="117.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" wrappingWidth="164.0" />
       <TextFlow fx:id="mangerProfileData" layoutX="702.0" layoutY="108.0" prefHeight="230.0" prefWidth="200.0" />
       <Button fx:id="showDataButton" layoutX="746.0" layoutY="355.0" mnemonicParsing="false" onAction="#showDataButtonPress" prefHeight="26.0" prefWidth="111.0" text="Show " />
     </AnchorPane>

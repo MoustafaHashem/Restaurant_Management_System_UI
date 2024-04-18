@@ -46,6 +46,6 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Text layoutX="591.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id not found" wrappingWidth="96.2711181640625" />
+      <Text layoutX="558.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." wrappingWidth="165.2711181640625" />
    </children>
 </AnchorPane>

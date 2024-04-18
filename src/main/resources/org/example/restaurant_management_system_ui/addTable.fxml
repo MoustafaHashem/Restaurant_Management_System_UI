@@ -58,6 +58,6 @@
          <Image url="@../../../Images/11.png" />
       </ImageView>
       <Button fx:id="removeTable" layoutX="136.0" layoutY="218.0" mnemonicParsing="false" onAction="#removeTablePress" prefHeight="74.0" prefWidth="137.0" text="Remove" />
-      <Text fx:id="addErrorMessage" layoutX="123.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
+      <Text fx:id="addErrorMessage" layoutX="123.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" wrappingWidth="164.0" />
    </AnchorPane>
 </HBox>

@@ -24,17 +24,15 @@
       <Image url="@../../../Images/2.png" />
    </ImageView>
    <Text fx:id="logoutText" layoutX="1167.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
-   <Button fx:id="change" layoutX="304.0" layoutY="393.0" mnemonicParsing="false" onAction="#changePress" prefHeight="26.0" prefWidth="111.0" text="change" />
-   <TextField fx:id="IDNewPassword" layoutX="285.0" layoutY="265.0" />
-   <Text layoutX="203.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your ID" />
+   <Button fx:id="change" layoutX="307.0" layoutY="333.0" mnemonicParsing="false" onAction="#changePress" prefHeight="26.0" prefWidth="111.0" text="change" />
    <Text layoutX="273.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change password">
       <font>
          <Font size="22.0" />
       </font>
    </Text>
-   <Text fx:id="addErrorMessage" layoutX="277.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
-   <TextField fx:id="newPassword" layoutX="285.0" layoutY="320.0" />
-   <Text layoutX="184.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New password" />
+   <Text fx:id="addErrorMessage" layoutX="281.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" wrappingWidth="164.0" />
+   <TextField fx:id="newPassword" layoutX="288.0" layoutY="260.0" />
+   <Text layoutX="187.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New password" />
    <ImageView fitHeight="353.0" fitWidth="200.0" layoutX="521.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" />
    <TextFlow layoutX="855.0" layoutY="223.0" prefHeight="251.0" prefWidth="234.0" />
    <Text layoutX="917.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile data">
