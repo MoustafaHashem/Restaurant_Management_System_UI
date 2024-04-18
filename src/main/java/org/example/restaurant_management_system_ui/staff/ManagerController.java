@@ -150,7 +150,7 @@ boolean y=true;
     public void showDataButtonPress( ) {
         if(y){
             y=false;
-          mangerProfileData.getChildren().add(new Text(Manager.getEmployees().getFirst().print()));
+          mangerProfileData.getChildren().add(new Text(Manager.getEmployees().get(0).print()));
         }
     }
     public void pressLogout( ) throws IOException {
