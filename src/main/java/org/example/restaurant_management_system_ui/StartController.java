@@ -54,24 +54,22 @@ public class StartController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Manager owner=new Manager("Moustafa Ahmed Hashem",20,"el-obour city","01097963663",10000,"high");
         owner.addEmployee(owner);
-        Staff sasa=new Staff("kareem ",20,"el-obour city","01097963663",10000,"high");
-        owner.addEmployee(sasa);
+        Staff moustafa=new Staff("kareem ",20,"el-obour city","01097963663",10000,"high");
+        owner.addEmployee(moustafa);
         Staff hoda=new Staff("hoda ",20,"el-obour city","01097963663",10000,"high");
         owner.addEmployee(hoda);
         owner.addMenu(new Menu("main menu"));
-        owner.addMenuSection(new MenuSection(owner.getMenus().get(0),"Grilled"));
-        owner.addMenuSection(new MenuSection(owner.getMenus().get(0),"Fried" ));
-        owner.addMenuItem(new MenuItem(owner.getMenuSections().get(0),"chicken",100));
-        owner.addMenuItem(new MenuItem(owner.getMenuSections().get(0),"meat",150));
-        owner.addMenuItem(new MenuItem(owner.getMenuSections().get(0),"kebab",300));
-        owner.addMenuItem(new MenuItem(owner.getMenuSections().get(1),"fried chicken",150));
-        owner.addMenuItem(new MenuItem(owner.getMenuSections().get(1),"fish",75));
-        owner.addMenuItem(new MenuItem(owner.getMenuSections().get(1),"meat",200));
+        owner.addMenuSection(new MenuSection(Manager.getMenus().get(0),"Grilled"));
+        owner.addMenuSection(new MenuSection(Manager.getMenus().get(0),"Fried" ));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0),"chicken",100));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0),"meat",150));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0),"kebab",300));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"fried chicken",150));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"fish",75));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"meat",200));
         for (int i=0;i<5;i++) {
             owner.addTable(new Table());
         }
-        //Reservation.makeReservation(LocalDate.now(),3,1);
-        //Reservation.makeReservation(LocalDate.now(),2,2);
-        //Reservation.makeReservation(LocalDate.now(),5,3);
+
     }
 }
