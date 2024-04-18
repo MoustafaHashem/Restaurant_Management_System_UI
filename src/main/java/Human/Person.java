@@ -45,7 +45,7 @@ public class Person {
         this.phone = phone;
     }
 
-    public void print() {
-        System.out.println("Person{name= " + name + ", age= " + age + ", address= " + address + ", phone= " + phone + '}');
+    public String print() {
+       return ("name= " + name + "\n age= " + age + "\n address= " + address + "\n phone= " + phone );
     }
 }

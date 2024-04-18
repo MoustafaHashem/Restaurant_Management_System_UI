@@ -2,6 +2,7 @@ package org.example.restaurant_management_system_ui.staff;
 
 
 
+import Human.Manager;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -147,7 +148,7 @@ public class ManagerController {
         mainStage.setScene(profileScene);
 }
     public void showDataButtonPress(ActionEvent actionEvent) {
-        mangerProfileData.getChildren().add(new Text("ddddddd"));
+          mangerProfileData.getChildren().add(new Text(Manager.getEmployees().get(0).print()));
     }
     public void pressLogout( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("staff.fxml"));

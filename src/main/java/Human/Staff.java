@@ -60,9 +60,10 @@ public class  Staff extends Person {
     }// for manger only
 
     @Override
-        public void print() {
-        super.print();
-        System.out.println("Employee{employeeID= " + employeeID + ", email= " + email + ", password= " + password + ", salary= " + salary + ", rank= " + rank + "joinedDate"+joinedDate+'}');
+        public String print() {
+        return super.print()
+                +
+        ("\nemployeeID= " + employeeID + "\n email= " + email + "\n password= " + password + "\n salary= " + salary + "\n rank= " + rank + "\njoinedDate"+joinedDate);
     }
     public static boolean checkPassword(String p) {
         return p.length() >= 8;
