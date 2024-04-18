@@ -36,8 +36,8 @@ public class MenuItem {
     public int getID() {
         return ID;
     }
-    public void print() {
-        menuSection.print();
-        System.out.println("MenuItem{" + "title= " + title + ", ID= " + ID + ", price= " + price + '}');
+    public String print() {
+        return (menuSection.print()+
+         "Title of menu item : " + title + " , ID : " + ID + " , Price : " + price + '\n');
     }
 }

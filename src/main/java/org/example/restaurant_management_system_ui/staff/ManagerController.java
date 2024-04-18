@@ -3,16 +3,13 @@ package org.example.restaurant_management_system_ui.staff;
 
 
 import Human.Manager;
-import javafx.application.Platform;
-import javafx.event.ActionEvent;
+import Human.Staff;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
@@ -20,6 +17,7 @@ import org.example.restaurant_management_system_ui.MainApplication;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ManagerController implements Initializable {
     public Button addEmployee;
@@ -83,7 +81,7 @@ public class ManagerController implements Initializable {
     public Button addMI;
     public Button addMS;
 
-    public Button showDataButton;
+
 
     public void addEmployeePress() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addEmployee.fxml"));
@@ -152,7 +150,7 @@ boolean y=true;
     public void showDataButtonPress( ) {
         if(y){
             y=false;
-          mangerProfileData.getChildren().add(new Text(Manager.getEmployees().get(0).print()));
+          mangerProfileData.getChildren().add(new Text(Manager.getEmployees().getFirst().print()));
         }
     }
     public void pressLogout( ) throws IOException {
@@ -170,7 +168,6 @@ boolean y=true;
 
     public void chooseEmployee( ) {
         for(int i=0;employeeList.getItems().size()>i;i++){
-
             int finalI = i;
             employeeList.getItems().get(finalI).setOnAction(event ->{
                 printEmployeeData.getChildren().clear();
@@ -179,33 +176,123 @@ boolean y=true;
         }
 
     }
-    public void menuChoosed( ) {
+    public void chooseMenu( ) {
+        for(int i=0;menuList.getItems().size()>i;i++){
+            int finalI = i;
+            menuList.getItems().get(finalI).setOnAction(event ->{
+                printMenuData.getChildren().clear();
+                printMenuData.getChildren().add(new Text(Manager.getMenus().get(finalI).print()));
+            });
+        }
     }
-    public void menuSectionChoosed( ) {
+    public void  chooseMenuSection( ) {
+        for(int i=0;menuSectionList.getItems().size()>i;i++){
+            int finalI = i;
+            menuSectionList.getItems().get(finalI).setOnAction(event ->{
+                printMenuSectionData.getChildren().clear();
+                printMenuSectionData.getChildren().add(new Text(Manager.getMenuSections().get(finalI).print()));
+            });
+        }
     }
     public void chooseMenuItem( ) {
+        for(int i=0;menuItemList.getItems().size()>i;i++){
+            int finalI = i;
+            menuItemList.getItems().get(finalI).setOnAction(event ->{
+                printMenuItemData.getChildren().clear();
+                printMenuItemData.getChildren().add(new Text(Manager.getMenuItems().get(finalI).print()));
+            });
+        }
     }
     public void chooseTable( ) {
+        for(int i=0;tableList.getItems().size()>i;i++){
+            int finalI = i;
+            tableList.getItems().get(finalI).setOnAction(event ->{
+                printTableData.getChildren().clear();
+                printTableData.getChildren().add(new Text(Manager.getTables().get(finalI).print()));
+            });
+        }
     }
     public void addPress( ) {
+        printEmployeeData.getChildren().clear();
         x=true;
+        try {
+            Manager manager=new Manager();
+            manager.addEmployee(new Staff(nameFieldAdd.getText(),Integer.parseInt(ageFieldAdd.getText()),addressFieldAdd.getText(),phoneFieldAdd.getText(),Integer.parseInt(salaryFieldAdd.getText()),rankFieldAdd.getText()));
+            addErrorMessage.setText("Added done");
+            addErrorMessage.setVisible(true);
+        }catch (NumberFormatException e){
+                    addErrorMessage.setVisible(true);
+        }
     }
     public void removePress( ) {
+        printEmployeeData.getChildren().clear();
         x=true;
+        try {
+            for (int i=0;i<=Manager.getEmployees().size();i++){
+              int z=  iDFieldRemove.getText().compareTo(Manager.getEmployees().get(i).getEmployeeID());
+              if(z==0)break;
+            }
+         Manager manager=new Manager();
+         manager.removeEmployee(iDFieldRemove.getText());
+         addErrorMessage.setText("Removed done");
+         addErrorMessage.setVisible(true);
+        }catch (Exception e){
+            addErrorMessage.setVisible(true);
+        }
     }
     public void setNewSalaryPress( ) {
+        printEmployeeData.getChildren().clear();
         x=true;
+        int i;
+        try {
+            for (i=0;i<=Manager.getEmployees().size();i++){
+                int z=  iDFieldSalary.getText().compareTo(Manager.getEmployees().get(i).getEmployeeID());
+                if(z==0)break;
+            }
+            Manager.getEmployees().get(i).setSalary(Integer.parseInt(salaryFieldSalary.getText()));
+            addErrorMessage.setText("Changed done");
+            addErrorMessage.setVisible(true);
+        }catch (Exception e){
+            addErrorMessage.setVisible(true);
+        }
     }
     public void setNewRankPress( ) {
+        printEmployeeData.getChildren().clear();
         x=true;
+        int i;
+        try {
+            for (i=0;i<=Manager.getEmployees().size();i++){
+                int z=  IDFieldRank.getText().compareTo(Manager.getEmployees().get(i).getEmployeeID());
+                if(z==0)break;
+            }
+            Manager.getEmployees().get(i).setRank(rankFieldRank.getText());
+            addErrorMessage.setText("Changed done");
+            addErrorMessage.setVisible(true);
+        }catch (Exception e){
+            addErrorMessage.setVisible(true);
+        }
     }
     public void addMPress() {
+        Manager.getMenus().add(new Restaurant.Menu(titleM.getText()));
     }
-    public void chooseMenu( ) {
+    public void  menuChoosed( ) {
+
+
     }
     public void addMSPress( ) {
+        int x;
+        for(int i=0;chooseMenu.getItems().size()>i;i++){
+            int finalI = i;
+            chooseMenu.getItems().get(i).setOnAction(event ->{
+                addErrorMessage.setText(Manager.getMenus().get(finalI).getTitle());
+            });
+        }
+        for( x=0;Manager.getMenus().size()>x;x++){System.out.println(addErrorMessage.getText());
+            if(addErrorMessage.getText().compareTo(Manager.getMenus().get(x).getTitle())==0)break;
+        }
+        Manager.getMenuSections().add(new Restaurant.MenuSection(Manager.getMenus().get(x), titleMS.getText()));
     }
-    public void chooseMenuSection( ) {
+    public void menuSectionChoosed( ) {
     }
     public void addMIPress( ) {
     }
@@ -227,9 +314,64 @@ boolean y=true;
     public void addList( ) {
 
                 if(x) {
+                    employeeList.getItems().clear();
                     for (int i = 1; i < Manager.getEmployees().size(); i++)
                         employeeList.getItems().add(new MenuItem(Manager.getEmployees().get(i).getName()));
                     x=false;
                 }
+    }
+    boolean z=true;
+    public void addListT( ) {
+        if(z) {
+            tableList.getItems().clear();
+            for (int i = 0; i < Manager.getTables().size(); i++)
+                tableList.getItems().add(new MenuItem(Integer.toString(Manager.getTables().get(i).getTableNum())));
+            z=false;
+        }
+    }
+    boolean a=true;
+    public void addListMS( ) {
+        if(a) {
+            menuSectionList.getItems().clear();
+            for (int i = 0; i < Manager.getMenuSections().size(); i++)
+                menuSectionList.getItems().add(new MenuItem(Manager.getMenuSections().get(i).getTitle()));
+            a=false;
+        }
+    }
+    boolean b=true;
+    public void addListMI( ) {
+        if(b) {
+            menuItemList.getItems().clear();
+            for (int i = 0; i < Manager.getMenuItems().size(); i++)
+                menuItemList.getItems().add(new MenuItem(Manager.getMenuItems().get(i).getTitle()));
+            b=false;
+        }
+    }
+    boolean c=true;
+    public void addListM( ) {
+        if(c) {
+            menuList.getItems().clear();
+            for (int i = 0; i < Manager.getMenus().size(); i++)
+                menuList.getItems().add(new MenuItem(Manager.getMenus().get(i).getTitle()));
+            c=false;
+        }
+    }
+    boolean d=true;
+    public void addListMSInMI( ) {
+        if(d) {
+            chooseMenuSection.getItems().clear();
+            for (int i = 0; i < Manager.getMenuSections().size(); i++)
+                chooseMenuSection.getItems().add(new MenuItem(Manager.getMenuSections().get(i).getTitle()));
+            d=false;
+        }
+    }
+    boolean e=true;
+    public void addListMInMS( ) {
+        if(e) {
+            chooseMenu.getItems().clear();
+            for (int i = 0; i < Manager.getMenus().size(); i++)
+                chooseMenu.getItems().add(new MenuItem(Manager.getMenus().get(i).getTitle()));
+            e=false;
+        }
     }
 }

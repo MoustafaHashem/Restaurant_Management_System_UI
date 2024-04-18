@@ -13,6 +13,9 @@ public class Person {
         this.phone = phone;
     }
 
+    public Person() {
+    }
+
     public String getName() {
         return name;
     }

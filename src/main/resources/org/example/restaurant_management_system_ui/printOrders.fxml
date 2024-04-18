@@ -38,10 +38,10 @@
          <Font size="22.0" />
       </font>
    </Text>
-   <Text layoutX="338.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="or">
+   <Text layoutX="349.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="or">
       <font>
          <Font size="23.0" />
       </font>
    </Text>
-   <Button fx:id="printAllOrder" layoutX="293.0" layoutY="447.0" mnemonicParsing="false" onAction="#printAllOrderPress" prefHeight="26.0" prefWidth="111.0" text="Print all" />
+   <Button fx:id="printAllOrder" layoutX="304.0" layoutY="447.0" mnemonicParsing="false" onAction="#printAllOrderPress" prefHeight="26.0" prefWidth="111.0" text="Print all" />
 </AnchorPane>

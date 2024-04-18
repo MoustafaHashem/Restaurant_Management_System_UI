@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 public class  Staff extends Person {
     private static int count = 10;
-    private final LocalDate joinedDate;
-    private final String employeeID;
-    private final String email;
+    private  LocalDate joinedDate;
+    private  String employeeID;
+    private  String email;
     private String password;
     private int salary;
     private String rank;
@@ -20,6 +20,10 @@ public class  Staff extends Person {
         this.salary = salary;
         this.rank = rank;
         count++;
+    }
+
+    public Staff() {
+        super();
     }
 
     public LocalDate getJoinedDate() {

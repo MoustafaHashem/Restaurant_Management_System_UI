@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -45,12 +44,7 @@
          <Image url="@../../../Images/2.png" />
       </ImageView>
       <Text fx:id="logoutText" layoutX="887.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
-      <MenuButton fx:id="menuSectionList" layoutX="716.0" layoutY="404.0" mnemonicParsing="false" onAction="#chooseMenuSection" prefHeight="26.0" prefWidth="172.0" text="Menu section list">
-         <items>
-            <MenuItem mnemonicParsing="false" text="Action 1" />
-            <MenuItem mnemonicParsing="false" text="Action 2" />
-         </items>
-      </MenuButton>
+      <MenuButton fx:id="menuSectionList" layoutX="716.0" layoutY="404.0" mnemonicParsing="false" onAction="#chooseMenuSection" onMouseClicked="#chooseMenuSection" onMouseEntered="#addListMS" prefHeight="26.0" prefWidth="172.0" text="Menu section list" />
       <TextFlow fx:id="printMenuSectionData" layoutX="683.0" layoutY="72.0" prefHeight="306.0" prefWidth="238.0" />
       <Text layoutX="110.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add menu section">
          <font>
@@ -58,17 +52,11 @@
          </font>
       </Text>
       <Text fx:id="addErrorMessage" layoutX="116.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" wrappingWidth="164.0" />
-      <MenuButton fx:id="chooseMenu" layoutX="129.0" layoutY="175.0" mnemonicParsing="false" onAction="#menuChoosed" prefHeight="26.0" prefWidth="143.0" text="Menus">
-         <items>
-            <MenuItem mnemonicParsing="false" text="Action 1" />
-            <MenuItem mnemonicParsing="false" text="Action 2" />
-         </items>
-      </MenuButton>
+      <MenuButton fx:id="chooseMenu" layoutX="129.0" layoutY="175.0" mnemonicParsing="false" onAction="#menuChoosed" onMouseClicked="#menuChoosed" onMouseEntered="#addListMInMS" prefHeight="26.0" prefWidth="143.0" text="Menus" />
       <Text layoutX="34.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose menu" />
-      <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="358.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Images/7.png" />
-         </image>
+      <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="340.0" layoutY="75.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@../../../Images/7.png"/>
       </ImageView>
    </AnchorPane>
 </HBox>

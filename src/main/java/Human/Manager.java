@@ -5,6 +5,10 @@ import Restaurant.*;
 import java.util.ArrayList;
 
 public class Manager extends Staff implements Restaurant {
+    public Manager() {
+        super();
+    }
+
     public Manager(String name, int age, String address, String phone, int salary, String rank ) {
         super(name, age, address, phone, salary, rank);
     }

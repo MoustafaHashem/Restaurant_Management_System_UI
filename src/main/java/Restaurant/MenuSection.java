@@ -14,8 +14,8 @@ public class MenuSection {
         this.title = title;
         this.menu = menu;
     }
-    public void print() {
-        menu.print();
-        System.out.println("MenuSection{"  + "title= " + title + '}');
+    public String print() {
+       return (menu.print()+
+       "Title of menu section : " + title + '\n');
     }
 }

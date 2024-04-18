@@ -1,7 +1,7 @@
 package Restaurant;
 
 public class Menu {
-    private final String title;
+    private  String title;
 
     public String getTitle() {
         return title;
@@ -10,7 +10,11 @@ public class Menu {
     public Menu(String title) {
         this.title = title;
     }
-    public void print() {
-        System.out.println("Menu{" + "title='" + title + '}');
+
+    public Menu() {
+    }
+
+    public String print() {
+        return ( "Title of menu : " + title + '\n');
     }
 }

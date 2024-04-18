@@ -42,7 +42,7 @@
          <Image url="@../../../Images/2.png" />
       </ImageView>
       <Text fx:id="logoutText" layoutX="887.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
-      <MenuButton fx:id="tableList" layoutX="716.0" layoutY="404.0" mnemonicParsing="false" onAction="#chooseTable" prefHeight="26.0" prefWidth="172.0" text="Tables list">
+      <MenuButton fx:id="tableList" layoutX="716.0" layoutY="404.0" mnemonicParsing="false" onAction="#chooseTable" onMouseClicked="#chooseTable" onMouseEntered="#addListT" prefHeight="26.0" prefWidth="172.0" text="Tables list">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
             <MenuItem mnemonicParsing="false" text="Action 2" />
