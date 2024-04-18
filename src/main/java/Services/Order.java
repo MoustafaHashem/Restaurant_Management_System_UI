@@ -99,4 +99,5 @@ public class Order {
         Manager.getTables().get(y).getOrder().getMeals().add(mi);
         Manager.getTables().get(y).getOrder().setCost(Manager.getTables().get(y).getOrder().getCost()+mi.getPrice());
     }
+
 }

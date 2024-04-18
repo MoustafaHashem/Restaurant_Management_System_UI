@@ -2,6 +2,7 @@ package org.example.restaurant_management_system_ui.Staff;
 
 
 import Human.Manager;
+import Services.Reservation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -59,7 +60,7 @@ public class EmployeeController {
             addErrorMessage.setVisible(true);
         } else {
             Manager.getEmployees().get(ii).setPassword(newPassword.getText());
-            System.out.println(Manager.getEmployees().get(ii).getPassword());
+            //System.out.println(Manager.getEmployees().get(ii).getPassword());
             addErrorMessage.setText("Changed done");
             addErrorMessage.setVisible(true);
             profileDateText.getChildren().add(new Text(Manager.getEmployees().get(ii).print()));
@@ -67,15 +68,18 @@ public class EmployeeController {
     }
 
     public void printIDOrderPress() {
+
     }
 
     public void printAllOrderPress() {
+        //Manager.getTables().get(1).getOrder().
     }
 
     public void printIDReservationPress() {
     }
 
     public void printAllReservationPress() {
+        profileDateText.getChildren().add(new Text(Reservation.printReservation()));
     }
 
     public void profileButtonPress() throws IOException {
@@ -104,5 +108,13 @@ public class EmployeeController {
         Scene staffScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage = (Stage) logout.getScene().getWindow();
         mainStage.setScene(staffScene);
+    }
+
+    boolean x = true;
+    public void showDataEntered() {
+        if (x) {
+            profileDateText.getChildren().add(new Text(Manager.getEmployees().get(ii).print()));
+            x = false;
+        }
     }
 }
