@@ -6,11 +6,9 @@ import Human.Manager;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -20,8 +18,10 @@ import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ManagerController {
+public class ManagerController implements Initializable {
     public Button addEmployee;
     public Button removeEmployee;
     public Button setSalary;
@@ -90,6 +90,7 @@ public class ManagerController {
         Scene addEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
         mainStage.setScene(addEmployeeScene);
+
     }
 
     public void removeEmployeePress() throws IOException {
@@ -147,8 +148,12 @@ public class ManagerController {
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
         mainStage.setScene(profileScene);
 }
-    public void showDataButtonPress(ActionEvent actionEvent) {
+boolean y=true;
+    public void showDataButtonPress( ) {
+        if(y){
+            y=false;
           mangerProfileData.getChildren().add(new Text(Manager.getEmployees().get(0).print()));
+        }
     }
     public void pressLogout( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("staff.fxml"));
@@ -164,6 +169,15 @@ public class ManagerController {
     }
 
     public void chooseEmployee( ) {
+        for(int i=0;employeeList.getItems().size()>i;i++){
+
+            int finalI = i;
+            employeeList.getItems().get(finalI).setOnAction(event ->{
+                printEmployeeData.getChildren().clear();
+            printEmployeeData.getChildren().add(new Text(Manager.getEmployees().get(finalI+1).print()));
+        });
+        }
+
     }
     public void menuChoosed( ) {
     }
@@ -174,14 +188,18 @@ public class ManagerController {
     public void chooseTable( ) {
     }
     public void addPress( ) {
+        x=true;
     }
     public void removePress( ) {
+        x=true;
     }
     public void setNewSalaryPress( ) {
+        x=true;
     }
     public void setNewRankPress( ) {
+        x=true;
     }
-    public void addMPress(ActionEvent actionEvent) {
+    public void addMPress() {
     }
     public void chooseMenu( ) {
     }
@@ -201,4 +219,17 @@ public class ManagerController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+    boolean x=true;
+    public void addList( ) {
+
+                if(x) {
+                    for (int i = 1; i < Manager.getEmployees().size(); i++)
+                        employeeList.getItems().add(new MenuItem(Manager.getEmployees().get(i).getName()));
+                    x=false;
+                }
+    }
 }

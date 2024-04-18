@@ -2,6 +2,7 @@ package org.example.restaurant_management_system_ui.staff;
 
 import Human.Manager;
 
+import Human.Staff;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -93,6 +94,10 @@ public class StaffController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Manager owner=new Manager("Moustafa Ahmed Hashem",20,"el-obour city","01097963663",10000,"high");
         owner.addEmployee(owner);
+        Staff sasa=new Staff("kareem ",20,"el-obour city","01097963663",10000,"high");
+        owner.addEmployee(sasa);
+        Staff hoda=new Staff("hoda ",20,"el-obour city","01097963663",10000,"high");
+        owner.addEmployee(hoda);
     }
 
     public void errorText1() {
