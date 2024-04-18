@@ -68,18 +68,18 @@ public class StaffController implements Initializable {
         }
     }
 
+    public static int ii;
     public void pressLogin() throws IOException {
-        int i;
         int x=1;
-        for (i=0;i<Manager.getEmployees().size();i++){
-            int y= email.getText().compareTo(Manager.getEmployees().get(i).getEmail());
-            int z=password.getText().compareTo(Manager.getEmployees().get(i).getPassword());
-            int w=passwordShowed.getText().compareTo(Manager.getEmployees().get(i).getPassword());
+        for (ii=0;ii<Manager.getEmployees().size();ii++){
+            int y= email.getText().compareTo(Manager.getEmployees().get(ii).getEmail());
+            int z=password.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
+            int w=passwordShowed.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
             if(y==0&&(z==0||w==0)){
                 x=0;
                 break;}
         }
-        if(x==0&&i==0){
+        if(x==0&&ii==0){
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manager.fxml"));
             Scene managerScene = new Scene(fxmlLoader.load(), 1280, 720);
             Stage mainStage=(Stage)returnImage.getScene().getWindow();
