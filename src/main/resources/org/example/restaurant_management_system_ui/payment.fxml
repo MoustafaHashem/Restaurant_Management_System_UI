@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.restaurant_management_system_ui.customer.PaymentController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.customer.PaymentController">
+   <children>
+      <ImageView fx:id="returnImage1" fitHeight="114.0" fitWidth="100.0" layoutX="1216.0" layoutY="622.0" onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/2.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="returnText1" layoutX="1185.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995" />
+      <Text layoutX="323.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I wish our food is delicious now time for paying :)">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="565.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Text>
+      <TextField layoutX="573.0" layoutY="315.0" />
+      <TextField layoutX="573.0" layoutY="390.0" />
+      <TextField layoutX="573.0" layoutY="465.0" />
+      <Text layoutX="580.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pay via card">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Button layoutX="624.0" layoutY="540.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="47.0" text="Pay" />
+      <Text layoutX="601.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Done successfully" visible="false" />
+      <Text layoutX="455.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card number" />
+      <Text layoutX="467.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exp date" />
+      <Text layoutX="479.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" />
+      <ImageView fitHeight="409.0" fitWidth="331.0" layoutX="957.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/18.png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>
