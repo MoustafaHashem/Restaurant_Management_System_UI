@@ -67,6 +67,7 @@ public class EmployeeController {
     }
 
     public void printOrderPress() { //need testing
+
         orderData.getChildren().clear();
         addErrorMessage.setVisible(false);
         try {
@@ -87,6 +88,7 @@ public class EmployeeController {
 
     public void printAllOrderPress() { //need testing
         orderData.getChildren().clear();
+        addErrorMessage.setVisible(false);
         orderData.getChildren().add(new Text(Order.printOrders()));
     }
 
@@ -111,6 +113,7 @@ public class EmployeeController {
     }
 
     public void printAllReservationPress() { //need testing
+        addErrorMessage.setVisible(false);
         reservationData.getChildren().clear();
         reservationData.getChildren().add(new Text(Reservation.printReservation()));
     }
