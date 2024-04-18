@@ -90,7 +90,7 @@ public class EmployeeController {
         orderData.getChildren().add(new Text(Order.printOrders()));
     }
 
-    public void printIDReservationPress() {
+    public void printIDReservationPress() { //need testing
         reservationData.getChildren().clear();
         addErrorMessage.setVisible(false);
         try {
@@ -110,7 +110,7 @@ public class EmployeeController {
         }
     }
 
-    public void printAllReservationPress() {
+    public void printAllReservationPress() { //need testing
         reservationData.getChildren().clear();
         reservationData.getChildren().add(new Text(Reservation.printReservation()));
     }
