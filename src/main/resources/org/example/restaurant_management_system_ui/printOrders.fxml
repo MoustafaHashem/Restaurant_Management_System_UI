@@ -14,14 +14,11 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Staff.EmployeeController">
    <HBox layoutX="9.0" layoutY="10.0" prefHeight="114.0" prefWidth="1280.0" spacing="50.0">
       <padding>
-         <Insets bottom="30.0" left="350.0" right="350.0" top="30.0"/>
+         <Insets bottom="30.0" left="350.0" right="350.0" top="30.0" />
       </padding>
-      <Button fx:id="profileButton" mnemonicParsing="false" onAction="#profileButtonPress" prefHeight="52.0"
-              prefWidth="172.0" text="Profile"/>
-      <Button fx:id="reservationButton" mnemonicParsing="false" onAction="#reservationButtonPress" prefHeight="52.0"
-              prefWidth="172.0" text="Print reservations"/>
-      <Button fx:id="orderButtonPress" mnemonicParsing="false" onAction="#orderButtonPress" prefHeight="52.0"
-              prefWidth="172.0" text="Print orders"/>
+      <Button fx:id="profileButton" mnemonicParsing="false" onAction="#profileButtonPress" prefHeight="52.0" prefWidth="172.0" text="Profile" />
+      <Button fx:id="reservationButton" mnemonicParsing="false" onAction="#reservationButtonPress" prefHeight="52.0" prefWidth="172.0" text="Print reservations" />
+      <Button fx:id="orderButtonPress" mnemonicParsing="false" onAction="#orderButtonPress" prefHeight="52.0" prefWidth="172.0" text="Print orders" />
    </HBox>
    <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="1199.0" layoutY="606.0" onMouseClicked="#logoutClicked" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/2.png" />
@@ -32,9 +29,9 @@
       <Image url="@../../../Images/13.png" />
    </ImageView>
    <TextFlow fx:id="orderData" layoutX="855.0" layoutY="223.0" prefHeight="251.0" prefWidth="384.0" />
-   <Button fx:id="printIDOrder" layoutX="304.0" layoutY="319.0" mnemonicParsing="false" onAction="#printIDOrderPress" prefHeight="26.0" prefWidth="111.0" text="Print" />
-   <TextField fx:id="IDOrder" layoutX="285.0" layoutY="265.0" />
-   <Text layoutX="200.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID" />
+   <Button fx:id="printIDOrder" layoutX="304.0" layoutY="319.0" mnemonicParsing="false" onAction="#printOrderPress" prefHeight="26.0" prefWidth="111.0" text="Print" />
+   <TextField fx:id="tableNumber" layoutX="285.0" layoutY="265.0" />
+   <Text layoutX="189.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table Number" />
    <Text layoutX="917.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order details">
       <font>
          <Font size="22.0" />

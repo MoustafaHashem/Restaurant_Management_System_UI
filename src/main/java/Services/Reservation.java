@@ -18,13 +18,14 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         return reservations;
     }
 
+    public Reservation() {
+    }
+
     public Reservation(LocalDate date, int numberOfPeoples) {
         this.ID=++count;
         this.date = date;
         this.numberOfPeoples = numberOfPeoples;
     }
-
-
 
     public int getID() {
         return ID;
@@ -126,20 +127,6 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         Manager.getTables().get(i).setCustomer(c);
         System.out.println("reservation done");
     }
-
-    public static String printReservation(int id) {
-        int size = reservations.size();
-        int i;
-        for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id) break;
-        }
-        if (i == size) return null;
-        else return ("Reservation ID: "+reservations.get(i).getID()
-                + "\nNumber of people: "+reservations.get(i).getNumberOfPeoples()
-                + "\nReservation date: "+ reservations.get(i).getDate()
-                +"\n************************************************************\n");
-    }
-
 
     public static String printReservation() {
         for(Reservation r: reservations) {

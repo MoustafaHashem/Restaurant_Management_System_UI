@@ -9,11 +9,13 @@ import java.util.Scanner;
 public class Order {
     private double cost=0;
     private final ArrayList<MenuItem> meals=new ArrayList<>();
-    //private final static ArrayList<Order> orders=new ArrayList<>();
 
 
     public double getCost() {
         return cost;
+    }
+
+    public Order() {
     }
 
     public void setCost(double cost) {
@@ -104,22 +106,35 @@ public class Order {
         Manager.getTables().get(y).getOrder().setCost(Manager.getTables().get(y).getOrder().getCost()+mi.getPrice());
         //Order.orders.add(Manager.getTables().get(y).getOrder());
     }
-    /*
-    public static String printOrder() {
+
+    public static String printOrders() {
+        ArrayList<Order> orders = new ArrayList<>();
         int i;
-        StringBuilder s = new StringBuilder(new String());
-        int size = Order.meals.size();
-        for (i = 0; i < size; i++) {
-            s.append(Order.meals.get(i).print());
+        int size1 = Manager.getTables().size();
+        for (i = 0; i < size1; i++) {
+            if (Manager.getTables().get(i).getOrder().getCost() != 0) {
+                orders.add(Manager.getTables().get(i).getOrder());
+            }
         }
-        for(Order o: orders) {
+        int size2 = orders.size();
+        StringBuilder s = new StringBuilder();
 
-            return ("Meals : "+ o.getMeals().get(i).print()
-                    + "\nCost: "+o.getCost()
-                    +"\n************************************************************\n");
+        for (int j = 0; j < size2; j++) {
+            s.append("Order #").append(j + 1).append("\nMeals : ");
+            for (int k = 0; k < orders.get(j).meals.size(); k++) {
+                s.append(orders.get(j).meals.get(k).print());
+            }
+            s.append("\nTotal Cost: ").append(orders.get(j).getCost()).append("\n************************************************************\n");
         }
-        return null;
+        return String.valueOf(s);
     }
-     */
-
+    public String print() {
+        StringBuilder s = new StringBuilder();
+        s.append("Order").append("\nMeals : ");
+        for (int i = 0; i < this.meals.size(); i++) {
+            s.append(this.meals.get(i).print());
+        }
+        s.append("Cost: ").append(this.getCost());
+        return String.valueOf(s);
+    }
 }

@@ -2,15 +2,14 @@ package org.example.restaurant_management_system_ui.Staff;
 
 
 import Human.Manager;
+import Services.Order;
 import Services.Reservation;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -29,7 +28,7 @@ public class EmployeeController {
     public TextField newPassword;
     public TextFlow orderData;
     public Button printIDOrder;
-    public TextField IDOrder;
+    public TextField tableNumber;
     public Button printAllOrder;
 
     public TextFlow reservationData;
@@ -67,30 +66,28 @@ public class EmployeeController {
         }
     }
 
-    public void printIDOrderPress() { //need fixing
+    public void printOrderPress() { //need testing
         orderData.getChildren().clear();
         addErrorMessage.setVisible(false);
         try {
-            int id = Integer.parseInt(IDOrder.getText());
-            int size = Reservation.getReservations().size();
+            int tableNum = Integer.parseInt(tableNumber.getText());
             int i;
+            int size = Manager.getTables().size();
             for (i = 0; i < size; i++) {
-                if (Reservation.getReservations().get(i).getID() == id) break;
+                if (tableNum == Manager.getTables().get(i).getTableNum()) {
+                    break;
+                }
             }
             if (i == size) addErrorMessage.setVisible(true);
-            else reservationData.getChildren().add(new Text(("Reservation ID: "+Reservation.getReservations().get(i).getID()
-                    + "\nNumber of people: "+Reservation.getReservations().get(i).getNumberOfPeoples()
-                    + "\nReservation date: "+ Reservation.getReservations().get(i).getDate()
-                    +"\n************************************************************\n")));
+            else orderData.getChildren().add(new Text((Manager.getTables().get(i).getOrder().print())));
         } catch (Exception e) {
             addErrorMessage.setVisible(true);
         }
-
     }
 
-    public void printAllOrderPress() { //need fixing
+    public void printAllOrderPress() { //need testing
         orderData.getChildren().clear();
-        orderData.getChildren().add(new Text(Reservation.printReservation()));
+        orderData.getChildren().add(new Text(Order.printOrders()));
     }
 
     public void printIDReservationPress() {
