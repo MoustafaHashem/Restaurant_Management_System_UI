@@ -28,5 +28,5 @@
    <Text fx:id="returnText2" layoutX="305.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="131.7366943359375" />
    <PasswordField fx:id="password" layoutX="565.0" layoutY="394.0" onInputMethodTextChanged="#errorText1" onKeyPressed="#errorText1" />
    <TextField fx:id="passwordShowed" layoutX="566.0" layoutY="395.0" visible="false" />
-   <Text fx:id="incorrect" layoutX="691.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="238.40004882812514" />
+   <Text fx:id="incorrect" layoutX="691.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="238.40004882812514" />
 </AnchorPane>

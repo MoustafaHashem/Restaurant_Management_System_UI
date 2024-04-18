@@ -54,6 +54,6 @@
       <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="379.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
          <Image url="@../../../Images/9.png" />
       </ImageView>
-      <Text fx:id="addErrorMessage" layoutX="117.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" wrappingWidth="164.0" />
+      <Text fx:id="addErrorMessage" layoutX="117.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" wrappingWidth="164.0" />
    </AnchorPane>
 </HBox>

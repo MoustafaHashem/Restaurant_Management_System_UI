@@ -9,61 +9,53 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.restaurant_management_system_ui.Services.Order.AddOrderController">
-   <ImageView fx:id="returnImage1" fitHeight="114.0" fitWidth="100.0" layoutX="1196.0" layoutY="602.0"
-              onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@../../../Images/2.png"/>
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Services.Order.AddOrderController">
+   <ImageView fx:id="returnImage1" fitHeight="114.0" fitWidth="100.0" layoutX="1196.0" layoutY="602.0" onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../Images/2.png" />
    </ImageView>
-   <Text fx:id="returnText1" layoutX="1165.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0"
-         wrappingWidth="104.79999999999995"/>
+   <Text fx:id="returnText1" layoutX="1165.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995" />
    <Text layoutX="531.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make order">
       <font>
-         <Font name="System Bold" size="40.0"/>
+         <Font name="System Bold" size="40.0" />
       </font>
    </Text>
-   <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="1086.0" layoutY="136.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@../../../Images/11.png"/>
+   <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="1086.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../Images/11.png" />
    </ImageView>
-   <AnchorPane layoutX="518.0" layoutY="122.0"/>
-   <ImageView fitHeight="254.0" fitWidth="464.0" layoutX="14.0" layoutY="452.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@../../../Images/22.png"/>
+   <AnchorPane layoutX="518.0" layoutY="122.0" />
+   <ImageView fitHeight="254.0" fitWidth="464.0" layoutX="14.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../Images/22.png" />
    </ImageView>
    <TextField layoutX="559.0" layoutY="260.0">
       <font>
-         <Font size="13.0"/>
+         <Font size="13.0" />
       </font>
    </TextField>
    <TextField layoutX="559.0" layoutY="355.0">
       <font>
-         <Font size="13.0"/>
+         <Font size="13.0" />
       </font>
    </TextField>
-   <TextArea layoutX="942.0" layoutY="190.0" prefHeight="325.0" prefWidth="254.0"/>
+   <TextArea layoutX="942.0" layoutY="190.0" prefHeight="325.0" prefWidth="254.0" />
    <Text layoutX="445.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table number">
       <font>
-         <Font size="13.0"/>
+         <Font size="13.0" />
       </font>
    </Text>
    <Text layoutX="464.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
       <font>
-         <Font size="13.0"/>
+         <Font size="13.0" />
       </font>
    </Text>
    <Text layoutX="992.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu">
       <font>
-         <Font name="System Bold" size="30.0"/>
+         <Font name="System Bold" size="30.0" />
       </font>
    </Text>
    <Button layoutX="610.0" layoutY="455.0" mnemonicParsing="false" text="Order">
       <font>
-         <Font size="15.0"/>
+         <Font size="15.0" />
       </font>
    </Button>
-   <Text layoutX="561.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again."
-         visible="false"/>
+   <Text layoutX="561.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
 </AnchorPane>

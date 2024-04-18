@@ -52,7 +52,7 @@
         <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="362.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../../../Images/20.png" />
         </ImageView>
-        <Text fx:id="addErrorMessage" layoutX="117.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" wrappingWidth="164.0" />
+        <Text fx:id="addErrorMessage" layoutX="117.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" wrappingWidth="164.0" />
       <TextFlow fx:id="mangerProfileData" layoutX="702.0" layoutY="108.0" prefHeight="230.0" prefWidth="200.0" />
     </AnchorPane>
 </HBox>
