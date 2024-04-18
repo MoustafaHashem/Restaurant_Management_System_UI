@@ -23,7 +23,7 @@ public class EmployeeController {
     public ImageView logout;
     public Text logoutText;
     public Button change;
-    public TextField IDNewPassword;
+
     public Text addErrorMessage;
     public TextField newPassword;
     public TextFlow orderData;
@@ -54,7 +54,7 @@ public class EmployeeController {
         String oldPassword = Manager.getEmployees().get(ii).getPassword();
         Manager.getEmployees().get(ii).setPassword(newPassword.getText());
         String newPassword1 = Manager.getEmployees().get(ii).getPassword();
-        if (oldPassword == newPassword1) {
+        if (oldPassword.compareTo(newPassword1)==0) {
             addErrorMessage.setText("Invalid input. please try again.");
             addErrorMessage.setVisible(true);
         } else {

@@ -284,9 +284,7 @@ boolean y=true;
         addErrorMessage.setVisible(false);
         for(int i=0;chooseMenu.getItems().size()>i;i++){
             int finalI = i;
-            chooseMenu.getItems().get(i).setOnAction(event ->{
-                addErrorMessage.setText(Manager.getMenus().get(finalI).getTitle());
-            });
+            chooseMenu.getItems().get(i).setOnAction(event -> addErrorMessage.setText(Manager.getMenus().get(finalI).getTitle()));
         }
     }
     public void addMSPress( ) {
@@ -306,9 +304,7 @@ boolean y=true;
         addErrorMessage.setVisible(false);
         for(int i=0;chooseMenuSection.getItems().size()>i;i++){
             int finalI = i;
-            chooseMenuSection.getItems().get(i).setOnAction(event ->{
-                addErrorMessage.setText(Manager.getMenuSections().get(finalI).getTitle());
-            });
+            chooseMenuSection.getItems().get(i).setOnAction(event -> addErrorMessage.setText(Manager.getMenuSections().get(finalI).getTitle()));
         }
     }
     public void addMIPress( ) {
@@ -319,7 +315,7 @@ boolean y=true;
         }
         if(x!=Manager.getMenuSections().size()){
         try {
-            Manager manager=new Manager();
+
             Manager.getMenuItems().add(new Restaurant.MenuItem(Manager.getMenuSections().get(x),titleMi.getText(),Integer.parseInt(price.getText())));
             addErrorMessage.setText("Added done");
             addErrorMessage.setVisible(true);
@@ -346,7 +342,7 @@ boolean y=true;
     public void removeTablePress( ) {
         addErrorMessage.setVisible(false);
         printTableData.getChildren().clear();
-        Manager.getTables().remove(Manager.getTables().size()-1);
+        Manager.getTables().removeLast();
         addErrorMessage.setText("Removed done");
         addErrorMessage.setVisible(true);
     }
@@ -362,7 +358,7 @@ boolean y=true;
         String oldPassword=Manager.getEmployees().get(0).getPassword();
         Manager.getEmployees().get(0).setPassword(newPassword.getText());
         String newPassword1=Manager.getEmployees().get(0).getPassword();
-        if(oldPassword==newPassword1){addErrorMessage.setText("Invalid input. please try again.");
+        if(oldPassword.compareTo(newPassword1)==0){addErrorMessage.setText("Invalid input. please try again.");
             addErrorMessage.setVisible(true);}
         else{
         Manager.getEmployees().get(0).setPassword(newPassword.getText());
