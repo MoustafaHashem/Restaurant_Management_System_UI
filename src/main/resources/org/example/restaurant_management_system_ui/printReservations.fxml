@@ -25,7 +25,6 @@
    </ImageView>
    <Text fx:id="logoutText" layoutX="1167.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
    <Text fx:id="addErrorMessage" layoutX="278.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" wrappingWidth="164.0" />
-   <ImageView fitHeight="353.0" fitWidth="200.0" layoutX="521.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" />
    <TextFlow fx:id="reservationData" layoutX="855.0" layoutY="223.0" prefHeight="251.0" prefWidth="234.0" />
    <Button fx:id="printIDReservation" layoutX="304.0" layoutY="319.0" mnemonicParsing="false" onAction="#printIDReservationPress" prefHeight="26.0" prefWidth="111.0" text="Print" />
    <Text layoutX="338.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="or">
@@ -41,4 +40,9 @@
          <Font size="22.0" />
       </font>
    </Text>
+   <ImageView fitHeight="501.0" fitWidth="205.0" layoutX="592.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../Images/19.png" />
+      </image>
+   </ImageView>
 </AnchorPane>

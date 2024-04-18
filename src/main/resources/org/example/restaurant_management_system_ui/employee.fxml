@@ -18,12 +18,14 @@
       <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="172.0" text="Print reservations" />
       <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="172.0" text="Print orders" />
    </HBox>
-   <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="1199.0" layoutY="606.0"
-              onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
-      <Image url="@../../../Images/2.png"/>
+   <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="1199.0" layoutY="606.0" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../Images/2.png" />
    </ImageView>
    <Text fx:id="logoutText" layoutX="1167.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
-   <ImageView fitHeight="372.0" fitWidth="584.0" layoutX="347.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fitHeight="372.0" fitWidth="584.0" layoutX="453.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../Images/5.png" />
+      </image></ImageView>
    <Text layoutX="382.0" layoutY="621.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Gusteau restaurant">
       <font>
          <Font size="37.0" />

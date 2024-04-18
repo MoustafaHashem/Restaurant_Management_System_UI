@@ -33,7 +33,10 @@
    <Text fx:id="addErrorMessage" layoutX="281.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" wrappingWidth="164.0" />
    <TextField fx:id="newPassword" layoutX="288.0" layoutY="260.0" />
    <Text layoutX="187.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New password" />
-   <ImageView fitHeight="353.0" fitWidth="200.0" layoutX="521.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fitHeight="408.0" fitWidth="249.0" layoutX="531.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../Images/20.png" />
+      </image></ImageView>
    <TextFlow layoutX="855.0" layoutY="223.0" prefHeight="251.0" prefWidth="234.0" />
    <Text layoutX="917.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile data">
       <font>
