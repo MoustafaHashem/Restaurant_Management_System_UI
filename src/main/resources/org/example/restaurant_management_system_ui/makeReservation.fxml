@@ -26,8 +26,7 @@
    <Text layoutX="475.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
    <Text layoutX="475.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" />
    <Button layoutX="619.0" layoutY="556.0" mnemonicParsing="false" text="Submit" />
-   <Text layoutX="578.0" layoutY="647.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Reservation ID is: 15" visible="false" />
-   <Text layoutX="566.0" layoutY="613.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
+   <Text layoutX="566.0" layoutY="613.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" />
    <Text layoutX="375.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Let's start making your reservation :)">
       <font>
          <Font size="34.0" />
