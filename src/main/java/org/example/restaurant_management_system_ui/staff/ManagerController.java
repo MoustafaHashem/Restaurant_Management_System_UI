@@ -2,13 +2,16 @@ package org.example.restaurant_management_system_ui.staff;
 
 
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
@@ -79,6 +82,8 @@ public class ManagerController {
     public Button addMI;
     public Button addMS;
 
+    public Button showDataButton;
+
     public void addEmployeePress() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addEmployee.fxml"));
         Scene addEmployeeScene = new Scene(fxmlLoader.load(), 1280, 720);
@@ -135,12 +140,14 @@ public class ManagerController {
     }
 
     public void profilePress( ) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("profile.fxml"));
         Scene profileScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)addEmployee.getScene().getWindow();
         mainStage.setScene(profileScene);
-
-        mangerProfileData.setTextAlignment(te);
+}
+    public void showDataButtonPress(ActionEvent actionEvent) {
+        mangerProfileData.getChildren().add(new Text("ddddddd"));
     }
     public void pressLogout( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("staff.fxml"));
@@ -191,14 +198,6 @@ public class ManagerController {
     }
     public void changePress( ) {
     }
-
-
-
-
-
-
-
-
 
 
 }
