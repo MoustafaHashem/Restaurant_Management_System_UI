@@ -6,7 +6,7 @@ import javafx.scene.text.Text;
 
 public class MakeReservationController {
 
-    //set error text to (Your Reservation ID is: 15) when there is no error
+    //set error text to (Your Reservation ID is: **) when there is no error
 
 
     public ImageView returnImage1;
