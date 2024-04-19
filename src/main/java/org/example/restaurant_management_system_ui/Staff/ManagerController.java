@@ -342,7 +342,7 @@ boolean y=true;
     public void removeTablePress( ) {
         addErrorMessage.setVisible(false);
         printTableData.getChildren().clear();
-        Manager.getTables().removeLast();
+        Manager.getTables().remove(Manager.getTables().size()-1);
         addErrorMessage.setText("Removed done");
         addErrorMessage.setVisible(true);
     }
