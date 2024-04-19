@@ -22,10 +22,13 @@
             <Image url="@../../../Images/4.png" />
          </image>
       </ImageView>
-      <Text fx:id="staffMenu" layoutX="1136.0" layoutY="647.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995" />
+      <Text fx:id="text" layoutX="1147.0" layoutY="578.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.0">
+         <font>
+            <Font name="Tw Cen MT Bold" size="15.0" />
+         </font></Text>
       <ImageView fx:id="Customer" fitHeight="122.0" fitWidth="91.0" layoutX="1100.0" layoutY="590.0" onMouseClicked="#clickCustomer" onMouseEntered="#showCustomer" onMouseExited="#hideCustomer" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Images/27.jpg"  />
+            <Image url="@../../../Images/27.jpg" />
          </image>
       </ImageView>
    </children>
