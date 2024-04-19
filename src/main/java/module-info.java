@@ -10,6 +10,7 @@ module org.example.restaurant_management_system_ui {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires javafx.media;
 
     opens org.example.restaurant_management_system_ui to javafx.fxml;
     exports org.example.restaurant_management_system_ui;

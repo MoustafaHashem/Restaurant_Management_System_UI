@@ -15,8 +15,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 
-
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,6 +39,7 @@ public class StartController implements Initializable {
         Scene sceneServices = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)start.getScene().getWindow();
         mainStage.setScene(sceneServices);
+
     }
 
     public void clickStaff() throws IOException {
@@ -40,6 +47,7 @@ public class StartController implements Initializable {
         Scene sceneStaff = new Scene(fxmlLoader.load(), 1280, 720, Color.TRANSPARENT);
         Stage mainStage=(Stage)start.getScene().getWindow();
         mainStage.setScene(sceneStaff);
+
     }
 
     public void show1() {
