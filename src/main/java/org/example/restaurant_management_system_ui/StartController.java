@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -33,6 +34,7 @@ public class StartController implements Initializable {
     public ImageView start;
     public ImageView staff;
     public Text staffMenu;
+    public ImageView Customer;
 
     public void click() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
@@ -62,10 +64,10 @@ public class StartController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Manager owner=new Manager("Moustafa Ahmed Hashem",20,"el-obour city","01097963663",10000,"high");
         owner.addEmployee(owner);
-        Staff moustafa=new Staff("kareem ",20,"el-obour city","01097963663",10000,"high");
-        owner.addEmployee(moustafa);
-        Staff hoda=new Staff("hoda ",20,"el-obour city","01097963663",10000,"high");
-        owner.addEmployee(hoda);
+        Staff kareem=new Staff("kareem ",20,"el-obour city","01097963663",10000,"high");
+        owner.addEmployee(kareem);
+        Staff mayar=new Staff("mayar ",20,"el-obour city","01097963663",10000,"high");
+        owner.addEmployee(mayar);
         owner.addMenu(new Menu("main menu"));
         owner.addMenuSection(new MenuSection(Manager.getMenus().get(0),"Grilled"));
         owner.addMenuSection(new MenuSection(Manager.getMenus().get(0),"Fried" ));
@@ -79,5 +81,20 @@ public class StartController implements Initializable {
             owner.addTable(new Table());
         }
 
+    }
+
+    public void clickCustomer(MouseEvent mouseEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
+        Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)start.getScene().getWindow();
+        mainStage.setScene(reservationScene);
+    }
+
+    public void showCustomer(MouseEvent mouseEvent) {
+        staffMenu.setText("Customer page");
+    }
+
+    public void hideCustomer(MouseEvent mouseEvent) {
+        staffMenu.setText("");
     }
 }
