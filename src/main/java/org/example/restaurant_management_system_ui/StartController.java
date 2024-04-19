@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -33,7 +34,8 @@ public class StartController implements Initializable {
 @FXML
     public ImageView start;
     public ImageView staff;
-    public Text staffMenu;
+    public Text text;
+
     public ImageView Customer;
 
     public void click() throws IOException {
@@ -53,11 +55,11 @@ public class StartController implements Initializable {
     }
 
     public void show1() {
-        staffMenu.setText("Staff page");
+        text.setText("Staff page");
     }
 
     public void hide1() {
-        staffMenu.setText("");
+        text.setText("");
     }
 
     @Override
@@ -91,10 +93,11 @@ public class StartController implements Initializable {
     }
 
     public void showCustomer(MouseEvent mouseEvent) {
-        staffMenu.setText("Customer page");
+        text.setText("Customer page");
     }
 
     public void hideCustomer(MouseEvent mouseEvent) {
-        staffMenu.setText("");
+        text.setText("");
     }
+
 }
