@@ -24,10 +24,8 @@ public abstract class Bill extends Table {
         }
         double cost = Manager.getTables().get(y).getOrder().getCost();
         for (String promocode : promocodes) {
-            if (promo == promocode)
-                cost = cost*0.75;
-                break;
-
+            if (promo.equals(promocode)) cost = cost*0.75;
+            break;
         }
 
 
