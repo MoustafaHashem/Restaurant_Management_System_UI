@@ -60,4 +60,7 @@ public class Table {
         return ( "Table number : " + tableNum + " , Is Reserved ? " + isReserved + '\n');
     }
 
+    public void setIsReserved(boolean b) {
+        this.isReserved=b;
+    }
 }
