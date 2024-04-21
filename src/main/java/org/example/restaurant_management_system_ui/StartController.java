@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class StartController implements Initializable {
+public class StartController   {
 
 @FXML
     public ImageView start;
@@ -62,28 +62,9 @@ public class StartController implements Initializable {
         text.setText("");
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Manager owner=new Manager("Moustafa Ahmed Hashem",20,"el-obour city","01097963663",10000,"high");
-        owner.addEmployee(owner);
-        Staff kareem=new Staff("kareem ",20,"el-obour city","01097963663",10000,"high");
-        owner.addEmployee(kareem);
-        Staff mayar=new Staff("mayar ",20,"el-obour city","01097963663",10000,"high");
-        owner.addEmployee(mayar);
-        owner.addMenu(new Menu("main menu"));
-        owner.addMenuSection(new MenuSection(Manager.getMenus().get(0),"Grilled"));
-        owner.addMenuSection(new MenuSection(Manager.getMenus().get(0),"Fried" ));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0),"chicken",100));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0),"meat",150));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0),"kebab",300));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"fried chicken",150));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"fish",75));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"meat",200));
-        for (int i=0;i<5;i++) {
-            owner.addTable(new Table());
-        }
 
-    }
+
+
 
     public void clickCustomer(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
