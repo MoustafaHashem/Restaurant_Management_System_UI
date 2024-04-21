@@ -36,7 +36,7 @@ public class MainApplication extends Application {
     public static void main(String[] args) {
         MediaPlayer media=new MediaPlayer(new Media(new File("src/main/resources/Music/Le+festib+(mp3cut.net)_out.mp3").toURI().toString()));
         media.setCycleCount(MediaPlayer.INDEFINITE);
-        media.setVolume(.1);
+        media.setVolume(.5);
         media.play();
         Manager owner=new Manager("Moustafa  ",20,"el-obour city","01097963663",10000,"high");
         owner.addEmployee(owner);
