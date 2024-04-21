@@ -9,7 +9,8 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Services.Order.AddOrderController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Services.Order.ModifyOrderController">
+   <ImageView fitHeight="720.0" fitWidth="1280.0" onMouseEntered="#showData" pickOnBounds="true" preserveRatio="true" />
    <ImageView fx:id="returnImage1" fitHeight="114.0" fitWidth="100.0" layoutX="1196.0" layoutY="602.0" onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/2.png" />
    </ImageView>
@@ -19,17 +20,17 @@
          <Font name="System Bold" size="40.0" />
       </font>
    </Text>
-   <TextField layoutX="553.0" layoutY="250.0">
+   <TextField fx:id="tableNo" layoutX="553.0" layoutY="250.0">
       <font>
          <Font size="13.0" />
       </font>
    </TextField>
-   <TextField layoutX="553.0" layoutY="345.0">
+   <TextField fx:id="oldMeal" layoutX="553.0" layoutY="345.0">
       <font>
          <Font size="13.0" />
       </font>
    </TextField>
-   <TextField layoutX="553.0" layoutY="440.0">
+   <TextField fx:id="newMeal" layoutX="553.0" layoutY="440.0">
       <font>
          <Font size="13.0" />
       </font>
@@ -49,12 +50,12 @@
          <Font size="13.0" />
       </font>
    </Text>
-   <Button layoutX="613.0" layoutY="535.0" mnemonicParsing="false" text="Modify">
+   <Button fx:id="modifyButton" layoutX="613.0" layoutY="535.0" mnemonicParsing="false" onAction="#pressButton" text="Modify">
       <font>
          <Font size="13.0" />
       </font>
    </Button>
-   <Text layoutX="564.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
+   <Text fx:id="invalidInput" layoutX="564.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
    <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="1096.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/11.png" />
    </ImageView>
@@ -66,5 +67,5 @@
    <ImageView fitHeight="251.0" fitWidth="363.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/26.png" />
    </ImageView>
-   <TextFlow layoutX="953.0" layoutY="202.0" prefHeight="326.0" prefWidth="254.0" />
+   <TextFlow fx:id="printMenuList" layoutX="953.0" layoutY="202.0" onMouseClicked="#showData" prefHeight="326.0" prefWidth="254.0" />
 </AnchorPane>

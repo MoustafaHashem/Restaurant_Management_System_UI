@@ -17,13 +17,15 @@ public class OrderController {
     public Text returnText1;
     public Button makeOrder;
 
-    public void hide1(MouseEvent event) {
-    }
+    public void hide1(MouseEvent event) { returnText1.setText("");}
 
-    public void show1(MouseEvent event) {
-    }
+    public void show1(MouseEvent event) { returnText1.setText("Return"); }
 
-    public void press(MouseEvent event) {
+    public void press(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
+        Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)returnImage1.getScene().getWindow();
+        mainStage.setScene(startScene);
     }
 
     public void makeOrderPress(ActionEvent actionEvent) throws IOException {
@@ -32,4 +34,12 @@ public class OrderController {
         Stage mainStage=(Stage)returnImage1.getScene().getWindow();
         mainStage.setScene(addOrderScene);
     }
+
+    public void changeOrderPress(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("modifyOrder.fxml"));
+        Scene modifyOrderScene = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage=(Stage)returnImage1.getScene().getWindow();
+        mainStage.setScene(modifyOrderScene);
+    }
 }
+
