@@ -34,6 +34,8 @@ public class MakeReservationController {
     public TextField numberOfPeopleInput;
     public DatePicker dateInput;
     public Text showMessageToUser;
+    public Text dateText;
+    public Text availableTablesText;
 
 
     public void pressMakeReservation(MouseEvent mouseEvent) throws IOException {
@@ -59,34 +61,44 @@ public class MakeReservationController {
             x=false;
         }
     }
-    public AtomicReference<String> pressAvailableTablesList() {
-        x=true;
-        String[] menuButtonItems = new String[Manager.getAvailableTables().size()];
-        for(int i=0;i<Manager.getAvailableTables().size();i++)
-        {
-            menuButtonItems[i]=availableTablesList.getItems().get(i).toString();
-        }
-          AtomicReference<String> returnValue = null;
-        for (String s : menuButtonItems) {
-            availableTablesList.setOnAction(e -> {
-             returnValue.set(s);
-            });
-        }
-        return returnValue;
-    }
-    public LocalDate getDateInputFromDatePicker()
-    {
-        AtomicReference<LocalDate> date = null;
-        dateInput = new DatePicker(LocalDate.now());
-        dateInput.setOnAction(event -> {
-             date.set(dateInput.getValue());
+//    public AtomicReference<String> pressAvailableTablesList() {
+//        x=true;
+//        String[] menuButtonItems = new String[Manager.getAvailableTables().size()];
+//        for(int i=0;i<Manager.getAvailableTables().size();i++)
+//        {
+//            menuButtonItems[i]=availableTablesList.getItems().get(i).toString();
+//        }
+//          AtomicReference<String> returnValue = null;
+//        for (String s : menuButtonItems) {
+//            availableTablesList.setOnAction(e -> {
+//             returnValue.set(s);
+//            });
+//        }
+//        return returnValue;
+//    }
+//    public LocalDate getDateInputFromDatePicker()
+//    {
+//        AtomicReference<LocalDate> date = null;
+//        dateInput = new DatePicker(LocalDate.now());
+//        dateInput.setOnAction(event -> {
+//             date.set(dateInput.getValue());
+//        });
+//        return date.get();
+//    }
+        public LocalDate getDateInputFromDatePicker(){
+            LocalDate date = null;
+            dateInput = new DatePicker(LocalDate.now());
+            dateInput.setOnAction(event -> {
+             dateText.setText(dateInput.getValue().toString());
         });
-        return date.get();
-    }
+        return LocalDate.parse(dateText.getText());
+        }
+    public int pressAvailableTablesList() {
 
+    }
     public void submitReservationInput(ActionEvent actionEvent) {
         try{
-            Reservation.makeReservation(Integer.parseInt(pressAvailableTablesList().toString()),nameInput.getText(),Integer.parseInt(ageInput.getText()),addressInput.getText(),phoneInput.getText(),getDateInputFromDatePicker(),Integer.parseInt(numberOfPeopleInput.getText()));
+            Reservation.makeReservation(,nameInput.getText(),Integer.parseInt(ageInput.getText()),addressInput.getText(),phoneInput.getText(),,Integer.parseInt(numberOfPeopleInput.getText()));
         }
         catch(IllegalArgumentException ex){
             throw new IllegalArgumentException("Invalid input type");
