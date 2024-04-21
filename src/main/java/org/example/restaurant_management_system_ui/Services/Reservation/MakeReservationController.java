@@ -84,7 +84,7 @@ public class MakeReservationController {
 
     public void submitReservationInput(ActionEvent actionEvent) {
         try{
-            Reservation.makeReservation(pressAvailableTablesList(),nameInput.getText(),ageInput.getText(),addressInput.getText(),phoneInput.getText(),,numberOfPeopleInput.getText())
+            Reservation.makeReservation(Integer.parseInt(pressAvailableTablesList().toString()),nameInput.getText(),Integer.parseInt(ageInput.getText()),addressInput.getText(),phoneInput.getText(),getDateInputFromDatePicker(),Integer.parseInt(numberOfPeopleInput.getText()))
         }
     }
 
