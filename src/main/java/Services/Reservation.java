@@ -2,33 +2,35 @@ package Services;
 
 import Human.Customer;
 import Human.Manager;
+import Restaurant.Table;
+
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Reservation {
-private  int ID;
-private static int count=0;
-private LocalDate date;
-private int numberOfPeoples;
-private final static ArrayList<Reservation> reservations=new ArrayList<>();
+    private  int reservationId;
+    private static int count=0;
+    private LocalDate date;
+    private int numberOfPeople;
+    private  static ArrayList<Reservation> reservations=new ArrayList<>();
+
+    public Reservation() {
+    }
+
+    public Reservation(LocalDate date, int numberOfPeople) {
+        this.reservationId=++count;
+        this.date = date;
+        this.numberOfPeople = numberOfPeople;
+    }
 
     public static ArrayList<Reservation> getReservations() {
         return reservations;
     }
 
-    public Reservation() {
-    }
-
-    public Reservation(LocalDate date, int numberOfPeoples) {
-        this.ID=++count;
-        this.date = date;
-        this.numberOfPeoples = numberOfPeoples;
-    }
-
-    public int getID() {
-        return ID;
+    public int getReservationId() {
+        return reservationId;
     }
 
     public LocalDate getDate() {
@@ -39,41 +41,56 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         this.date = date;
     }
 
-
-    public int getNumberOfPeoples() {
-        return numberOfPeoples;
+    public int getNumberOfPeople() {
+        return numberOfPeople;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.reservationId = ID;
     }
 
-    public void setNumberOfPeoples(int numberOfPeoples) {
-        this.numberOfPeoples = numberOfPeoples;
+    public void setNumberOfPeople(int numberOfPeople) {
+        this.numberOfPeople = numberOfPeople;
     }
-    public static void cancelReservation(int id){
+    public static void cancelReservation(){
+        Scanner input= new Scanner(System.in);
         int size = reservations.size();
         int i;
-        for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id)
-                break;
-        }
-        reservations.remove(i);
-        int x = Manager.getTables().size();
-        int y;
-        for (y = 0; y < x; y++) {
-            if (Manager.getTables().get(y).getReservation().getID() == id) {
-                Manager.getTables().get(y).removeReservation();
-                break;
+        boolean invalidReservation = true;
+
+        do {
+            System.out.println("Enter ID of Reservation to be cancelled: ");
+            int id= input.nextInt();
+            for (i = 0; i < size; i++) {
+                if (reservations.get(i).getReservationId() == id)
+                {
+                    invalidReservation=false;
+                }
+                if(!invalidReservation)
+                {
+                    for (Table table: Manager.getTables()) {
+                        if (table.getReservation().getReservationId() == id) {
+                            table.removeReservation();
+                            break;
+                        }
+                    }
+                    reservations.remove(i);
+                    System.out.println("Reservation cancelled");
+                    System.out.println("************************************************************");
+                    break;
+                }
+                else {
+                    System.out.println("Entered Reservation ID not valid");
+                    System.out.println("************************************************************");
+                }
             }
-        }
-        System.out.println("cancelled");
+        }while(invalidReservation);
     }
     public static void changeReservation(int id,LocalDate d){
         int size = reservations.size(); // if size =0 throw exception
         int i;
         for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id){
+            if (reservations.get(i).getReservationId() == id){
                 break;}
         }
         reservations.get(i).setDate(d);
@@ -83,58 +100,102 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         int size = reservations.size();
         int i;
         for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id)
+            if (reservations.get(i).getReservationId() == id)
                 break;
         }
-        reservations.get(i).setNumberOfPeoples(n);
+        reservations.get(i).setNumberOfPeople(n);
         System.out.println("changed");
     }
     public  static void changeReservation(int id,LocalDate d,int n){
         int size = reservations.size();
         int i;
         for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id)
+            if (reservations.get(i).getReservationId() == id)
                 break;
         }
-        reservations.get(i).setNumberOfPeoples(n);
+        reservations.get(i).setNumberOfPeople(n);
         reservations.get(i).setDate(d);
         System.out.println("changed");
     }
-    public  static void makeReservation(LocalDate d, int n, int tableNum){
+    public static void makeReservation(LocalDate d, int n){
         Scanner in=new Scanner(System.in);
-        System.out.println("Enter name");
-            String name=in.nextLine();
-        System.out.println("Enter age");
-            int age=in.nextInt();
-        System.out.println("Enter address");
-            String address=in.next();
-        System.out.println("Enter phone");
-            String phone=in.next();
-        Customer c=new Customer(name,age,address,phone);
-        Reservation r = new Reservation(d,n);
-        reservations.add(r);
-        System.out.println("reservationID = "+r.getID());
+        Reservation r;
         int size = Manager.getTables().size();
         int i;
+        ArrayList <Table> availableTables = new ArrayList<>();
+        int selectedTable;
+        boolean invalidTable=true;
         for (i = 0; i < size; i++) {
-            if (Manager.getTables().get(i).getTableNum() == tableNum){
-                if(Manager.getTables().get(i).isReserved())continue;
-                break;}
-            // if i =size throw exception handling enter another table
+            if(!Manager.getTables().get(i).isReserved())
+            {
+                availableTables.add(Manager.getTables().get(i));
+            }
         }
-        Manager.getTables().get(i).addReservation(r);
-        c.checkIn();
-        Manager.getTables().get(i).setCustomer(c);
-        System.out.println("reservation done");
+        if (!availableTables.isEmpty())
+        {
+            System.out.println("Let's start making your reservation :)");
+            System.out.println("Enter name: ");
+            String name=in.nextLine();
+            System.out.println("Enter age: ");
+            int age=in.nextInt();
+            System.out.println("Enter address: ");
+            String address=in.next();
+            System.out.println("Enter phone: ");
+            String phone=in.next();
+            Customer c = new Customer(name,age,address,phone);
+            r = new Reservation(d,n);
+            reservations.add(r);
+            System.out.println("Reservation ID:  "+r.getReservationId());
+            System.out.println("************************************************************");
+            System.out.println("Available tables for making a reservation: ");
+            System.out.println();
+            for(Table table:availableTables)
+            {
+                System.out.println("Table "+ table.getTableNum());
+            }
+            do {
+                System.out.println("\nWhich table do you want to make your reservation?");
+                selectedTable = in.nextInt();
+                for (Table table:availableTables) {
+                    if (table.getTableNum() == selectedTable) {
+                        invalidTable = false;
+                        break;
+                    }
+                }
+                if(!invalidTable)
+                {
+                    Manager.getTables().get(selectedTable-1).addReservation(r);
+                    c.checkIn();
+                    Manager.getTables().get(selectedTable-1).setCustomer(c);
+                    Manager.getTables().get(selectedTable-1).setIsReserved(true);
+                    System.out.println("Reservation done successfully");
+                    System.out.println("Your Reservation ID is: "+ r.getReservationId());
+                    System.out.println("************************************************************");
+                }
+                else {
+                    System.out.println("Please enter a valid table number from the available tables listed above");
+                }
+            }while(invalidTable);
+
+        }
+        else
+        {
+            System.out.println("No available tables for making a reservation at the restaurant at the moment");
+            System.out.println("************************************************************");
+        }
     }
 
-    public static String printReservation() {
-        for(Reservation r: reservations) {
-            return ("Reservation ID: "+r.getID()
-                    + "\nNumber of people: "+r.getNumberOfPeoples()
-                    + "\nReservation date: "+ r.getDate()
-                    +"\n************************************************************\n");
+    public static String printReservation()
+    {
+        String accumulator="";
+        for(Reservation r: reservations)
+        {
+           accumulator= "Reservation ID: "+r.getReservationId()
+           +"Number of people: "+r.getNumberOfPeople()
+           +"Reservation date: "+ r.getDate()
+            +"************************************************************"
+            +"\n";
         }
-        return null;
+        return accumulator;
     }
 }
