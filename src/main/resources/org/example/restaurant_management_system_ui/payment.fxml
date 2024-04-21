@@ -8,8 +8,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Services.PaymentController">
-   <ImageView fx:id="returnImage1" fitHeight="114.0" fitWidth="100.0" layoutX="1186.0" layoutY="599.0" onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+<AnchorPane fx:id="anchor" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Services.PaymentController">
+   <ImageView fx:id="returnImage1" fitHeight="114.0" fitWidth="100.0" layoutX="1186.0" layoutY="599.0" onMouseClicked="#pressReturnImage" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/2.png" />
    </ImageView>
    <Text fx:id="returnText1" layoutX="1160.0" layoutY="653.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995" />
@@ -23,22 +23,28 @@
          <Font name="System Bold" size="40.0" />
       </font>
    </Text>
-   <TextField layoutX="573.0" layoutY="315.0" />
-   <TextField layoutX="573.0" layoutY="390.0" />
-   <TextField layoutX="573.0" layoutY="465.0" />
-   <Text layoutX="580.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pay via card">
-      <font>
-         <Font size="26.0" />
-      </font>
-   </Text>
-   <Button layoutX="624.0" layoutY="615.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="47.0" text="Pay" />
-   <Text layoutX="455.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card number" />
-   <Text layoutX="467.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exp date" />
-   <Text layoutX="478.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" />
+   <TextField fx:id="tableNumber" layoutX="420.0" layoutY="310.0" />
+   <TextField fx:id="promocode" layoutX="789.0" layoutY="310.0" />
+   <Text layoutX="671.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Promocode" />
    <ImageView fitHeight="409.0" fitWidth="331.0" layoutX="957.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/18.png" />
    </ImageView>
-   <Text layoutX="451.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table Number" />
-   <TextField layoutX="574.0" layoutY="540.0" />
-   <Text layoutX="570.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
+   <Text layoutX="298.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table Number" />
+   <Text fx:id="text1" layoutX="444.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total cost:" visible="false" wrappingWidth="133.9215087890625">
+      <font>
+         <Font size="28.0" />
+      </font>
+   </Text>
+   <Text fx:id="costText" layoutX="655.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="75.521484375">
+      <font>
+         <Font size="28.0" />
+      </font>
+   </Text>
+   <Button fx:id="checkoutButton" layoutX="622.0" layoutY="387.0" mnemonicParsing="false" onAction="#buttonPress" text="Checkout" />
+   <Text fx:id="text2" layoutX="444.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please go to the Cashier" textAlignment="CENTER" visible="false" wrappingWidth="421.33673095703125">
+      <font>
+         <Font size="35.0" />
+      </font>
+   </Text>
+   <Text fx:id="addErrorMessage" layoutX="615.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input" visible="false" />
 </AnchorPane>
