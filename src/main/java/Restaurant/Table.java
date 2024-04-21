@@ -26,6 +26,7 @@ public class Table {
         this.isReserved = false;
         this.reservation = new Reservation();
         this.order = new Order();
+        this.customer = new Customer();
     }
 
     public int getTableNum() {
@@ -45,6 +46,8 @@ public class Table {
     public void removeReservation() {
           this.reservation=null;
           this.isReserved=false;
+          this.order=null;
+          this.customer=null;
     }
 
     public void addReservation (Reservation reservation){

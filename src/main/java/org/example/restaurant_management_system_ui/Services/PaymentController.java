@@ -28,6 +28,8 @@ public class PaymentController {
     public TextField tableNumber;
     public AnchorPane anchor;
     public Text addErrorMessage;
+    public Text text3;
+    public Text reservationnametext;
 
     public void press(MouseEvent event) {
 
@@ -48,7 +50,7 @@ public class PaymentController {
         mainStage.setScene(sceneServices);
     }
 
-    public void buttonPress(ActionEvent actionEvent) {
+    public void buttonPress( ) {
         double cost=0;
         try {
             int tableNum = Integer.parseInt(tableNumber.getText());
@@ -63,9 +65,11 @@ public class PaymentController {
                 addErrorMessage.setVisible(true);
             }
             else {
+                String s=Manager.getTables().get(i).getCustomer().getName();
                 cost = Bill.payment(tableNum,promocode.getText());
+                reservationnametext.setText(s);
                 costText.setText(Double.toString(cost));
-                costText.setVisible(true);
+                text3.setVisible(true);
                 text1.setVisible(true);
                 text2.setVisible(true);
             }

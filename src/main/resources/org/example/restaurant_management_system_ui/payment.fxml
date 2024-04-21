@@ -30,21 +30,31 @@
       <Image url="@../../../Images/18.png" />
    </ImageView>
    <Text layoutX="298.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table Number" />
-   <Text fx:id="text1" layoutX="444.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total cost:" visible="false" wrappingWidth="133.9215087890625">
+   <Text fx:id="text1" layoutX="428.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total cost :" visible="false" wrappingWidth="133.9215087890625">
       <font>
          <Font size="28.0" />
       </font>
    </Text>
-   <Text fx:id="costText" layoutX="655.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="75.521484375">
+   <Text fx:id="costText" layoutX="619.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995">
       <font>
          <Font size="28.0" />
       </font>
    </Text>
    <Button fx:id="checkoutButton" layoutX="622.0" layoutY="387.0" mnemonicParsing="false" onAction="#buttonPress" text="Checkout" />
-   <Text fx:id="text2" layoutX="444.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please go to the Cashier" textAlignment="CENTER" visible="false" wrappingWidth="421.33673095703125">
+   <Text fx:id="text2" layoutX="389.0" layoutY="651.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please go to the Cashier" textAlignment="CENTER" visible="false" wrappingWidth="532.5366821289062">
       <font>
-         <Font size="35.0" />
+         <Font size="48.0" />
       </font>
    </Text>
    <Text fx:id="addErrorMessage" layoutX="615.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input" visible="false" />
+   <Text fx:id="text3" layoutX="374.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation name :" visible="false" wrappingWidth="241.12152099609375">
+      <font>
+         <Font size="28.0" />
+      </font>
+   </Text>
+   <Text fx:id="reservationnametext" layoutX="622.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="325.9215087890625">
+      <font>
+         <Font size="28.0" />
+      </font>
+   </Text>
 </AnchorPane>
