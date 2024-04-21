@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class MakeReservationController {
@@ -70,6 +71,15 @@ public class MakeReservationController {
             });
         }
         return returnValue;
+    }
+    public LocalDate getDateInputFromDatePicker()
+    {
+        AtomicReference<LocalDate> date = null;
+        dateInput = new DatePicker(LocalDate.now());
+        dateInput.setOnAction(event -> {
+             date.set(dateInput.getValue());
+        });
+        return date.get();
     }
 
     public void submitReservationInput(ActionEvent actionEvent) {
