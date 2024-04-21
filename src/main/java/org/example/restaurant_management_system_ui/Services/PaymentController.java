@@ -51,6 +51,12 @@ public class PaymentController {
     }
 
     public void buttonPress( ) {
+        text3.setVisible(false);
+        text1.setVisible(false);
+        text2.setVisible(false);
+        addErrorMessage.setVisible(false);
+        reservationnametext.setVisible(false);
+        costText.setVisible(false);
         double cost=0;
         try {
             int tableNum = Integer.parseInt(tableNumber.getText());
@@ -69,6 +75,8 @@ public class PaymentController {
                 cost = Bill.payment(tableNum,promocode.getText());
                 reservationnametext.setText(s);
                 costText.setText(Double.toString(cost));
+                reservationnametext.setVisible(true);
+                costText.setVisible(true);
                 text3.setVisible(true);
                 text1.setVisible(true);
                 text2.setVisible(true);

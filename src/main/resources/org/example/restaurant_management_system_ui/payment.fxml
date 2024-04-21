@@ -46,7 +46,7 @@
          <Font size="48.0" />
       </font>
    </Text>
-   <Text fx:id="addErrorMessage" layoutX="615.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input" visible="false" />
+   <Text fx:id="addErrorMessage" layoutX="731.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input" visible="false" />
    <Text fx:id="text3" layoutX="374.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation name :" visible="false" wrappingWidth="241.12152099609375">
       <font>
          <Font size="28.0" />

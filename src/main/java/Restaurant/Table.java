@@ -26,7 +26,6 @@ public class Table {
         this.isReserved = false;
         this.reservation = new Reservation();
         this.order = new Order();
-        this.customer = new Customer();
     }
 
     public int getTableNum() {
