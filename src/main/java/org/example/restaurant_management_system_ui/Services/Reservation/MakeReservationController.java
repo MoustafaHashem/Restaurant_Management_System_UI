@@ -1,7 +1,10 @@
 package org.example.restaurant_management_system_ui.Services.Reservation;
 
+import Human.Manager;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -18,6 +21,14 @@ public class MakeReservationController {
     public ImageView returnMakeReservation;
 
     public Text textMakeReservation;
+    public Button submitReservationInputButton;
+    public MenuButton availableTablesList;
+    public TextField nameInput;
+    public TextField ageInput;
+    public TextField addressInput;
+    public TextField phoneInput;
+    public TextField numberOfPeopleInput;
+    public DatePicker dateInput;
 
 
     public void pressMakeReservation(MouseEvent mouseEvent) throws IOException {
@@ -35,4 +46,16 @@ public class MakeReservationController {
         textMakeReservation.setText("");
     }
 
+    public void submitReservationInput(ActionEvent actionEvent) {
+
+    }
+    boolean x=true;
+    public void addListMI( ) {
+        if(x) {
+            availableTablesList.getItems().clear();
+            for (int i = 0; i < Manager.getMenuItems().size(); i++)
+                availableTablesList.getItems().add(new MenuItem(Manager.getMenuItems().get(i).getTitle()));
+            x=false;
+        }
+    }
 }

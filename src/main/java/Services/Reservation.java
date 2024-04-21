@@ -117,38 +117,18 @@ public class Reservation {
         reservations.get(i).setDate(d);
         System.out.println("changed");
     }
-    public static void makeReservation(LocalDate d, int n){
-        Scanner in=new Scanner(System.in);
+    public static void makeReservation(String name , int age,String address ,String phone,LocalDate date, int numberOfPeople){
         Reservation r;
-        int size = Manager.getTables().size();
         int i;
-        ArrayList <Table> availableTables = new ArrayList<>();
         int selectedTable;
         boolean invalidTable=true;
-        for (i = 0; i < size; i++) {
-            if(!Manager.getTables().get(i).isReserved())
-            {
-                availableTables.add(Manager.getTables().get(i));
-            }
+
         }
         if (!availableTables.isEmpty())
         {
-            System.out.println("Let's start making your reservation :)");
-            System.out.println("Enter name: ");
-            String name=in.nextLine();
-            System.out.println("Enter age: ");
-            int age=in.nextInt();
-            System.out.println("Enter address: ");
-            String address=in.next();
-            System.out.println("Enter phone: ");
-            String phone=in.next();
             Customer c = new Customer(name,age,address,phone);
-            r = new Reservation(d,n);
+            r = new Reservation(date,numberOfPeople);
             reservations.add(r);
-            System.out.println("Reservation ID:  "+r.getReservationId());
-            System.out.println("************************************************************");
-            System.out.println("Available tables for making a reservation: ");
-            System.out.println();
             for(Table table:availableTables)
             {
                 System.out.println("Table "+ table.getTableNum());

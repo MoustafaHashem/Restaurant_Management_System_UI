@@ -53,6 +53,7 @@ public class Manager extends Staff implements Restaurant {
     public static ArrayList<Table> getTables() {
         return tables;
     }
+
     public static ArrayList<Menu> getMenus() {
         return menus;
     }
@@ -61,5 +62,14 @@ public class Manager extends Staff implements Restaurant {
     }
     public static ArrayList<MenuItem> getMenuItems() {
         return menuItems;
+    }
+    public static ArrayList<Table> getAvailableTables() {
+        int size = Manager.getTables().size();
+        for (Table t : tables) {
+            if (!t.isReserved()) {
+                availableTables.add(t);
+            }
+        }
+        return availableTables;
     }
 }

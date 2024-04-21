@@ -4,6 +4,8 @@ import Human.Customer;
 import Services.Order;
 import Services.Reservation;
 
+import java.util.ArrayList;
+
 public class Table {
 
     private final int tableNum;

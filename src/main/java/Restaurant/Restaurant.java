@@ -13,6 +13,7 @@ public interface Restaurant {
      ArrayList<Menu> menus=new ArrayList<>();
      ArrayList<MenuSection> menuSections=new ArrayList<>();
      ArrayList<MenuItem> menuItems=new ArrayList<>();
+     ArrayList<Table> availableTables = new ArrayList<>();
      void addMenu(Menu m);
      void addMenuSection(MenuSection ms);
      void addMenuItem(MenuItem mi);
