@@ -31,17 +31,13 @@ public class MainApplication extends Application {
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("/Images/7.png")).toExternalForm()));
         stage.setResizable(false);
         stage.centerOnScreen();
-
-
-
-
     }
 
     public static void main(String[] args) {
         MediaPlayer media=new MediaPlayer(new Media(new File("src/main/resources/Music/Le+festib+(mp3cut.net)_out.mp3").toURI().toString()));
         media.setCycleCount(MediaPlayer.INDEFINITE);
         media.play();
-        Manager owner=new Manager("Moustafa Ahmed Hashem",20,"el-obour city","01097963663",10000,"high");
+        Manager owner=new Manager("Moustafa  ",20,"el-obour city","01097963663",10000,"high");
         owner.addEmployee(owner);
         Staff kareem=new Staff("kareem ",20,"el-obour city","01097963663",10000,"high");
         owner.addEmployee(kareem);
