@@ -50,11 +50,11 @@ public class MakeReservationController {
 
     }
     boolean x=true;
-    public void addListMI( ) {
+    public void addAvailableTablesList( ) {
         if(x) {
             availableTablesList.getItems().clear();
-            for (int i = 0; i < Manager.getMenuItems().size(); i++)
-                availableTablesList.getItems().add(new MenuItem(Manager.getMenuItems().get(i).getTitle()));
+            for (int i = 0; i < Manager.getAvailableTables().size(); i++)
+                availableTablesList.getItems().add(new MenuItem("Table "+ Manager.getAvailableTables().get(i).getTableNum()));
             x=false;
         }
     }

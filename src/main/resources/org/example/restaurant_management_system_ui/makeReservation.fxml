@@ -23,7 +23,7 @@
             <Image url="@../../../Images/17.png" />
          </image>
       </ImageView>
-      <MenuButton fx:id="availableTablesList" layoutX="1089.0" layoutY="354.0" mnemonicParsing="false" text="Available tables">
+      <MenuButton fx:id="availableTablesList" layoutX="1089.0" layoutY="354.0" mnemonicParsing="false" onMouseEntered="#addAvailableTablesList" text="Available tables">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
             <MenuItem mnemonicParsing="false" text="Action 2" />

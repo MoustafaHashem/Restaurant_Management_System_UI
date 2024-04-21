@@ -120,7 +120,7 @@ public class Reservation {
     }
     public static int makeReservation(int tableToBeReserved,String name , int age,String address ,String phone,LocalDate date, int numberOfPeople){
         Reservation r;
-        ArrayList<Table>availableTables=new ArrayList<>();
+        ArrayList<Table>availableTables;
         availableTables=Manager.getAvailableTables();
         if (!availableTables.isEmpty()) {
             Customer c = new Customer(name, age, address, phone);
