@@ -12,6 +12,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
+import java.awt.Label;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.concurrent.atomic.AtomicReference;
@@ -32,6 +33,7 @@ public class MakeReservationController {
     public TextField phoneInput;
     public TextField numberOfPeopleInput;
     public DatePicker dateInput;
+    public Text showMessageToUser;
 
 
     public void pressMakeReservation(MouseEvent mouseEvent) throws IOException {
@@ -84,7 +86,15 @@ public class MakeReservationController {
 
     public void submitReservationInput(ActionEvent actionEvent) {
         try{
-            Reservation.makeReservation(Integer.parseInt(pressAvailableTablesList().toString()),nameInput.getText(),Integer.parseInt(ageInput.getText()),addressInput.getText(),phoneInput.getText(),getDateInputFromDatePicker(),Integer.parseInt(numberOfPeopleInput.getText()))
+            Reservation.makeReservation(Integer.parseInt(pressAvailableTablesList().toString()),nameInput.getText(),Integer.parseInt(ageInput.getText()),addressInput.getText(),phoneInput.getText(),getDateInputFromDatePicker(),Integer.parseInt(numberOfPeopleInput.getText()));
+        }
+        catch(IllegalArgumentException ex){
+            throw new IllegalArgumentException("Invalid input type");
+        }
+        if( Reservation.makeReservation(Integer.parseInt(pressAvailableTablesList().toString()),nameInput.getText(),Integer.parseInt(ageInput.getText()),addressInput.getText(),phoneInput.getText(),getDateInputFromDatePicker(),Integer.parseInt(numberOfPeopleInput.getText()))==-1)
+        {
+            showMessageToUser.setText("No available tables at the moment to make a reservation");
+            showMessageToUser.setVisible(true);
         }
     }
 
