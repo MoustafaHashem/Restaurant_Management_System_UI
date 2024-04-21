@@ -23,7 +23,7 @@
             <Image url="@../../../Images/17.png" />
          </image>
       </ImageView>
-      <MenuButton fx:id="availableTablesList" layoutX="1089.0" layoutY="354.0" mnemonicParsing="false" onMouseEntered="#addAvailableTablesList" text="Available tables">
+      <MenuButton fx:id="availableTablesList" layoutX="1089.0" layoutY="354.0" mnemonicParsing="false" onAction="#pressAvailableTablesList" onMouseEntered="#addAvailableTablesList" text="Available tables">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
             <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -33,7 +33,7 @@
       <Text layoutX="480.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
       <Text layoutX="475.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
       <Text layoutX="475.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" />
-      <Button fx:id="submitReservationInputButton" layoutX="619.0" layoutY="556.0" mnemonicParsing="false" onAction="#sumbitReservationInput" text="Submit" />
+      <Button fx:id="submitReservationInputButton" layoutX="619.0" layoutY="556.0" mnemonicParsing="false" onAction="#submitReservationInput" text="Submit" />
       <Text layoutX="566.0" layoutY="613.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" />
       <Text layoutX="375.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Let's start making your reservation :)">
          <font>

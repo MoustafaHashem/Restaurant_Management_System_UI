@@ -1,6 +1,7 @@
 package org.example.restaurant_management_system_ui.Services.Reservation;
 
 import Human.Manager;
+import Services.Reservation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class MakeReservationController {
 
@@ -45,10 +47,6 @@ public class MakeReservationController {
     public void hideMakeReservation(MouseEvent mouseEvent) {
         textMakeReservation.setText("");
     }
-
-    public void submitReservationInput(ActionEvent actionEvent) {
-
-    }
     boolean x=true;
     public void addAvailableTablesList( ) {
         if(x) {
@@ -58,4 +56,29 @@ public class MakeReservationController {
             x=false;
         }
     }
+    public AtomicReference<String> pressAvailableTablesList() {
+        x=true;
+        String[] menuButtonItems = new String[Manager.getAvailableTables().size()];
+        for(int i=0;i<Manager.getAvailableTables().size();i++)
+        {
+            menuButtonItems[i]=availableTablesList.getItems().get(i).toString();
+        }
+          AtomicReference<String> returnValue = null;
+        for (String s : menuButtonItems) {
+            availableTablesList.setOnAction(e -> {
+             returnValue.set(s);
+            });
+        }
+        return returnValue;
+    }
+
+    public void submitReservationInput(ActionEvent actionEvent) {
+        try{
+            Reservation.makeReservation(pressAvailableTablesList(),nameInput.getText(),ageInput.getText(),addressInput.getText(),phoneInput.getText(),,numberOfPeopleInput.getText())
+        }
+    }
+
+
+
+
 }
