@@ -90,7 +90,7 @@ public class MakeReservationController {
 //    }
     public LocalDate getDateInputFromDatePicker() {
         LocalDate date = null;
-        dateInput = new DatePicker(LocalDate.now());
+//        dateInput = new DatePicker(LocalDate.now());
         dateInput.setOnAction(event -> {
             dateText.setText(dateInput.getValue().toString());
         });
