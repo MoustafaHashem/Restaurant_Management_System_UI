@@ -53,29 +53,22 @@ public class Reservation {
     public void setNumberOfPeople(int numberOfPeople) {
         this.numberOfPeople = numberOfPeople;
     }
-    public static void cancelReservation(){
-        Scanner input= new Scanner(System.in);
+    public static void cancelReservation(int tableID){
         int size = reservations.size();
         int i;
-        boolean invalidReservation = true;
 
-        do {
-            System.out.println("Enter ID of Reservation to be cancelled: ");
-            int id= input.nextInt();
             for (i = 0; i < size; i++) {
-                if (reservations.get(i).getReservationId() == id)
-                {
-                    invalidReservation=false;
-                }
+
                 if(!invalidReservation)
                 {
                     for (Table table: Manager.getTables()) {
-                        if (table.getReservation().getReservationId() == id) {
+                        if (table.getReservation().getReservationId() == tableID) {
                             table.removeReservation();
                             break;
                         }
                     }
                     reservations.remove(i);
+                    Manager.getAvailableTables().get(i).setIsReserved(false);
                     System.out.println("Reservation cancelled");
                     System.out.println("************************************************************");
                     break;
@@ -85,7 +78,7 @@ public class Reservation {
                     System.out.println("************************************************************");
                 }
             }
-        }while(invalidReservation);
+
     }
     public static void changeReservation(int id,LocalDate d){
         int size = reservations.size(); // if size =0 throw exception
@@ -121,15 +114,18 @@ public class Reservation {
     public static int makeReservation(int tableToBeReserved,String name , int age,String address ,String phone,LocalDate date, int numberOfPeople){
         Reservation r;
         ArrayList<Table>availableTables;
+        Table t;
         availableTables=Manager.getAvailableTables();
         if (!availableTables.isEmpty()) {
             Customer c = new Customer(name, age, address, phone);
             r = new Reservation(date, numberOfPeople);
+            t= new Table(tableToBeReserved,true,r);
             reservations.add(r);
             Manager.getTables().get(tableToBeReserved - 1).addReservation(r);
             c.checkIn();
             Manager.getTables().get(tableToBeReserved - 1).setCustomer(c);
             Manager.getTables().get(tableToBeReserved - 1).setIsReserved(true);
+            Manager.getAvailableTables().add(t);
             return 1;
         }
         else
