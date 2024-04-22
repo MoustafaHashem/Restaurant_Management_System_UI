@@ -29,6 +29,12 @@ public class Table {
         this.reservation = new Reservation();
         this.order = new Order();
     }
+    public Table(int tableNum,boolean isReserved,Reservation reservation){
+        this.tableNum = count++;
+        this.isReserved = false;
+        this.reservation = new Reservation();
+    }
+
 
     public int getTableNum() {
         return tableNum;

@@ -97,7 +97,7 @@ public class MakeReservationController {
         return LocalDate.parse(dateText.getText());
     }
 
-    public int pressAvailableTablesList() {
+public int pressAvailableTablesList() {
         for (int i = 0; availableTablesList.getItems().size() > i; i++) {
             int finalI = i;
             availableTablesList.getItems().get(finalI).setOnAction(event -> {
@@ -109,8 +109,12 @@ public class MakeReservationController {
         public void submitReservationInput () throws IllegalArgumentException {
             try {
                 Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
+                showMessageToUser.setText("Reservation made successfully ;)");
+                showMessageToUser.setVisible(true);
             } catch (IllegalArgumentException ex) {
-                throw new IllegalArgumentException("Invalid input type");
+//                showMessageToUser.setText("Invalid input type: please re-enter data");
+//                showMessageToUser.setVisible(true);
+                throw new IllegalArgumentException("Invalid input type: please re-enter data");
             }
             if (Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
                 showMessageToUser.setText("No available tables at the moment to make a reservation");

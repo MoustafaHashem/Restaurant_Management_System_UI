@@ -55,9 +55,8 @@ public class Reservation {
     }
     public static void cancelReservation(int tableID){
         reservations.remove(tableID-1);
-        Manager.getAvailableTables().get(tableID-1).setIsReserved(false);
         Manager.getAvailableTables().remove(tableID-1);
-
+        Manager.getAvailableTables().get(tableID-1).removeReservation();
     }
     public static void changeReservation(int id,LocalDate d){
         int size = reservations.size(); // if size =0 throw exception

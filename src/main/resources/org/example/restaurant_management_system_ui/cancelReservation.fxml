@@ -44,7 +44,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="534.0" layoutY="302.0">
+      <TextField fx:id="cancelReservationID" layoutX="534.0" layoutY="302.0">
          <font>
             <Font size="17.0" />
          </font>
@@ -55,5 +55,10 @@
          </font>
       </Button>
       <Text layoutX="558.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" wrappingWidth="165.2711181640625" />
+      <Text fx:id="cancelReservationID" layoutX="625.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+         <font>
+            <Font name="Tw Cen MT Bold" size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

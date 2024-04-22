@@ -60,5 +60,10 @@
       <TextField fx:id="numberOfPeopleInput" layoutX="571.0" layoutY="494.0" />
       <Text fx:id="dateText" layoutX="918.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
       <Text fx:id="availableTablesText" layoutX="1147.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="showMessageToUser" layoutX="639.0" layoutY="624.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+         <font>
+            <Font name="Tw Cen MT Bold" size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
