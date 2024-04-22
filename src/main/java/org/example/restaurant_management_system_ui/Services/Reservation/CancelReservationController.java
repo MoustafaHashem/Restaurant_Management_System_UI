@@ -1,7 +1,9 @@
 package org.example.restaurant_management_system_ui.Services.Reservation;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -13,8 +15,9 @@ import java.io.IOException;
 public class CancelReservationController {
     public ImageView returnCancelReservation;
     public Text textCancelReservation;
+    public Button cancelReservation;
 
-    public void pressCancelReservation(MouseEvent mouseEvent) throws IOException {
+    public void pressCancelReservation(ActionEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)returnCancelReservation.getScene().getWindow();
@@ -30,4 +33,7 @@ public class CancelReservationController {
     }
 
 
+    public void clickCancelReservation(ActionEvent actionEvent) {
+
+    }
 }
