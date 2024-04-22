@@ -23,7 +23,7 @@
             <Image url="@../../../Images/17.png" />
          </image>
       </ImageView>
-      <MenuButton layoutX="1089.0" layoutY="354.0" mnemonicParsing="false" text="Available tables">
+      <MenuButton fx:id="availableTablesList" layoutX="1089.0" layoutY="354.0" mnemonicParsing="false" onAction="#pressAvailableTablesList" onMouseEntered="#addAvailableTablesList" text="Available tables">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
             <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -33,7 +33,7 @@
       <Text layoutX="480.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
       <Text layoutX="475.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
       <Text layoutX="475.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" />
-      <Button layoutX="619.0" layoutY="556.0" mnemonicParsing="false" text="Submit" />
+      <Button fx:id="submitReservationInputButton" layoutX="619.0" layoutY="556.0" mnemonicParsing="false" onAction="#submitReservationInput" text="Submit" />
       <Text layoutX="566.0" layoutY="613.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." visible="false" />
       <Text layoutX="375.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Let's start making your reservation :)">
          <font>
@@ -41,7 +41,7 @@
          </font>
       </Text>
       <Text layoutX="1102.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select your table" />
-      <DatePicker layoutX="850.0" layoutY="354.0" />
+      <DatePicker fx:id="dateInput" layoutX="850.0" layoutY="354.0" />
       <ImageView fx:id="returnMakeReservation" fitHeight="114.0" fitWidth="100.0" layoutX="1186.0" layoutY="593.0" onMouseClicked="#pressMakeReservation" onMouseEntered="#showMakeReservation" onMouseExited="#hideMakeReservation" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/2.png" />
@@ -53,10 +53,17 @@
          </font></Text>
       <Text layoutX="432.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of People" />
       <Text layoutX="905.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select date" />
-      <TextField layoutX="571.0" layoutY="214.0" />
-      <TextField layoutX="571.0" layoutY="284.0" />
-      <TextField layoutX="572.0" layoutY="354.0" />
-      <TextField layoutX="573.0" layoutY="424.0" />
-      <TextField layoutX="571.0" layoutY="494.0" />
+      <TextField fx:id="nameInput" layoutX="571.0" layoutY="214.0" />
+      <TextField fx:id="ageInput" layoutX="571.0" layoutY="284.0" />
+      <TextField fx:id="addressInput" layoutX="572.0" layoutY="354.0" />
+      <TextField fx:id="phoneInput" layoutX="573.0" layoutY="424.0" />
+      <TextField fx:id="numberOfPeopleInput" layoutX="571.0" layoutY="494.0" />
+      <Text fx:id="dateText" layoutX="918.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="availableTablesText" layoutX="1147.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="showMessageToUser" layoutX="639.0" layoutY="624.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+         <font>
+            <Font name="Tw Cen MT Bold" size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

@@ -100,11 +100,11 @@ public class EmployeeController {
         int size = Reservation.getReservations().size();
         int i;
         for (i = 0; i < size; i++) {
-            if (Reservation.getReservations().get(i).getID() == id) break;
+            if (Reservation.getReservations().get(i).getReservationId() == id) break;
         }
         if (i == size) addErrorMessage.setVisible(true);
-        else reservationData.getChildren().add(new Text(("Reservation ID: "+Reservation.getReservations().get(i).getID()
-                    + "\nNumber of people: "+Reservation.getReservations().get(i).getNumberOfPeoples()
+        else reservationData.getChildren().add(new Text(("Reservation ID: "+Reservation.getReservations().get(i).getReservationId()
+                    + "\nNumber of people: "+Reservation.getReservations().get(i).getNumberOfPeople()
                     + "\nReservation date: "+ Reservation.getReservations().get(i).getDate()
                     +"\n************************************************************\n")));
         } catch (Exception e) {

@@ -4,9 +4,13 @@ import java.time.LocalDate;
 
 public class Customer extends Person {
     private static int count = 1;
-    private final int customerId;
+    private  int customerId;
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
+
+    public Customer() {
+
+    }
 
     public Customer(String name, int age, String address, String phone) {
         super(name, age, address, phone);

@@ -4,6 +4,8 @@ import Human.Customer;
 import Services.Order;
 import Services.Reservation;
 
+import java.util.ArrayList;
+
 public class Table {
 
     private final int tableNum;
@@ -27,6 +29,12 @@ public class Table {
         this.reservation = new Reservation();
         this.order = new Order();
     }
+    public Table(int tableNum,boolean isReserved,Reservation reservation){
+        this.tableNum = count++;
+        this.isReserved = false;
+        this.reservation = new Reservation();
+    }
+
 
     public int getTableNum() {
         return tableNum;
@@ -45,6 +53,8 @@ public class Table {
     public void removeReservation() {
           this.reservation=null;
           this.isReserved=false;
+          this.order=null;
+          this.customer=null;
     }
 
     public void addReservation (Reservation reservation){
@@ -58,4 +68,7 @@ public class Table {
         return ( "Table number : " + tableNum + " , Is Reserved ? " + isReserved + '\n');
     }
 
+    public void setIsReserved(boolean b) {
+        this.isReserved=b;
+    }
 }

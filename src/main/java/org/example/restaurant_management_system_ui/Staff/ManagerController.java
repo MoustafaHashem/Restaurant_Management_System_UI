@@ -362,7 +362,7 @@ boolean y=true;
             addErrorMessage.setVisible(true);}
         else{
         Manager.getEmployees().get(0).setPassword(newPassword.getText());
-        System.out.println(Manager.getEmployees().get(0).getPassword());
+        //System.out.println(Manager.getEmployees().get(0).getPassword());
         addErrorMessage.setText("Changed done");
         addErrorMessage.setVisible(true);
         mangerProfileData.getChildren().add(new Text(Manager.getEmployees().get(0).print()));}

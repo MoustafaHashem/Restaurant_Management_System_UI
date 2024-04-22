@@ -66,7 +66,7 @@ public class Order {
             if (tableNum == Manager.getTables().get(y).getTableNum()) break;
         }
        // System.out.println("find table");
-        int num = Manager.getTables().get(y).getReservation().getNumberOfPeoples();
+        int num = Manager.getTables().get(y).getReservation().getNumberOfPeople();
         int i;
         for (i = 1; i <= num; i++) {
         System.out.println(i +"# order");
@@ -92,7 +92,7 @@ public class Order {
             if (tableNum == Manager.getTables().get(y).getTableNum()) break;
         }
         //Order.orders.remove(Manager.getTables().get(y).getOrder());
-        int num = Manager.getTables().get(y).getReservation().getNumberOfPeoples();
+        int num = Manager.getTables().get(y).getReservation().getNumberOfPeople();
         int i;
         for (i = 1; i <= num; i++) {
             if (oldMeal == Manager.getTables().get(y).getOrder().getMeals().get(i).getID()) {
