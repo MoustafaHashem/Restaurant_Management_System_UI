@@ -58,5 +58,7 @@
       <TextField fx:id="addressInput" layoutX="572.0" layoutY="354.0" />
       <TextField fx:id="phoneInput" layoutX="573.0" layoutY="424.0" />
       <TextField fx:id="numberOfPeopleInput" layoutX="571.0" layoutY="494.0" />
+      <Text fx:id="dateText" layoutX="918.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="availableTablesText" layoutX="1147.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
    </children>
 </AnchorPane>
