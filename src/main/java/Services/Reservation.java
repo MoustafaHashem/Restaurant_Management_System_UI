@@ -66,7 +66,7 @@ public class Reservation {
                 break;}
         }
         reservations.get(i).setDate(d);
-        System.out.println("changed");
+        System.out.println("Reservation date changed");
     }
     public  static void changeReservation(int id,int n){
         int size = reservations.size();

@@ -1,5 +1,6 @@
 package org.example.restaurant_management_system_ui.Services.Reservation;
 
+import Human.Manager;
 import Services.Reservation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +19,9 @@ public class CancelReservationController {
     public ImageView returnCancelReservation;
     public Text textCancelReservation;
     public Button cancelReservation;
-    public TextField cancelReservationID;
     public Text showMessageToUser;
+    public TextField cancelReservationIDInput;
+
     public void pressCancelReservation(ActionEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
@@ -36,15 +38,30 @@ public class CancelReservationController {
     }
 
 
-    public void clickCancelReservation(ActionEvent actionEvent) {
+    public void clickCancelReservation( ) {
         try {
-            Reservation.cancelReservation(Integer.parseInt(cancelReservationID.getText()));
-            showMessageToUser.setText("Reservation cancelled :(");
+            int reservationId=(Integer.parseInt(cancelReservationIDInput.getText()));
+            int i;
+            for( i=0;i< Reservation.getReservations().size();i++)
+            {
+                if(reservationId==Reservation.getReservations().get(i).getReservationId())
+                    break;
+            }
+            if(i==Reservation.getReservations().size())
+            {
+            showMessageToUser.setText("No such id matches an existing reservation");
             showMessageToUser.setVisible(true);
+            }
+            else{
+                Reservation.cancelReservation(Integer.parseInt(cancelReservationIDInput.getText()));
+                showMessageToUser.setText("Reservation cancelled :(");
+                showMessageToUser.setVisible(true);
+            }
         } catch (IllegalArgumentException ex) {
-//            showMessageToUser.setText("Invalid input: Input type must be integer");
-//            showMessageToUser.setVisible(true);
+            showMessageToUser.setText("Invalid input: Input type must be integer");
+            showMessageToUser.setVisible(true);
             throw new IllegalArgumentException("Invalid input: Input type must be an integer");
         }
     }
+
 }

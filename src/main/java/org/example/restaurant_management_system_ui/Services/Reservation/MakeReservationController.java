@@ -112,8 +112,8 @@ public int pressAvailableTablesList() {
                 showMessageToUser.setText("Reservation made successfully ;)");
                 showMessageToUser.setVisible(true);
             } catch (IllegalArgumentException ex) {
-//                showMessageToUser.setText("Invalid input type: please re-enter data");
-//                showMessageToUser.setVisible(true);
+                showMessageToUser.setText("Invalid input type: please re-enter data");
+                showMessageToUser.setVisible(true);
                 throw new IllegalArgumentException("Invalid input type: please re-enter data");
             }
             if (Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
