@@ -64,7 +64,7 @@ public class Manager extends Staff implements Restaurant {
         return menuItems;
     }
     public static ArrayList<Table> getAvailableTables() {
-        int size = Manager.getTables().size();
+        availableTables.clear();
         for (Table t : tables) {
             if (!t.isReserved()) {
                 availableTables.add(t);
