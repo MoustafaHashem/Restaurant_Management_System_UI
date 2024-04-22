@@ -76,7 +76,7 @@ public class Reservation {
                 break;
         }
         reservations.get(i).setNumberOfPeople(n);
-        System.out.println("changed");
+//        System.out.println("Number of people changed");
     }
     public  static void changeReservation(int id,LocalDate d,int n){
         int size = reservations.size();
@@ -87,7 +87,7 @@ public class Reservation {
         }
         reservations.get(i).setNumberOfPeople(n);
         reservations.get(i).setDate(d);
-        System.out.println("changed");
+//        System.out.println("Number of people and date changed");
     }
     public static int makeReservation(int tableToBeReserved,String name , int age,String address ,String phone,LocalDate date, int numberOfPeople){
         Reservation r;

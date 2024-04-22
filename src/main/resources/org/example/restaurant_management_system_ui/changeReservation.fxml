@@ -30,7 +30,7 @@
             <Font name="System Bold" size="40.0" />
          </font>
       </Text>
-      <TextField layoutX="563.0" layoutY="240.0">
+      <TextField fx:id="reservationIdInput" layoutX="563.0" layoutY="240.0">
          <font>
             <Font size="13.0" />
          </font>
@@ -40,8 +40,8 @@
             <Image url="@../../../Images/25.png" />
          </image>
       </ImageView>
-      <DatePicker layoutX="557.0" layoutY="394.0" />
-      <Button layoutX="608.0" layoutY="472.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" text="Change">
+      <DatePicker fx:id="dateInput" layoutX="557.0" layoutY="394.0" />
+      <Button fx:id="changeButton" layoutX="608.0" layoutY="472.0" mnemonicParsing="false" onAction="#presschangeButton" prefHeight="27.0" prefWidth="72.0" text="Change">
          <font>
             <Font size="13.0" />
          </font>
@@ -54,11 +54,13 @@
       <Text layoutX="430.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of people" />
       <Text layoutX="476.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
       <Text layoutX="426.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter reservation ID" />
-      <TextField layoutX="563.0" layoutY="320.0">
+      <TextField fx:id="numberOfPeopleInput" layoutX="563.0" layoutY="320.0">
          <font>
             <Font size="13.0" />
          </font>
       </TextField>
       <Text layoutX="564.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
+      <Text fx:id="dateText" layoutX="626.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="showMessageToUser" layoutX="517.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>
