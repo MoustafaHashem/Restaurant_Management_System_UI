@@ -54,30 +54,9 @@ public class Reservation {
         this.numberOfPeople = numberOfPeople;
     }
     public static void cancelReservation(int tableID){
-        int size = reservations.size();
-        int i;
-
-            for (i = 0; i < size; i++) {
-
-                if(!invalidReservation)
-                {
-                    for (Table table: Manager.getTables()) {
-                        if (table.getReservation().getReservationId() == tableID) {
-                            table.removeReservation();
-                            break;
-                        }
-                    }
-                    reservations.remove(i);
-                    Manager.getAvailableTables().get(i).setIsReserved(false);
-                    System.out.println("Reservation cancelled");
-                    System.out.println("************************************************************");
-                    break;
-                }
-                else {
-                    System.out.println("Entered Reservation ID not valid");
-                    System.out.println("************************************************************");
-                }
-            }
+        reservations.remove(tableID-1);
+        Manager.getAvailableTables().get(tableID-1).setIsReserved(false);
+        Manager.getAvailableTables().remove(tableID-1);
 
     }
     public static void changeReservation(int id,LocalDate d){
