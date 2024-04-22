@@ -41,7 +41,7 @@ public class MakeReservationController {
     public void pressMakeReservation(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnMakeReservation.getScene().getWindow();
+        Stage mainStage = (Stage) returnMakeReservation.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
@@ -52,16 +52,19 @@ public class MakeReservationController {
     public void hideMakeReservation(MouseEvent mouseEvent) {
         textMakeReservation.setText("");
     }
-    boolean x=true;
-    public void addAvailableTablesList( ) {
-        if(x) {
+
+    boolean x = true;
+
+    public void addAvailableTablesList() {
+        if (x) {
             availableTablesList.getItems().clear();
             for (int i = 0; i < Manager.getAvailableTables().size(); i++)
-                availableTablesList.getItems().add(new MenuItem("Table "+ Manager.getAvailableTables().get(i).getTableNum()));
-            x=false;
+                availableTablesList.getItems().add(new MenuItem("Table " + Manager.getAvailableTables().get(i).getTableNum()));
+            x = false;
         }
     }
-//    public AtomicReference<String> pressAvailableTablesList() {
+
+    //    public AtomicReference<String> pressAvailableTablesList() {
 //        x=true;
 //        String[] menuButtonItems = new String[Manager.getAvailableTables().size()];
 //        for(int i=0;i<Manager.getAvailableTables().size();i++)
@@ -85,37 +88,33 @@ public class MakeReservationController {
 //        });
 //        return date.get();
 //    }
-        public LocalDate getDateInputFromDatePicker(){
-            LocalDate date = null;
-            dateInput = new DatePicker(LocalDate.now());
-            dateInput.setOnAction(event -> {
-             dateText.setText(dateInput.getValue().toString());
+    public LocalDate getDateInputFromDatePicker() {
+        LocalDate date = null;
+        dateInput = new DatePicker(LocalDate.now());
+        dateInput.setOnAction(event -> {
+            dateText.setText(dateInput.getValue().toString());
         });
         return LocalDate.parse(dateText.getText());
-        }
+    }
+
     public int pressAvailableTablesList() {
-        for(int i=0;availableTablesList.getItems().size()>i;i++){
+        for (int i = 0; availableTablesList.getItems().size() > i; i++) {
             int finalI = i;
             availableTablesList.getItems().get(finalI).setOnAction(event -> {
-            availableTablesText.setText(availableTablesList.getItems().get(finalI).toString());
+                availableTablesText.setText(availableTablesList.getItems().get(finalI).toString());
             });
-            return availableTablesText.getText().charAt(6);
+        }
+        return availableTablesText.getText().charAt(6);
     }
-    public void submitReservationInput(ActionEvent actionEvent) {
-        try{
-            Reservation.makeReservation(,nameInput.getText(),Integer.parseInt(ageInput.getText()),addressInput.getText(),phoneInput.getText(),,Integer.parseInt(numberOfPeopleInput.getText()));
-        }
-        catch(IllegalArgumentException ex){
-            throw new IllegalArgumentException("Invalid input type");
-        }
-        if( Reservation.makeReservation(Integer.parseInt(pressAvailableTablesList().toString()),nameInput.getText(),Integer.parseInt(ageInput.getText()),addressInput.getText(),phoneInput.getText(),getDateInputFromDatePicker(),Integer.parseInt(numberOfPeopleInput.getText()))==-1)
-        {
-            showMessageToUser.setText("No available tables at the moment to make a reservation");
-            showMessageToUser.setVisible(true);
-        }
-    }
-
-
-
-
+//        public void submitReservationInput () throws IllegalArgumentException {
+//            try {
+//                Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
+//            } catch (IllegalArgumentException ex) {
+//                throw new IllegalArgumentException("Invalid input type");
+//            }
+//            if (Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
+//                showMessageToUser.setText("No available tables at the moment to make a reservation");
+//                showMessageToUser.setVisible(true);
+//            }
+//        }
 }
