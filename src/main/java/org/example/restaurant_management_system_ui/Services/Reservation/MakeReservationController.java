@@ -106,15 +106,15 @@ public class MakeReservationController {
         }
         return availableTablesText.getText().charAt(6);
     }
-//        public void submitReservationInput () throws IllegalArgumentException {
-//            try {
-//                Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
-//            } catch (IllegalArgumentException ex) {
-//                throw new IllegalArgumentException("Invalid input type");
-//            }
-//            if (Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
-//                showMessageToUser.setText("No available tables at the moment to make a reservation");
-//                showMessageToUser.setVisible(true);
-//            }
-//        }
+        public void submitReservationInput () throws IllegalArgumentException {
+            try {
+                Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
+            } catch (IllegalArgumentException ex) {
+                throw new IllegalArgumentException("Invalid input type");
+            }
+            if (Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
+                showMessageToUser.setText("No available tables at the moment to make a reservation");
+                showMessageToUser.setVisible(true);
+            }
+        }
 }
