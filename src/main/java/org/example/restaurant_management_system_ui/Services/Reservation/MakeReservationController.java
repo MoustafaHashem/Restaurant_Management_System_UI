@@ -104,7 +104,7 @@ public int pressAvailableTablesList() {
                 availableTablesText.setText(availableTablesList.getItems().get(finalI).toString());
             });
         }
-        return availableTablesText.getText().charAt(6);
+        return Character.getNumericValue(availableTablesText.getText().charAt(6));
     }
         public void submitReservationInput () throws IllegalArgumentException {
             try {

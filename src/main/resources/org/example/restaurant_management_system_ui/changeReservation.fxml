@@ -61,6 +61,10 @@
       </TextField>
       <Text layoutX="564.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
       <Text fx:id="dateText" layoutX="626.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
-      <Text fx:id="showMessageToUser" layoutX="517.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="showMessageToUser" layoutX="519.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="Tw Cen MT Bold" size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
