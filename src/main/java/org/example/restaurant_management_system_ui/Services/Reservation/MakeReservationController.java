@@ -94,7 +94,12 @@ public class MakeReservationController {
         return LocalDate.parse(dateText.getText());
         }
     public int pressAvailableTablesList() {
-
+        for(int i=0;availableTablesList.getItems().size()>i;i++){
+            int finalI = i;
+            availableTablesList.getItems().get(finalI).setOnAction(event -> {
+            availableTablesText.setText(availableTablesList.getItems().get(finalI).toString());
+            });
+            return availableTablesText.getText().charAt(6);
     }
     public void submitReservationInput(ActionEvent actionEvent) {
         try{
