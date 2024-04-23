@@ -31,22 +31,22 @@
    <ImageView fitHeight="254.0" fitWidth="464.0" layoutX="14.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/22.png" />
    </ImageView>
-   <TextField fx:id="tableNo" layoutX="559.0" layoutY="260.0">
+   <TextField fx:id="tableNo" layoutX="559.0" layoutY="207.0">
       <font>
          <Font size="13.0" />
       </font>
    </TextField>
-   <TextField fx:id="itemID" layoutX="559.0" layoutY="355.0">
+   <TextField fx:id="itemID" layoutX="559.0" layoutY="275.0">
       <font>
          <Font size="13.0" />
       </font>
    </TextField>
-   <Text layoutX="445.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table number">
+   <Text layoutX="445.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table number">
       <font>
          <Font size="13.0" />
       </font>
    </Text>
-   <Text layoutX="464.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
+   <Text layoutX="476.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
       <font>
          <Font size="13.0" />
       </font>
@@ -56,11 +56,14 @@
          <Font name="System Bold" size="30.0" />
       </font>
    </Text>
-   <Button fx:id="orderButton" layoutX="610.0" layoutY="455.0" mnemonicParsing="false" onAction="#pressOrder" text="Order">
+   <Button fx:id="orderButton" layoutX="611.0" layoutY="355.0" mnemonicParsing="false" onAction="#pressOrder" text="Order">
       <font>
          <Font size="15.0" />
       </font>
    </Button>
-   <Text fx:id="invalidInput" layoutX="561.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
+   <Text fx:id="invalidInput" layoutX="561.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
    <TextFlow fx:id="printMenuItemData" layoutX="941.0" layoutY="192.0" prefHeight="326.0" prefWidth="254.0" />
+   <Button fx:id="AddItem" layoutX="749.0" layoutY="276.0" mnemonicParsing="false" onAction="#pressAddItem" text=" Add Item" />
+   <ImageView fitHeight="254.0" fitWidth="346.0" layoutX="646.0" layoutY="459.0" onMouseDragEntered="#showOrderData" pickOnBounds="true" preserveRatio="true" />
+   <TextFlow fx:id="printOrderData" layoutX="712.0" layoutY="465.0" prefHeight="241.0" prefWidth="200.0" />
 </AnchorPane>
