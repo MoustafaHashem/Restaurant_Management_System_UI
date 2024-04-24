@@ -99,11 +99,16 @@ public class Reservation {
             r = new Reservation(date, numberOfPeople);
             t= new Table(tableToBeReserved,true,r);
             reservations.add(r);
-            Manager.getTables().get(tableToBeReserved - 1).addReservation(r);
             c.checkIn();
+            Manager.getTables().get(tableToBeReserved - 1).setTable(t);
             Manager.getTables().get(tableToBeReserved - 1).setCustomer(c);
-            Manager.getAvailableTables().remove(t);
-            return 1;
+            for(Table searchTable: availableTables) {
+            if(searchTable.getTableNum()==tableToBeReserved)
+            {
+                Manager.getAvailableTables().remove(searchTable);
+            }
+            }
+            return 0;
         }
         else
         {

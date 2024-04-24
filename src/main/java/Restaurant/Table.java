@@ -1,6 +1,7 @@
 package Restaurant;
 
 import Human.Customer;
+import Human.Manager;
 import Services.Order;
 import Services.Reservation;
 
@@ -35,7 +36,15 @@ public class Table {
         this.reservation = new Reservation();
     }
 
-
+        public void setTable(Table table) {
+            for (int i = 0; i < Manager.getTables().size(); i++) {
+                if (table.getTableNum() == this.getTableNum()) {
+                    this.isReserved = false;
+                    this.reservation = table.getReservation();
+                    this.customer = table.getCustomer();
+                }
+            }
+        }
     public int getTableNum() {
         return tableNum;
     }
