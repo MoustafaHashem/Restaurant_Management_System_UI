@@ -38,18 +38,18 @@ public class MakeReservationController {
     public Text availableTablesText;
 
 
-    public void pressMakeReservation(MouseEvent mouseEvent) throws IOException {
+    public void pressMakeReservation() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage = (Stage) returnMakeReservation.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
-    public void showMakeReservation(MouseEvent mouseEvent) {
+    public void showMakeReservation() {
         textMakeReservation.setText("Return to reservation page");
     }
 
-    public void hideMakeReservation(MouseEvent mouseEvent) {
+    public void hideMakeReservation() {
         textMakeReservation.setText("");
     }
 
@@ -109,6 +109,10 @@ public int pressAvailableTablesList() {
         public void submitReservationInput () throws IllegalArgumentException {
             try {
                 Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
+                if (Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
+                    showMessageToUser.setText("No available tables at the moment to make a reservation");
+                    showMessageToUser.setVisible(true);
+                }
                 showMessageToUser.setText("Reservation made successfully ;)");
                 showMessageToUser.setVisible(true);
             } catch (IllegalArgumentException ex) {
@@ -116,9 +120,6 @@ public int pressAvailableTablesList() {
                 showMessageToUser.setVisible(true);
                 throw new IllegalArgumentException("Invalid input type: please re-enter data");
             }
-            if (Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
-                showMessageToUser.setText("No available tables at the moment to make a reservation");
-                showMessageToUser.setVisible(true);
-            }
+
         }
 }

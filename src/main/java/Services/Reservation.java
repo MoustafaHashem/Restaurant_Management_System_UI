@@ -102,8 +102,7 @@ public class Reservation {
             Manager.getTables().get(tableToBeReserved - 1).addReservation(r);
             c.checkIn();
             Manager.getTables().get(tableToBeReserved - 1).setCustomer(c);
-            Manager.getTables().get(tableToBeReserved - 1).setIsReserved(true);
-            Manager.getAvailableTables().add(t);
+            Manager.getAvailableTables().remove(t);
             return 1;
         }
         else
