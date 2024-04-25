@@ -45,15 +45,59 @@ public class ChangeReservationController {
     public LocalDate getDateInputFromDatePicker() {
         return dateInput.getValue();
     }
-
+    public static boolean isInteger(String str) {
+        if (str == null) {
+            return false;
+        }
+        int length = str.length();
+        if (length == 0) {
+            return false;
+        }
+        int i = 0;
+        if (str.charAt(0) == '-') {
+            return false;
+        }
+        for (; i < length; i++) {
+            char c = str.charAt(i);
+            if (c < '0' || c > '9') {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean isString(String str){
+        if (str == null) {
+            return false;
+        }
+        int length = str.length();
+        if (length == 0) {
+            return false;
+        }
+        for (int i=0; i < length; i++) {
+            char c = str.charAt(i);
+            if (!((c <= 90 && c >= 65) || (c <= 122 && c >= 97))) {
+                return false;
+            }
+        }
+        return true;
+    }
     public void presschangeButton( ) {
         if(Objects.equals(reservationNameInput.getText(), "") || Objects.equals(numberOfPeopleInput.getText(), "") || getDateInputFromDatePicker()==null){
             showMessageToUser.setText("All fields must be filled first in order to change a reservation");
             showMessageToUser.setVisible(true);
         }
-
-        String reservationName=reservationNameInput.getText();
+        else {
+            if (!isInteger(numberOfPeopleInput.getText())) {
+                showMessageToUser.setText("Invalid input type: input must be a positive integer");
+                showMessageToUser.setVisible(true);
+            }
+            if (!isString(reservationNameInput.getText())) {
+                showMessageToUser.setText("Invalid input type: input must be a name (String)");
+                showMessageToUser.setVisible(true);
+            }
+        }
             int i;
+        String reservationName = reservationNameInput.getText();
             for(i=0; i< Manager.getTables().size(); i++)
             {
                 if(reservationName.compareTo(Manager.getTables().get(i).getCustomer().getName())==0)

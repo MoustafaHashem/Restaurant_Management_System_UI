@@ -15,7 +15,11 @@ import org.example.restaurant_management_system_ui.MainApplication;
 import java.awt.Label;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
+
+import static org.example.restaurant_management_system_ui.Services.Reservation.ChangeReservationController.isInteger;
+import static org.example.restaurant_management_system_ui.Services.Reservation.ChangeReservationController.isString;
 
 public class MakeReservationController {
 
@@ -102,19 +106,46 @@ public void pressAvailableTablesList() {
 }
 
         public void submitReservationInput () throws IllegalArgumentException {
-        x=true;
-            try {
-                int TN=Integer.parseInt(String.valueOf(availableTablesList.getText().charAt(6)));
-                if (Reservation.makeReservation(TN, nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
-                    showMessageToUser.setText("No available tables at the moment to make a reservation");
+            if (Objects.equals(nameInput.getText(), "") || Objects.equals(addressInput.getText(), "") || getDateInputFromDatePicker() == null || Objects.equals(phoneInput.getText(), "") || Objects.equals(ageInput.getText(), "") || Objects.equals(numberOfPeopleInput.getText(), "")) {
+                showMessageToUser.setText("All fields must be filled first in order to change a reservation");
+                showMessageToUser.setVisible(true);
+            }
+//            else{
+//                if(!isInteger(numberOfPeopleInput.getText())) {
+//
+//                    showMessageToUser.setText("Invalid input type: input must be a positive integer");
+//                    showMessageToUser.setVisible(true);
+//                }
+//                if(!isInteger(ageInput.getText())) {
+//
+//                    showMessageToUser.setText("Invalid input type: input must be a positive integer");
+//                    showMessageToUser.setVisible(true);
+//                }
+//                 if(!isString(nameInput.getText())) {
+//                     showMessageToUser.setText("Invalid input type: input must be a name (String)");
+//                     showMessageToUser.setVisible(true);
+//                 }
+//                if(!isInteger(phoneInput.getText())) {
+//                    showMessageToUser.setText("Invalid input type: input must be a phone number (positive integers)");
+//                    showMessageToUser.setVisible(true);
+//                }
+//            }
+
+            else {
+                x = true;
+                try {
+                    int TN = Integer.parseInt(String.valueOf(availableTablesList.getText().charAt(6)));
+                    if (Reservation.makeReservation(TN, nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
+                        showMessageToUser.setText("No available tables at the moment to make a reservation");
+                        showMessageToUser.setVisible(true);
+                    }
+                    showMessageToUser.setText("Reservation made successfully ;)");
+                    showMessageToUser.setVisible(true);
+                    availableTablesList.setText("availableTablesList");
+                } catch (IllegalArgumentException ex) {
+                    showMessageToUser.setText("Invalid input type: please re-enter data");
                     showMessageToUser.setVisible(true);
                 }
-                showMessageToUser.setText("Reservation made successfully ;)");
-                showMessageToUser.setVisible(true);
-                availableTablesList.setText("availableTablesList");
-            } catch (IllegalArgumentException ex) {
-                showMessageToUser.setText("Invalid input type: please re-enter data");
-                showMessageToUser.setVisible(true);
             }
         }
 }
