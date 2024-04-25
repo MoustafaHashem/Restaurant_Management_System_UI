@@ -33,6 +33,7 @@ public class AddOrderController   {
     public TextFlow printOrderData;
 
     public void press(MouseEvent event) throws IOException {
+        printOrderData.setVisible(false);
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("order.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage=(Stage)returnImage1.getScene().getWindow();
@@ -48,13 +49,12 @@ public class AddOrderController   {
     public void showData( ) {
         if(x){
             x=false;
-            for(int i=0;i< Manager.getMenuItems().size();i++)
-                printMenuItemData.getChildren().add(new Text(Manager.getMenuItems().get(i).print()));}
+            for(int j=0;j< Manager.getMenuItems().size();j++)
+                printMenuItemData.getChildren().add(new Text(Manager.getMenuItems().get(j).print()));}
     }
     Order order = new Order();
     boolean t = false;
     boolean t1 = false;
-    boolean y = false;
     int i;
     public void pressAddItem(ActionEvent actionEvent) {
         invalidInput.setVisible(false);
@@ -68,45 +68,44 @@ public class AddOrderController   {
             }
         }
         if(t){
+            invalidInput.setVisible(true);
+            invalidInput.setText("Item added.");
             MenuItem mi = Services.Order.addMeal(Integer.parseInt(itemID.getText()));
             order.getMeals().add(mi);
             order.setCost(order.getCost() + mi.getPrice());
         }
         else{
             invalidInput.setVisible(true);
-            invalidInput.setText("Table number or ID number doesn't exist,please enter another number");
+            invalidInput.setText("ID number doesn't exist,please enter another number");
         }
         //invalidInput.setVisible(false);
     }
     public void pressOrder(ActionEvent actionEvent) {
-        int x = Manager.getTables().size();
-        for ( i = 0; i < x; i++) {
+        for ( i = 0; i < Manager.getTables().size(); i++) {
             int y = tableNo.getText().compareTo((String.valueOf(Manager.getTables().get(i).getTableNum())));
             if(y==0){
                 t1=true;
                 break;
             }
-            else{
-                invalidInput.setVisible(true);
-                invalidInput.setText("Table number doesn't exist,please enter another number");
-                break;
-            }
         }
-        if(t1 && t){
+        if(t1 && t) {
             Manager.getTables().get(i).addOrder(order);
             invalidInput.setVisible(true);
             invalidInput.setText("Your order will be ready soon");
         }
+        else{
+            invalidInput.setVisible(true);
+            invalidInput.setText("Table number doesn't exist,please enter another number");
+        }
         y = true;
     }
+    boolean y = true;
     public void showOrderData(MouseEvent mouseEvent) {
         if(y){
             y = false;
-            //Manager.getTables().get(i).getOrder().print()
-            //for(int i=0;i<order.getMeals().size();i++)
-                printOrderData.getChildren().add(new Text(order.print()));
+            printOrderData.setVisible(true);
+            printOrderData.getChildren().add(new Text(Order.printOrders()));
         }
     }
-
 
 }
