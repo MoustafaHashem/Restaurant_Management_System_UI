@@ -62,7 +62,7 @@ public class Reservation {
         t.setTableNum(tableID);
         Table.setCount(Table.getCount()-1);
         Manager.getAvailableTables().add(tableID-1,t);
-        Manager.getTables().removeLast();
+        Manager.getTables().remove(Manager.getTables().size()-1);
     }
     public static void changeReservation(int id,LocalDate d){
         int size = reservations.size(); // if size =0 throw exception
