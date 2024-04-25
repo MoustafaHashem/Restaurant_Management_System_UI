@@ -20,42 +20,42 @@
          <Font name="System Bold" size="40.0" />
       </font>
    </Text>
-   <TextField fx:id="tableNo" layoutX="553.0" layoutY="250.0">
+   <TextField fx:id="tableNo" layoutX="553.0" layoutY="140.0">
       <font>
          <Font size="13.0" />
       </font>
    </TextField>
-   <TextField fx:id="oldMeal" layoutX="553.0" layoutY="345.0">
+   <TextField fx:id="oldMeal" layoutX="424.0" layoutY="212.0">
       <font>
          <Font size="13.0" />
       </font>
    </TextField>
-   <TextField fx:id="newMeal" layoutX="553.0" layoutY="440.0">
+   <TextField fx:id="newMeal" layoutX="424.0" layoutY="275.0">
       <font>
          <Font size="13.0" />
       </font>
    </TextField>
-   <Text layoutX="400.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table number">
+   <Text layoutX="426.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table number">
       <font>
          <Font size="13.0" />
       </font>
    </Text>
-   <Text layoutX="414.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Old meal">
+   <Text layoutX="340.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Old meal">
       <font>
          <Font size="13.0" />
       </font>
    </Text>
-   <Text layoutX="411.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New meal">
+   <Text layoutX="337.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New meal">
       <font>
          <Font size="13.0" />
       </font>
    </Text>
-   <Button fx:id="modifyButton" layoutX="613.0" layoutY="535.0" mnemonicParsing="false" onAction="#pressButton" text="Modify">
+   <Button fx:id="modifyButton" layoutX="466.0" layoutY="337.0" mnemonicParsing="false" onAction="#pressButton" text="Modify">
       <font>
          <Font size="13.0" />
       </font>
    </Button>
-   <Text fx:id="invalidInput" layoutX="564.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
+   <Text fx:id="invalidInput" layoutX="590.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
    <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="1096.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/11.png" />
    </ImageView>
@@ -68,4 +68,20 @@
       <Image url="@../../../Images/26.png" />
    </ImageView>
    <TextFlow fx:id="printMenuList" layoutX="953.0" layoutY="202.0" onMouseClicked="#showData" prefHeight="326.0" prefWidth="254.0" />
+   <TextFlow fx:id="printOrderData" layoutX="466.0" layoutY="380.0" prefHeight="326.0" prefWidth="240.0" />
+   <TextField fx:id="removeItem" layoutX="764.0" layoutY="212.0">
+      <font>
+         <Font size="13.0" />
+      </font>
+   </TextField>
+   <Text layoutX="663.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Item">
+      <font>
+         <Font size="13.0" />
+      </font>
+   </Text>
+   <Button fx:id="removeButton" layoutX="807.0" layoutY="274.0" mnemonicParsing="false" onAction="#pressRemoveButton" prefHeight="27.0" prefWidth="76.0" text="Remove">
+      <font>
+         <Font size="13.0" />
+      </font>
+   </Button>
 </AnchorPane>
