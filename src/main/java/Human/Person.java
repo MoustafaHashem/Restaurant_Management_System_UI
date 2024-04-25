@@ -1,7 +1,7 @@
 package Human;
 
 public class Person {
-    private String name;
+    private String name="noName";
     private int age;
     private String address;
     private String phone;

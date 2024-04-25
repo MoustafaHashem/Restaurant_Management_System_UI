@@ -54,9 +54,15 @@ public class Reservation {
         this.numberOfPeople = numberOfPeople;
     }
     public static void cancelReservation(int tableID){
-        reservations.remove(tableID-1);
-        Manager.getAvailableTables().remove(tableID-1);
-        Manager.getAvailableTables().get(tableID-1).removeReservation();
+        int i;
+        for (i = 0; i < Manager.getTables().size(); i++) { if (Manager.getTables().get(i).getTableNum() == tableID){
+            break;}}
+        reservations.remove(Manager.getTables().get(i).getReservation());
+        Table t=new Table();
+        t.setTableNum(tableID);
+        Table.setCount(Table.getCount()-1);
+        Manager.getAvailableTables().add(tableID-1,t);
+        Manager.getTables().removeLast();
     }
     public static void changeReservation(int id,LocalDate d){
         int size = reservations.size(); // if size =0 throw exception
@@ -90,20 +96,23 @@ public class Reservation {
 //        System.out.println("Number of people and date changed");
     }
     public static int makeReservation(int tableToBeReserved,String name , int age,String address ,String phone,LocalDate date, int numberOfPeople){
+
         Reservation r;
-        ArrayList<Table>availableTables;
         Table t;
-        availableTables=Manager.getAvailableTables();
-        if (!availableTables.isEmpty()) {
+
+        if (!(Manager.getAvailableTables().isEmpty())) {
             Customer c = new Customer(name, age, address, phone);
             r = new Reservation(date, numberOfPeople);
-            t= new Table(tableToBeReserved,true,r);
             reservations.add(r);
             Manager.getTables().get(tableToBeReserved - 1).addReservation(r);
             c.checkIn();
             Manager.getTables().get(tableToBeReserved - 1).setCustomer(c);
-            Manager.getTables().get(tableToBeReserved - 1).setIsReserved(true);
-            Manager.getAvailableTables().add(t);
+            int i;
+            for (i = 0; i < Manager.getTables().size(); i++) { if (Manager.getTables().get(i).getTableNum() == tableToBeReserved){
+                break;}}
+
+            Manager.getAvailableTables().remove(Manager.getTables().get(i));
+
             return 1;
         }
         else

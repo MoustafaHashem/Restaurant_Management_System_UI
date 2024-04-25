@@ -56,6 +56,11 @@ public class MainApplication extends Application {
         owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"meat",200));
         for (int i=0;i<5;i++) {
             owner.addTable(new Table());}
+        for (Table t : Manager.getTables()) {
+            if (!t.isReserved()) {
+                Manager.getAvailableTables().add(t);
+            }
+        }
         launch();
     }
 }
