@@ -24,7 +24,7 @@
          <font>
             <Font name="Tw Cen MT Bold" size="15.0" />
          </font></Text>
-      <ImageView fitHeight="458.0" fitWidth="836.0" layoutX="-210.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="458.0" fitWidth="836.0" layoutX="-238.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/24.png" />
          </image>
@@ -55,7 +55,7 @@
          </font>
       </Button>
       <Text layoutX="558.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" wrappingWidth="165.2711181640625" />
-      <Text fx:id="showMessageToUser" layoutX="460.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+      <Text fx:id="showMessageToUser" layoutX="350.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
          <font>
             <Font name="Tw Cen MT Bold" size="20.0" />
          </font>

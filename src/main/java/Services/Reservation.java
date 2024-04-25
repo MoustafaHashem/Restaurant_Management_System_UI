@@ -62,7 +62,6 @@ public class Reservation {
         t.setTableNum(tableID);
         Table.setCount(Table.getCount()-1);
         Manager.getAvailableTables().add(tableID-1,t);
-        Manager.getTables().remove(Manager.getTables().size()-1);
     }
     public static void changeReservation(int id,LocalDate d){
         int size = reservations.size(); // if size =0 throw exception
@@ -98,7 +97,6 @@ public class Reservation {
     public static int makeReservation(int tableToBeReserved,String name , int age,String address ,String phone,LocalDate date, int numberOfPeople){
 
         Reservation r;
-        Table t;
 
         if (!(Manager.getAvailableTables().isEmpty())) {
             Customer c = new Customer(name, age, address, phone);

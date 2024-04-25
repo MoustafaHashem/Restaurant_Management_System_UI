@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class CancelReservationController {
     public ImageView returnCancelReservation;
@@ -38,7 +39,10 @@ public class CancelReservationController {
 
 
     public void clickCancelReservation( ) {
-        try {
+        if(Objects.equals(cancelReservationNameInput.getText(), "")){
+            showMessageToUser.setText("You must fill the text field with the reservation name in order to cancel your reservation");
+            showMessageToUser.setVisible(true);
+        }
             String reservationName= cancelReservationNameInput.getText();
             int i;
             for(i=0; i< Manager.getTables().size(); i++)
@@ -53,16 +57,11 @@ public class CancelReservationController {
             showMessageToUser.setText("No such name  matches an existing reservation");
             showMessageToUser.setVisible(true);
             }
-            else{
+            else {
                 Reservation.cancelReservation(Manager.getTables().get(i).getTableNum());
                 showMessageToUser.setText("Reservation cancelled :(");
                 showMessageToUser.setVisible(true);
-
             }
-        } catch (IllegalArgumentException ex) {
-            showMessageToUser.setText("Invalid input: Input type must be integer");
-            showMessageToUser.setVisible(true);
-        }
     }
 
 }

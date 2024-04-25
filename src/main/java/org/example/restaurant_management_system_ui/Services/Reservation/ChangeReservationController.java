@@ -15,6 +15,7 @@ import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class ChangeReservationController {
     public ImageView returnChangeReservation;
@@ -46,8 +47,12 @@ public class ChangeReservationController {
     }
 
     public void presschangeButton( ) {
-        try {
-            String reservationName= reservationNameInput.getText();
+        if(Objects.equals(reservationNameInput.getText(), "") || Objects.equals(numberOfPeopleInput.getText(), "") || getDateInputFromDatePicker()==null){
+            showMessageToUser.setText("All fields must be filled first in order to change a reservation");
+            showMessageToUser.setVisible(true);
+        }
+
+        String reservationName=reservationNameInput.getText();
             int i;
             for(i=0; i< Manager.getTables().size(); i++)
             {
@@ -73,10 +78,6 @@ public class ChangeReservationController {
                         showMessageToUser.setVisible(true);
                     }
                 }
-            }
-        } catch (IllegalArgumentException ex) {
-            showMessageToUser.setText("Invalid input type");
-            showMessageToUser.setVisible(true);
         }
     }
 }
