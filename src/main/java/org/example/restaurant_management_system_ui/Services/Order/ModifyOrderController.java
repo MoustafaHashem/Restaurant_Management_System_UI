@@ -27,6 +27,9 @@ public class ModifyOrderController {
     public Button modifyButton;
     public Text invalidInput;
     public TextField oldMeal;
+    public TextFlow printOrderData;
+    public Button removeButton;
+    public TextField removeItem;
 
     public void press(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("order.fxml"));
@@ -89,6 +92,43 @@ public class ModifyOrderController {
             MenuItem mi = Order.addMeal(Integer.parseInt(newMeal.getText()));
             Manager.getTables().get(i).getOrder().getMeals().add(mi);
             Manager.getTables().get(i).getOrder().setCost(Manager.getTables().get(i).getOrder().getCost() +  mi.getPrice());
+            printOrderData.getChildren().add(new Text(Order.printOrders()));
+            invalidInput.setText("Your order has been modified");
+        }
+        else{
+            invalidInput.setText("Invalid input, please try again");
+        }
+    }
+
+    public void pressRemoveButton(ActionEvent actionEvent) {
+        int x = Manager.getTables().size();
+        int i,j;
+        for ( i = 0; i < x; i++) {
+            int y = tableNo.getText().compareTo((String.valueOf(Manager.getTables().get(i).getTableNum())));
+            if (y == 0) {
+                t1 = true;
+                break;
+            }else{
+                invalidInput.setVisible(true);
+                invalidInput.setText("Invalid input, please try again");
+            }
+        }
+        order = Manager.getTables().get(i).getOrder();
+        for (j = 0; j < Manager.getMenuItems().size(); j++) {
+            int a= removeItem.getText().compareTo(String.valueOf(order.getMeals().get(j).getID()));
+            if (a == 0) {
+                t2 = true;
+                break;
+            }else{
+                invalidInput.setVisible(true);
+                invalidInput.setText("Your old meal wasn't ordered, please enter a meal you ordered");
+            }
+        }
+        invalidInput.setVisible(true);
+        if(t1 && t2){
+            Manager.getTables().get(i).getOrder().setCost(Manager.getTables().get(i).getOrder().getCost() - order.getMeals().get(j).getPrice());
+            Manager.getTables().get(i).getOrder().getMeals().remove(j);
+            printOrderData.getChildren().add(new Text(Order.printOrders()));
             invalidInput.setText("Your order has been modified");
         }
         else{

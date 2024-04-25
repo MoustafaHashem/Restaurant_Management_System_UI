@@ -1,14 +1,13 @@
 package org.example.restaurant_management_system_ui.Services.Reservation;
 
 import Human.Manager;
+import Restaurant.Table;
 import Services.Reservation;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
@@ -20,47 +19,49 @@ public class CancelReservationController {
     public Text textCancelReservation;
     public Button cancelReservation;
     public Text showMessageToUser;
-    public TextField cancelReservationIDInput;
+    public TextField cancelReservationNameInput;
 
-    public void pressCancelReservation(ActionEvent mouseEvent) throws IOException {
+    public void pressCancelReservation( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage = (Stage) returnCancelReservation.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
-    public void showCancelReservation(MouseEvent mouseEvent) {
-        textCancelReservation.setText("Return to reservation page");
+    public void showCancelReservation( ) {
+        textCancelReservation.setText("Return");
     }
 
-    public void hideCancelReservation(MouseEvent mouseEvent) {
+    public void hideCancelReservation( ) {
         textCancelReservation.setText("");
     }
 
 
     public void clickCancelReservation( ) {
         try {
-            int reservationId=(Integer.parseInt(cancelReservationIDInput.getText()));
+            String reservationName= cancelReservationNameInput.getText();
             int i;
-            for( i=0;i< Reservation.getReservations().size();i++)
+            for(i=0; i< Manager.getTables().size(); i++)
             {
-                if(reservationId==Reservation.getReservations().get(i).getReservationId())
+
+
+                if(reservationName.compareTo(Manager.getTables().get(i).getCustomer().getName())==0)
                     break;
             }
             if(i==Reservation.getReservations().size())
             {
-            showMessageToUser.setText("No such id matches an existing reservation");
+            showMessageToUser.setText("No such name  matches an existing reservation");
             showMessageToUser.setVisible(true);
             }
             else{
-                Reservation.cancelReservation(Integer.parseInt(cancelReservationIDInput.getText()));
+                Reservation.cancelReservation(Manager.getTables().get(i).getTableNum());
                 showMessageToUser.setText("Reservation cancelled :(");
                 showMessageToUser.setVisible(true);
+
             }
         } catch (IllegalArgumentException ex) {
             showMessageToUser.setText("Invalid input: Input type must be integer");
             showMessageToUser.setVisible(true);
-            throw new IllegalArgumentException("Invalid input: Input type must be an integer");
         }
     }
 

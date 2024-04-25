@@ -9,12 +9,29 @@ import java.util.ArrayList;
 
 public class Table {
 
-    private final int tableNum;
+    private  int tableNum;
     private static int count = 1;
     private boolean isReserved;
     protected Order order;
     private Reservation reservation;
-    private Customer customer;
+    private Customer customer=new Customer();
+
+    public static void setCount(int count) {
+        Table.count = count;
+    }
+
+    public void setReserved(boolean reserved) {
+        isReserved = reserved;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+
+    public void setTableNum(int tableNum) {
+        this.tableNum = tableNum;
+    }
 
     public Customer getCustomer() {
         return customer;

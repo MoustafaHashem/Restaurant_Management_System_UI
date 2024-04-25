@@ -34,9 +34,10 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) {
-        MediaPlayer media=new MediaPlayer(new Media(new File("src/main/resources/Music/Le+festib+(mp3cut.net)_out.mp3").toURI().toString()));
+        MediaPlayer media=new MediaPlayer(new Media(new File("src/main/resources/Music/French_Accordion_Traditionell_Musette.mp3").toURI().toString()));
+        //MediaPlayer media=new MediaPlayer(new Media(new File("src/main/resources/Music/Le+festib+(mp3cut.net)_out.mp3").toURI().toString()));
         media.setCycleCount(MediaPlayer.INDEFINITE);
-        media.setVolume(.5);
+        media.setVolume(.2);
         media.play();
         Manager owner=new Manager("Moustafa  ",20,"el-obour city","01097963663",10000,"high");
         owner.addEmployee(owner);
@@ -55,6 +56,11 @@ public class MainApplication extends Application {
         owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"meat",200));
         for (int i=0;i<5;i++) {
             owner.addTable(new Table());}
+        for (Table t : Manager.getTables()) {
+            if (!t.isReserved()) {
+                Manager.getAvailableTables().add(t);
+            }
+        }
         launch();
     }
 }

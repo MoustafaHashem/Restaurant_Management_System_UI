@@ -1,7 +1,7 @@
 package org.example.restaurant_management_system_ui.Services.Reservation;
 
+import Human.Manager;
 import Services.Reservation;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,7 +19,7 @@ import java.time.LocalDate;
 public class ChangeReservationController {
     public ImageView returnChangeReservation;
     public Text textChangeReservation;
-    public TextField reservationIdInput;
+    public TextField reservationNameInput;
     public DatePicker dateInput;
     public TextField numberOfPeopleInput;
     public Text dateText;
@@ -34,31 +34,28 @@ public class ChangeReservationController {
     }
 
     public void showChangeReservation(MouseEvent mouseEvent) {
-        textChangeReservation.setText("Return to reservation page");
+        textChangeReservation.setText("Return");
     }
 
-    public void hideChangeReservation(MouseEvent mouseEvent) {
+    public void hideChangeReservation() {
         textChangeReservation.setText("");
     }
 
     public LocalDate getDateInputFromDatePicker() {
-        LocalDate date = null;
-        dateInput.setOnAction(event -> {
-            dateText.setText(dateInput.getValue().toString());
-        });
-        return LocalDate.parse(dateText.getText());
+        return dateInput.getValue();
     }
 
-    public void presschangeButton(ActionEvent actionEvent) {
+    public void presschangeButton( ) {
         try {
-            int reservationId=(Integer.parseInt(reservationIdInput.getText()));
+            String reservationName= reservationNameInput.getText();
             int i;
-            for(i=0; i< Reservation.getReservations().size(); i++)
+            for(i=0; i< Manager.getTables().size(); i++)
             {
-                if(reservationId==Reservation.getReservations().get(i).getReservationId())
+                if(reservationName.compareTo(Manager.getTables().get(i).getCustomer().getName())==0)
                     break;
             }
-            if(i==Reservation.getReservations().size())
+            int RID=Manager.getTables().get(i).getReservation().getReservationId();
+            if(i==Manager.getTables().size())
             {
                 showMessageToUser.setText("No such id matches an existing reservation");
                 showMessageToUser.setVisible(true);
@@ -71,7 +68,7 @@ public class ChangeReservationController {
                 }
                 else{
                     {
-                        Reservation.changeReservation(Integer.parseInt(reservationIdInput.getText()), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
+                        Reservation.changeReservation(RID, getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
                         showMessageToUser.setText("Reservation changed successfully");
                         showMessageToUser.setVisible(true);
                     }
@@ -80,7 +77,6 @@ public class ChangeReservationController {
         } catch (IllegalArgumentException ex) {
             showMessageToUser.setText("Invalid input type");
             showMessageToUser.setVisible(true);
-            throw new IllegalArgumentException("Invalid input type");
         }
     }
 }

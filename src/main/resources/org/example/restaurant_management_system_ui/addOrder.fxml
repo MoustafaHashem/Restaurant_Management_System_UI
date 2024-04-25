@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -11,14 +10,12 @@
 <?import javafx.scene.text.TextFlow?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Services.Order.AddOrderController">
-   <ImageView fitHeight="720.0" fitWidth="1280.0" onMouseEntered="#showData" pickOnBounds="true" preserveRatio="true" rotate="-14.0">
-      <rotationAxis>
-         <Point3D x="25.0" y="25.0" z="1.0" />
-      </rotationAxis></ImageView>
+   <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="2.0" layoutY="5.0" onMouseEntered="#showData" pickOnBounds="true" preserveRatio="true" />
    <ImageView fx:id="returnImage1" fitHeight="114.0" fitWidth="100.0" layoutX="1196.0" layoutY="602.0" onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/2.png" />
    </ImageView>
    <Text fx:id="returnText1" layoutX="1165.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995" />
+   <TextFlow layoutX="540.0" layoutY="296.0" onMouseEntered="#showOrderData" prefHeight="519.0" prefWidth="200.0" />
    <Text layoutX="531.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make order">
       <font>
          <Font name="System Bold" size="40.0" />
@@ -31,22 +28,23 @@
    <ImageView fitHeight="254.0" fitWidth="464.0" layoutX="14.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/22.png" />
    </ImageView>
-   <TextField fx:id="tableNo" layoutX="559.0" layoutY="207.0">
+   <TextFlow fx:id="printOrderData" layoutX="599.0" layoutY="416.0" prefHeight="295.0" prefWidth="244.0" />
+   <TextField fx:id="tableNo" layoutX="559.0" layoutY="181.0">
       <font>
          <Font size="13.0" />
       </font>
    </TextField>
-   <TextField fx:id="itemID" layoutX="559.0" layoutY="275.0">
+   <TextField fx:id="itemID" layoutX="560.0" layoutY="249.0">
       <font>
          <Font size="13.0" />
       </font>
    </TextField>
-   <Text layoutX="445.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table number">
+   <Text layoutX="457.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table number">
       <font>
          <Font size="13.0" />
       </font>
    </Text>
-   <Text layoutX="476.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
+   <Text layoutX="476.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item ID">
       <font>
          <Font size="13.0" />
       </font>
@@ -56,14 +54,12 @@
          <Font name="System Bold" size="30.0" />
       </font>
    </Text>
-   <Button fx:id="orderButton" layoutX="611.0" layoutY="355.0" mnemonicParsing="false" onAction="#pressOrder" text="Order">
+   <Button fx:id="orderButton" layoutX="610.0" layoutY="304.0" mnemonicParsing="false" onAction="#pressOrder" text="Order">
       <font>
          <Font size="15.0" />
       </font>
    </Button>
-   <Text fx:id="invalidInput" layoutX="561.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
+   <Text fx:id="invalidInput" layoutX="561.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
    <TextFlow fx:id="printMenuItemData" layoutX="941.0" layoutY="192.0" prefHeight="326.0" prefWidth="254.0" />
-   <Button fx:id="AddItem" layoutX="749.0" layoutY="276.0" mnemonicParsing="false" onAction="#pressAddItem" text=" Add Item" />
-   <ImageView fitHeight="254.0" fitWidth="346.0" layoutX="646.0" layoutY="459.0" onMouseDragEntered="#showOrderData" pickOnBounds="true" preserveRatio="true" />
-   <TextFlow fx:id="printOrderData" layoutX="712.0" layoutY="465.0" prefHeight="241.0" prefWidth="200.0" />
+   <Button fx:id="AddItem" layoutX="749.0" layoutY="249.0" mnemonicParsing="false" onAction="#pressAddItem" text=" Add Item" />
 </AnchorPane>
