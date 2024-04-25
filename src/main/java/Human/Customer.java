@@ -9,7 +9,7 @@ public class Customer extends Person {
     private LocalDate checkOutDate;
 
     public Customer() {
-
+super();
     }
 
     public Customer(String name, int age, String address, String phone) {

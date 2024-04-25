@@ -46,7 +46,7 @@ public class MakeReservationController {
     }
 
     public void showMakeReservation() {
-        textMakeReservation.setText("Return to reservation page");
+        textMakeReservation.setText("Return ");
     }
 
     public void hideMakeReservation() {
@@ -89,37 +89,32 @@ public class MakeReservationController {
 //        return date.get();
 //    }
     public LocalDate getDateInputFromDatePicker() {
-        LocalDate date = null;
-//        dateInput = new DatePicker(LocalDate.now());
-        dateInput.setOnAction(event -> {
-            dateText.setText(dateInput.getValue().toString());
-        });
-        return LocalDate.parse(dateText.getText());
+        return dateInput.getValue();
     }
 
-public int pressAvailableTablesList() {
+public void pressAvailableTablesList() {
+        x=true;
+
         for (int i = 0; availableTablesList.getItems().size() > i; i++) {
             int finalI = i;
-            availableTablesList.getItems().get(finalI).setOnAction(event -> {
-                availableTablesText.setText(availableTablesList.getItems().get(finalI).toString());
-            });
+            availableTablesList.getItems().get(finalI).setOnAction(event -> availableTablesList.setText(availableTablesList.getItems().get(finalI).getText()));
         }
-        return Character.getNumericValue(availableTablesText.getText().charAt(6));
-    }
+}
+
         public void submitReservationInput () throws IllegalArgumentException {
+        x=true;
             try {
-                Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
-                if (Reservation.makeReservation(pressAvailableTablesList(), nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
+                int TN=Integer.parseInt(String.valueOf(availableTablesList.getText().charAt(6)));
+                if (Reservation.makeReservation(TN, nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
                     showMessageToUser.setText("No available tables at the moment to make a reservation");
                     showMessageToUser.setVisible(true);
                 }
                 showMessageToUser.setText("Reservation made successfully ;)");
                 showMessageToUser.setVisible(true);
+                availableTablesList.setText("availableTablesList");
             } catch (IllegalArgumentException ex) {
                 showMessageToUser.setText("Invalid input type: please re-enter data");
                 showMessageToUser.setVisible(true);
-                throw new IllegalArgumentException("Invalid input type: please re-enter data");
             }
-
         }
 }

@@ -19,7 +19,7 @@ public class ReservationController {
     public Button changeReservationButton;
 
     public void showReservation(MouseEvent event) {
-        reservationText.setText("Return to main page");
+        reservationText.setText("Return");
     }
 
     public void hideReservation(MouseEvent event) {
