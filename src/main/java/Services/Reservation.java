@@ -101,14 +101,14 @@ public class Reservation {
     public static String printReservation()
     {
         String accumulator = "";
-        System.out.println("hey");
-        for(Reservation r: reservations)
+        int size = reservations.size();
+        for (int i=0;i<size;i++)
         {
             System.out.println(accumulator);
-            accumulator= "Reservation ID: "+ String.valueOf(r.getReservationId())
-                    +"Number of people: "+String.valueOf(r.getNumberOfPeople())
-                    +"Reservation date: "+ r.getDate()
-                    +"************************************************************\n";
+            accumulator= "Reservation ID: "+ reservations.get(i).reservationId
+                    +"\nNumber of people: "+ reservations.get(i).getNumberOfPeople()
+                    +"\nReservation date: "+ reservations.get(i).getDate()
+                    +"\n************************************************************\n";
         }
         return accumulator;
     }
