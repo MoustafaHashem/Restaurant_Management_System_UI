@@ -12,11 +12,10 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Services.Order.AddOrderController">
    <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="1.0" layoutY="-3.0" onMouseEntered="#showData" pickOnBounds="true" preserveRatio="true" />
-   <ImageView fx:id="returnImage1" fitHeight="114.0" fitWidth="100.0" layoutX="1196.0" layoutY="602.0" onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="returnImage1" fitHeight="114.0" fitWidth="100.0" layoutX="1196.0" layoutY="603.0" onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/2.png" />
    </ImageView>
-   <Text fx:id="returnText1" layoutX="1165.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995" />
-   <TextFlow layoutX="540.0" layoutY="296.0" onMouseEntered="#showOrderData" prefHeight="519.0" prefWidth="200.0" />
+   <TextFlow layoutX="380.0" layoutY="296.0" onMouseEntered="#showOrderData" prefHeight="421.0" prefWidth="525.0" />
    <Text layoutX="531.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make order">
       <font>
          <Font name="System Bold" size="40.0" />
@@ -26,12 +25,7 @@
       <Image url="@../../../Images/11.png" />
    </ImageView>
    <AnchorPane layoutX="518.0" layoutY="122.0" />
-   <ScrollPane layoutX="86.0" layoutY="192.0">
-      <content>
-         <TextFlow fx:id="printOrderData" prefHeight="312.0" prefWidth="244.0" />
-      </content>
-   </ScrollPane>
-   <ImageView fitHeight="254.0" fitWidth="464.0" layoutX="14.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="194.0" fitWidth="381.0" layoutX="14.0" layoutY="520.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/22.png" />
    </ImageView>
    <TextField fx:id="tableNo" layoutX="559.0" layoutY="181.0">
@@ -66,14 +60,20 @@
    </Button>
    <Text fx:id="invalidInput" layoutX="561.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" />
    <ScrollPane layoutX="941.0" layoutY="192.0">
-      <content>
-         <TextFlow fx:id="printMenuItemData" prefHeight="326.0" prefWidth="254.0" />
-      </content>
+      <TextFlow fx:id="printMenuItemData" prefHeight="326.0" prefWidth="254.0"/>
    </ScrollPane>
    <Button fx:id="AddItem" layoutX="749.0" layoutY="249.0" mnemonicParsing="false" onAction="#pressAddItem" text=" Add Item" />
    <Text layoutX="133.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your order">
       <font>
          <Font name="System Bold" size="30.0" />
+      </font>
+   </Text>
+   <ScrollPane layoutX="81.0" layoutY="192.0">
+      <TextFlow fx:id="printOrderData" prefHeight="326.0" prefWidth="254.0"/>
+   </ScrollPane>
+   <Text fx:id="returnText" layoutX="1091.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="104.79999999999995">
+      <font>
+         <Font name="Tw Cen MT Bold" size="18.0" />
       </font>
    </Text>
 </AnchorPane>

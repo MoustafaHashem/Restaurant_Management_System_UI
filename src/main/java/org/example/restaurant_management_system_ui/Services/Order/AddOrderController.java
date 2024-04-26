@@ -22,8 +22,6 @@ import java.util.ResourceBundle;
 
 public class AddOrderController   {
 
-    public ImageView returnImage1;
-    public Text returnText1;
     public TextFlow printMenuItemData;
     public Text invalidInput;
     public Button orderButton;
@@ -31,18 +29,19 @@ public class AddOrderController   {
     public TextField itemID;
     public Button AddItem;
     public TextFlow printOrderData;
+    public Text returnText;
 
     public void press(MouseEvent event) throws IOException {
         printOrderData.setVisible(false);
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("order.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnImage1.getScene().getWindow();
+        Stage mainStage=(Stage)returnText.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
-    public void show1(MouseEvent event) {returnText1.setText("Return");}
+    public void show1(MouseEvent event) {returnText.setText("Return");}
 
-    public void hide1(MouseEvent event) {returnText1.setText("");}
+    public void hide1(MouseEvent event) {returnText.setText("");}
 
 
     boolean x=true;

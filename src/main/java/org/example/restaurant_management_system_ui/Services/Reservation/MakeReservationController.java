@@ -110,28 +110,22 @@ public void pressAvailableTablesList() {
                 showMessageToUser.setText("All fields must be filled first in order to change a reservation");
                 showMessageToUser.setVisible(true);
             }
-//            else{
-//                if(!isInteger(numberOfPeopleInput.getText())) {
-//
-//                    showMessageToUser.setText("Invalid input type: input must be a positive integer");
-//                    showMessageToUser.setVisible(true);
-//                }
-//                if(!isInteger(ageInput.getText())) {
-//
-//                    showMessageToUser.setText("Invalid input type: input must be a positive integer");
-//                    showMessageToUser.setVisible(true);
-//                }
-//                 if(!isString(nameInput.getText())) {
-//                     showMessageToUser.setText("Invalid input type: input must be a name (String)");
-//                     showMessageToUser.setVisible(true);
-//                 }
-//                if(!isInteger(phoneInput.getText())) {
-//                    showMessageToUser.setText("Invalid input type: input must be a phone number (positive integers)");
-//                    showMessageToUser.setVisible(true);
-//                }
-//            }
-
-            else {
+            else if (!isInteger(numberOfPeopleInput.getText())) {
+                showMessageToUser.setText("Invalid input type: input must be a positive integer");
+                showMessageToUser.setVisible(true);
+            }
+            else if(!isInteger(ageInput.getText())) {
+                showMessageToUser.setText("Invalid input type: input must be a positive integer");
+                showMessageToUser.setVisible(true);
+            }
+            else if(!isString(nameInput.getText())) {
+                showMessageToUser.setText("Invalid input type: input must be a name (String)");showMessageToUser.setVisible(true);
+            }
+            else if(!isInteger(phoneInput.getText())) {
+                showMessageToUser.setText("Invalid input type: input must be a phone number (positive integers)");
+                showMessageToUser.setVisible(true);
+            }
+            else  {
                 x = true;
                 try {
                     int TN = Integer.parseInt(String.valueOf(availableTablesList.getText().charAt(6)));

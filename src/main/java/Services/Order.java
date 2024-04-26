@@ -109,18 +109,20 @@ public class Order {
 
     public static String printOrders() {
         ArrayList<Order> orders = new ArrayList<>();
+        ArrayList<Integer> z =new ArrayList<>();
         int i;
         int size1 = Manager.getTables().size();
         for (i = 0; i < size1; i++) {
             if (Manager.getTables().get(i).getOrder().getCost() != 0) {
                 orders.add(Manager.getTables().get(i).getOrder());
+                z.add(i);
             }
         }
         int size2 = orders.size();
         StringBuilder s = new StringBuilder();
 
         for (int j = 0; j < size2; j++) {
-            s.append("Order #").append(j + 1).append("\nMeals : ");
+            s.append("Order -> table #").append(Manager.getTables().get(z.get(j)).getTableNum()).append("\nMeals : ");
             for (int k = 0; k < orders.get(j).meals.size(); k++) {
                 s.append(orders.get(j).meals.get(k).print());
             }

@@ -37,14 +37,14 @@
       </Text>
       <Text layoutX="1102.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select your table" />
       <DatePicker fx:id="dateInput" layoutX="850.0" layoutY="354.0" onAction="#getDateInputFromDatePicker" />
-      <ImageView fx:id="returnMakeReservation" fitHeight="114.0" fitWidth="100.0" layoutX="1186.0" layoutY="593.0" onMouseClicked="#pressMakeReservation" onMouseEntered="#showMakeReservation" onMouseExited="#hideMakeReservation" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="returnMakeReservation" fitHeight="114.0" fitWidth="100.0" layoutX="1196.0" layoutY="603.0" onMouseClicked="#pressMakeReservation" onMouseEntered="#showMakeReservation" onMouseExited="#hideMakeReservation" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/2.png" />
          </image>
       </ImageView>
-      <Text fx:id="textMakeReservation" layoutX="1074.0" layoutY="666.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995">
+      <Text fx:id="textMakeReservation" layoutX="1091.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="104.79999999999995">
          <font>
-            <Font name="Tw Cen MT Bold" size="15.0" />
+            <Font name="Tw Cen MT Bold" size="18.0" />
          </font></Text>
       <Text layoutX="432.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of People" />
       <Text layoutX="905.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select date" />

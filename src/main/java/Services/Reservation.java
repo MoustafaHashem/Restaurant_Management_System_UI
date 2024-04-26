@@ -97,17 +97,4 @@ public class Reservation {
             return -1;
         }
     }
-
-    public static String printReservation()
-    {
-        String accumulator = "";
-        int size = reservations.size();
-        for (Reservation reservation : reservations) {
-            accumulator += "Reservation ID: " + reservation.reservationId
-                    + "\nNumber of people: " + reservation.getNumberOfPeople()
-                    + "\nReservation date: " + reservation.getDate()
-                    + "\n************************************************************\n";
-        }
-        return accumulator;
-    }
 }

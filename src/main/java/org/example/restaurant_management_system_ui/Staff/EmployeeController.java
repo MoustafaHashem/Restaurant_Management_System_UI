@@ -7,7 +7,6 @@ import Services.Reservation;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
@@ -35,7 +34,7 @@ public class EmployeeController {
     public TextFlow reservationData;
     public Button printIDReservation;
     public Button printAllReservation;
-    public TextField IDReservation;
+    public TextField reservationName;
     public Button profileButton;
     public Button reservationButton;
     public Button orderButtonPress;
@@ -93,21 +92,22 @@ public class EmployeeController {
         orderData.getChildren().add(new Text(Order.printOrders()));
     }
 
-    public void printIDReservationPress() {
+    public void printReservationNamePress() {
         reservationData.getChildren().clear();
         addErrorMessage.setVisible(false);
         try {
-        int id = Integer.parseInt(IDReservation.getText());
-        int size = Reservation.getReservations().size();
+        String name = reservationName.getText();
+        int size = Manager.getTables().size();
         int i;
         for (i = 0; i < size; i++) {
-            if (Reservation.getReservations().get(i).getReservationId() == id) break;
+            if (name.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName()) == 0) break;
         }
         if (i == size) addErrorMessage.setVisible(true);
-        else reservationData.getChildren().add(new Text(("Reservation ID: "+Reservation.getReservations().get(i).getReservationId()
-                    + "\nNumber of people: "+Reservation.getReservations().get(i).getNumberOfPeople()
-                    + "\nReservation date: "+ Reservation.getReservations().get(i).getDate()
-                    +"\n************************************************************\n")));
+        else reservationData.getChildren().add(new Text(("Reservation Name: "+Manager.getTables().get(i).getCustomer().getName()
+                + "\nReservation ID: " + Manager.getTables().get(i).getReservation().getReservationId()
+                + "\nNumber of people: " + Manager.getTables().get(i).getReservation().getNumberOfPeople()
+                + "\nReservation date: " + Manager.getTables().get(i).getReservation().getDate()
+                +"\n************************************************************\n")));
         } catch (Exception e) {
             addErrorMessage.setVisible(true);
         }
@@ -116,7 +116,19 @@ public class EmployeeController {
     public void printAllReservationPress() { //need testing
         addErrorMessage.setVisible(false);
         reservationData.getChildren().clear();
-        reservationData.getChildren().add(new Text(Reservation.printReservation()));
+        String accumulator = "";
+        int i;
+        int size = Manager.getTables().size();
+        for (i = 0; i < size; i++) {
+            if (Manager.getTables().get(i).isReserved()) {
+                accumulator += "Reservation Name: "+Manager.getTables().get(i).getCustomer().getName()
+                        + "\nReservation ID: " + Manager.getTables().get(i).getReservation().getReservationId()
+                        + "\nNumber of people: " + Manager.getTables().get(i).getReservation().getNumberOfPeople()
+                        + "\nReservation date: " + Manager.getTables().get(i).getReservation().getDate()
+                        +"\n************************************************************\n";
+            }
+        }
+        reservationData.getChildren().add(new Text(accumulator));
     }
 
     public void profileButtonPress() throws IOException {

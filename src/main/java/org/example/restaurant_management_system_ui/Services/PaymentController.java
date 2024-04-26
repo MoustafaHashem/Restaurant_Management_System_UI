@@ -17,9 +17,6 @@ import org.example.restaurant_management_system_ui.MainApplication;
 import java.io.IOException;
 
 public class PaymentController {
-    public ImageView returnImage1;
-    public Text returnText1;
-
     public Text costText;
     public Text text1;
     public Text text2;
@@ -30,23 +27,22 @@ public class PaymentController {
     public Text addErrorMessage;
     public Text text3;
     public Text reservationnametext;
+    public ImageView returnImage;
+    public Text returnText;
 
-    public void press(MouseEvent event) {
-
-    }
 
     public void show1(MouseEvent event) {
-        returnText1.setText("Return");
+        returnText.setText("Return");
     }
 
     public void hide1(MouseEvent event) {
-        returnText1.setText("");
+        returnText.setText("");
     }
 
-    public void pressReturnImage(MouseEvent mouseEvent) throws IOException {
+    public void press(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
         Scene sceneServices = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnImage1.getScene().getWindow();
+        Stage mainStage=(Stage)returnImage.getScene().getWindow();
         mainStage.setScene(sceneServices);
     }
 

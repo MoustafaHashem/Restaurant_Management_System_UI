@@ -19,8 +19,6 @@ import org.example.restaurant_management_system_ui.Services.Order.AddOrderContro
 import java.io.IOException;
 
 public class ModifyOrderController {
-    public ImageView returnImage1;
-    public Text returnText1;
     public TextFlow printMenuList;
     public TextField tableNo;
     public TextField newMeal;
@@ -30,17 +28,19 @@ public class ModifyOrderController {
     public TextFlow printOrderData;
     public Button removeButton;
     public TextField removeItem;
+    public ImageView returnImage;
+    public Text returnText;
 
     public void press(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("order.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnImage1.getScene().getWindow();
+        Stage mainStage=(Stage)returnImage.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
-    public void show1(MouseEvent event) {returnText1.setText("Return");}
+    public void show1(MouseEvent event) {returnText.setText("Return");}
 
-    public void hide1(MouseEvent event) {returnText1.setText("");}
+    public void hide1(MouseEvent event) {returnText.setText("");}
 
     boolean x=true;
     public void showData( ) {

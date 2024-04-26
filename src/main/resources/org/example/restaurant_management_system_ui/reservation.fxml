@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,41 +7,45 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Services.Reservation.ReservationController">
-   <children>
-      <ImageView fx:id="returnReservation" fitHeight="114.0" fitWidth="100.0" layoutX="1186.0" layoutY="592.0" onMouseClicked="#pressReservation" onMouseEntered="#showReservation" onMouseExited="#hideReservation" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Images/2.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="reservationText" layoutX="1075.0" layoutY="653.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.79999999999995">
-         <font>
-            <Font name="Tw Cen MT Bold" size="15.0" />
-         </font></Text>
-      <Text layoutX="328.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select an option">
-         <font>
-            <Font name="Tw Cen MT Condensed Extra Bold" size="72.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="332.0" fitWidth="366.0" layoutX="457.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Images/16.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="makeReservationButton" layoutX="113.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#goToMakeReservation" text="Make reservation">
-         <font>
-            <Font name="Tw Cen MT" size="38.0" />
-         </font>
-      </Button>
-      <Button fx:id="cancelReservationButton" layoutX="834.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#goToCancelReservation" text="Cancel reservation">
-         <font>
-            <Font name="Tw Cen MT" size="38.0" />
-         </font>
-      </Button>
-      <Button fx:id="changeReservationButton" layoutX="447.0" layoutY="531.0" mnemonicParsing="false" onMouseClicked="#goToChangeReservation" text="Change reservation">
-         <font>
-            <Font name="Tw Cen MT" size="38.0" />
-         </font>
-      </Button>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
+            prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.restaurant_management_system_ui.Services.Reservation.ReservationController">
+   <Text layoutX="328.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select an option">
+      <font>
+         <Font name="Tw Cen MT Condensed Extra Bold" size="72.0"/>
+      </font>
+   </Text>
+   <ImageView fitHeight="332.0" fitWidth="366.0" layoutX="457.0" layoutY="138.0" pickOnBounds="true"
+              preserveRatio="true">
+      <Image url="@../../../Images/16.png"/>
+   </ImageView>
+   <Button fx:id="makeReservationButton" layoutX="113.0" layoutY="295.0" mnemonicParsing="false"
+           onMouseClicked="#goToMakeReservation" text="Make reservation">
+      <font>
+         <Font name="Tw Cen MT" size="38.0"/>
+      </font>
+   </Button>
+   <Button fx:id="cancelReservationButton" layoutX="834.0" layoutY="295.0" mnemonicParsing="false"
+           onMouseClicked="#goToCancelReservation" text="Cancel reservation">
+      <font>
+         <Font name="Tw Cen MT" size="38.0"/>
+      </font>
+   </Button>
+   <Button fx:id="changeReservationButton" layoutX="447.0" layoutY="531.0" mnemonicParsing="false"
+           onMouseClicked="#goToChangeReservation" text="Change reservation">
+      <font>
+         <Font name="Tw Cen MT" size="38.0"/>
+      </font>
+   </Button>
+   <ImageView fx:id="returnImage" fitHeight="114.0" fitWidth="100.0" layoutX="1196.0" layoutY="603.0"
+              onMouseClicked="#press" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true"
+              preserveRatio="true">
+      <Image url="@../../../Images/2.png"/>
+   </ImageView>
+   <Text fx:id="returnText" layoutX="1091.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0"
+         textAlignment="RIGHT" wrappingWidth="104.79999999999995">
+      <font>
+         <Font name="Tw Cen MT Bold" size="18.0"/>
+      </font>
+   </Text>
 </AnchorPane>

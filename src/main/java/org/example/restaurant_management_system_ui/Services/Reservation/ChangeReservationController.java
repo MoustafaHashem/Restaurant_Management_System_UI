@@ -18,28 +18,28 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class ChangeReservationController {
-    public ImageView returnChangeReservation;
-    public Text textChangeReservation;
     public TextField reservationNameInput;
     public DatePicker dateInput;
     public TextField numberOfPeopleInput;
     public Text dateText;
     public Button changeButton;
     public Text showMessageToUser;
+    public ImageView returnImage;
+    public Text returnText;
 
-    public void pressChangeReservation(MouseEvent mouseEvent) throws IOException {
+    public void press(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnChangeReservation.getScene().getWindow();
+        Stage mainStage=(Stage)returnText.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
-    public void showChangeReservation(MouseEvent mouseEvent) {
-        textChangeReservation.setText("Return");
+    public void show1(MouseEvent mouseEvent) {
+        returnText.setText("Return");
     }
 
-    public void hideChangeReservation() {
-        textChangeReservation.setText("");
+    public void hide1() {
+        returnText.setText("");
     }
 
     public LocalDate getDateInputFromDatePicker() {

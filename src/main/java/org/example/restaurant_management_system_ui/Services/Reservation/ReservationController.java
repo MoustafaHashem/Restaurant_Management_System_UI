@@ -12,24 +12,24 @@ import org.example.restaurant_management_system_ui.MainApplication;
 import java.io.IOException;
 
 public class ReservationController {
-    public Text reservationText;
-    public ImageView returnReservation;
     public Button makeReservationButton;
     public Button cancelReservationButton;
     public Button changeReservationButton;
+    public ImageView returnImage;
+    public Text returnText;
 
-    public void showReservation(MouseEvent event) {
-        reservationText.setText("Return");
+    public void show1(MouseEvent event) {
+        returnText.setText("Return");
     }
 
-    public void hideReservation(MouseEvent event) {
-        reservationText.setText("");
+    public void hide1(MouseEvent event) {
+        returnText.setText("");
     }
 
-    public void pressReservation(MouseEvent mouseEvent) throws IOException {
+    public void press(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("start.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnReservation.getScene().getWindow();
+        Stage mainStage=(Stage)returnText.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 

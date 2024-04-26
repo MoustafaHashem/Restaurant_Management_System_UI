@@ -1,7 +1,6 @@
 package org.example.restaurant_management_system_ui.Services.Reservation;
 
 import Human.Manager;
-import Restaurant.Table;
 import Services.Reservation;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,25 +17,25 @@ import java.util.Objects;
 import static org.example.restaurant_management_system_ui.Services.Reservation.ChangeReservationController.isString;
 
 public class CancelReservationController {
-    public ImageView returnCancelReservation;
-    public Text textCancelReservation;
     public Button cancelReservation;
     public Text showMessageToUser;
     public TextField cancelReservationNameInput;
+    public ImageView returnImage;
+    public Text returnText;
 
-    public void pressCancelReservation( ) throws IOException {
+    public void press( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage = (Stage) returnCancelReservation.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
-    public void showCancelReservation( ) {
-        textCancelReservation.setText("Return");
+    public void show1( ) {
+        returnText.setText("Return");
     }
 
-    public void hideCancelReservation( ) {
-        textCancelReservation.setText("");
+    public void hide1( ) {
+        returnText.setText("");
     }
 
 
