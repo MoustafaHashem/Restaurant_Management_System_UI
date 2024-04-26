@@ -67,7 +67,7 @@ public class StaffController   {
     public void pressLogin() throws IOException {
         int x=1;
         for (ii=0;ii<Manager.getEmployees().size();ii++){
-            int y= email.getText().compareTo(Manager.getEmployees().get(ii).getEmail());
+            int y= email.getText().compareToIgnoreCase(Manager.getEmployees().get(ii).getEmail());
             int z=password.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
             int w=passwordShowed.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
             if(y==0&&(z==0||w==0)){

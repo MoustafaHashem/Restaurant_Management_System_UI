@@ -15,8 +15,7 @@ public class Reservation {
     private static int count=0;
     private LocalDate date;
     private int numberOfPeople;
-    private  static ArrayList<Reservation> reservations=new ArrayList<>();
-
+    private  static final ArrayList<Reservation> reservations=new ArrayList<>();
     public Reservation() {
     }
 
@@ -63,26 +62,6 @@ public class Reservation {
         Table.setCount(Table.getCount()-1);
         Manager.getAvailableTables().add(tableID-1,t);
     }
-    public static void changeReservation(int id,LocalDate d){
-        int size = reservations.size(); // if size =0 throw exception
-        int i;
-        for (i = 0; i < size; i++) {
-            if (reservations.get(i).getReservationId() == id){
-                break;}
-        }
-        reservations.get(i).setDate(d);
-        System.out.println("Reservation date changed");
-    }
-    public  static void changeReservation(int id,int n){
-        int size = reservations.size();
-        int i;
-        for (i = 0; i < size; i++) {
-            if (reservations.get(i).getReservationId() == id)
-                break;
-        }
-        reservations.get(i).setNumberOfPeople(n);
-//        System.out.println("Number of people changed");
-    }
     public  static void changeReservation(int id,LocalDate d,int n){
         int size = reservations.size();
         int i;
@@ -121,14 +100,15 @@ public class Reservation {
 
     public static String printReservation()
     {
-        String accumulator="";
+        String accumulator = "";
+        System.out.println("hey");
         for(Reservation r: reservations)
         {
-           accumulator= "Reservation ID: "+r.getReservationId()
-           +"Number of people: "+r.getNumberOfPeople()
-           +"Reservation date: "+ r.getDate()
-            +"************************************************************"
-            +"\n";
+            System.out.println(accumulator);
+            accumulator= "Reservation ID: "+ String.valueOf(r.getReservationId())
+                    +"Number of people: "+String.valueOf(r.getNumberOfPeople())
+                    +"Reservation date: "+ r.getDate()
+                    +"************************************************************\n";
         }
         return accumulator;
     }

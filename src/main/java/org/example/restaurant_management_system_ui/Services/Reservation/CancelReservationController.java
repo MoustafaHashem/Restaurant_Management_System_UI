@@ -55,7 +55,7 @@ public class CancelReservationController {
             {
 
 
-                if(reservationName.compareTo(Manager.getTables().get(i).getCustomer().getName())==0)
+                if(reservationName.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName())==0)
                     break;
             }
             if(i==Reservation.getReservations().size())

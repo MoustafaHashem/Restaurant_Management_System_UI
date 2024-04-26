@@ -100,7 +100,7 @@ public class ChangeReservationController {
         String reservationName = reservationNameInput.getText();
             for(i=0; i< Manager.getTables().size(); i++)
             {
-                if(reservationName.compareTo(Manager.getTables().get(i).getCustomer().getName())==0)
+                if(reservationName.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName())==0)
                     break;
             }
             int RID=Manager.getTables().get(i).getReservation().getReservationId();

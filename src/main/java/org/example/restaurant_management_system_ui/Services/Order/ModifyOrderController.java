@@ -54,6 +54,7 @@ public class ModifyOrderController {
     Order order = new Order();
 
     public void pressButton(ActionEvent actionEvent) {
+        invalidInput.setVisible(false);
         int x = Manager.getTables().size();
         int i,j;
         for ( i = 0; i < x; i++) {
@@ -92,6 +93,7 @@ public class ModifyOrderController {
             MenuItem mi = Order.addMeal(Integer.parseInt(newMeal.getText()));
             Manager.getTables().get(i).getOrder().getMeals().add(mi);
             Manager.getTables().get(i).getOrder().setCost(Manager.getTables().get(i).getOrder().getCost() +  mi.getPrice());
+            printOrderData.getChildren().clear();
             printOrderData.getChildren().add(new Text(Order.printOrders()));
             invalidInput.setText("Your order has been modified");
         }
@@ -101,6 +103,7 @@ public class ModifyOrderController {
     }
 
     public void pressRemoveButton(ActionEvent actionEvent) {
+        invalidInput.setVisible(false);
         int x = Manager.getTables().size();
         int i,j;
         for ( i = 0; i < x; i++) {
@@ -128,6 +131,7 @@ public class ModifyOrderController {
         if(t1 && t2){
             Manager.getTables().get(i).getOrder().setCost(Manager.getTables().get(i).getOrder().getCost() - order.getMeals().get(j).getPrice());
             Manager.getTables().get(i).getOrder().getMeals().remove(j);
+            printOrderData.getChildren().clear();
             printOrderData.getChildren().add(new Text(Order.printOrders()));
             invalidInput.setText("Your order has been modified");
         }

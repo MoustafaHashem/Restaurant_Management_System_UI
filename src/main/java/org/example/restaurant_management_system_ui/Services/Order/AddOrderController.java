@@ -81,6 +81,7 @@ public class AddOrderController   {
         //invalidInput.setVisible(false);
     }
     public void pressOrder(ActionEvent actionEvent) {
+        invalidInput.setVisible(false);
         for ( i = 0; i < Manager.getTables().size(); i++) {
             int y = tableNo.getText().compareTo((String.valueOf(Manager.getTables().get(i).getTableNum())));
             if(y==0){
