@@ -102,13 +102,11 @@ public class Reservation {
     {
         String accumulator = "";
         int size = reservations.size();
-        for (int i=0;i<size;i++)
-        {
-            System.out.println(accumulator);
-            accumulator= "Reservation ID: "+ reservations.get(i).reservationId
-                    +"\nNumber of people: "+ reservations.get(i).getNumberOfPeople()
-                    +"\nReservation date: "+ reservations.get(i).getDate()
-                    +"\n************************************************************\n";
+        for (Reservation reservation : reservations) {
+            accumulator += "Reservation ID: " + reservation.reservationId
+                    + "\nNumber of people: " + reservation.getNumberOfPeople()
+                    + "\nReservation date: " + reservation.getDate()
+                    + "\n************************************************************\n";
         }
         return accumulator;
     }
