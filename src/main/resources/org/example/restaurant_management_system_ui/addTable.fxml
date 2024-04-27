@@ -38,10 +38,13 @@
             <Font size="22.0" />
          </font>
       </Text>
-      <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="919.0" layoutY="600.0" onMouseClicked="#pressLogout" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="923.0" layoutY="603.0" onMouseClicked="#pressLogout" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
          <Image url="@../../../Images/2.png" />
       </ImageView>
-      <Text fx:id="logoutText" layoutX="887.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
+      <Text fx:id="logoutText" layoutX="818.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="104.79999999999995">
+         <font>
+            <Font name="Tw Cen MT Bold" size="18.0" />
+         </font></Text>
       <MenuButton fx:id="tableList" layoutX="716.0" layoutY="404.0" mnemonicParsing="false" onAction="#chooseTable" onMouseClicked="#chooseTable" onMouseEntered="#addListT" prefHeight="26.0" prefWidth="172.0" text="Tables list">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />

@@ -12,19 +12,19 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system_ui.Staff.EmployeeController">
    <HBox layoutX="9.0" layoutY="10.0" prefHeight="114.0" prefWidth="1280.0" spacing="50.0">
       <padding>
-         <Insets bottom="30.0" left="350.0" right="350.0" top="30.0"/>
+         <Insets bottom="30.0" left="350.0" right="350.0" top="30.0" />
       </padding>
-      <Button fx:id="profileButton" mnemonicParsing="false" onAction="#profileButtonPress" prefHeight="52.0"
-              prefWidth="172.0" text="Profile"/>
-      <Button fx:id="reservationButton" mnemonicParsing="false" onAction="#reservationButtonPress" prefHeight="52.0"
-              prefWidth="172.0" text="Print reservations"/>
-      <Button fx:id="orderButtonPress" mnemonicParsing="false" onAction="#orderButtonPress" prefHeight="52.0"
-              prefWidth="172.0" text="Print orders"/>
+      <Button fx:id="profileButton" mnemonicParsing="false" onAction="#profileButtonPress" prefHeight="52.0" prefWidth="172.0" text="Profile" />
+      <Button fx:id="reservationButton" mnemonicParsing="false" onAction="#reservationButtonPress" prefHeight="52.0" prefWidth="172.0" text="Print reservations" />
+      <Button fx:id="orderButtonPress" mnemonicParsing="false" onAction="#orderButtonPress" prefHeight="52.0" prefWidth="172.0" text="Print orders" />
    </HBox>
-   <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="1199.0" layoutY="606.0" onMouseClicked="#logoutClicked" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="logout" fitHeight="114.0" fitWidth="100.0" layoutX="1196.0" layoutY="603.0" onMouseClicked="#logoutClicked" onMouseEntered="#show1" onMouseExited="#hide1" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/2.png" />
    </ImageView>
-   <Text fx:id="logoutText" layoutX="1167.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
+   <Text fx:id="logoutText" layoutX="1091.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="110.936767578125">
+      <font>
+         <Font name="Tw Cen MT Bold" size="18.0" />
+      </font></Text>
    <ImageView fitHeight="372.0" fitWidth="584.0" layoutX="453.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../../Images/5.png" />
    </ImageView>
