@@ -2,6 +2,7 @@ package Services;
 
 import Human.Manager;
 import Restaurant.MenuItem;
+import Restaurant.Table;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -130,6 +131,17 @@ public class Order {
         }
         return String.valueOf(s);
     }
+
+    public static String printOrder(Table t) {
+        StringBuilder s = new StringBuilder();
+        s.append("Order -> table #").append(t.getTableNum()).append("\nMeals : ");
+        for (int i = 0; i < t.getOrder().meals.size(); i++) {
+            s.append(t.getOrder().meals.get(i).print());
+        }
+        s.append("\nTotal Cost: ").append(t.getOrder().getCost()).append("\n************************************************************\n");
+        return String.valueOf(s);
+    }
+
     public String print() {
         StringBuilder s = new StringBuilder();
         s.append("Order").append("\nMeals : ");

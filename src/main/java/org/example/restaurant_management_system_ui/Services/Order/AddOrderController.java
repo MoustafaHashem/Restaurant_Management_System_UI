@@ -30,6 +30,7 @@ public class AddOrderController   {
     public Button AddItem;
     public TextFlow printOrderData;
     public Text returnText;
+    public ImageView returnImage1;
 
     public void press(MouseEvent event) throws IOException {
         printOrderData.setVisible(false);
@@ -81,6 +82,7 @@ public class AddOrderController   {
     }
     public void pressOrder(ActionEvent actionEvent) {
         invalidInput.setVisible(false);
+        printOrderData.getChildren().clear();
         for ( i = 0; i < Manager.getTables().size(); i++) {
             int y = tableNo.getText().compareTo((String.valueOf(Manager.getTables().get(i).getTableNum())));
             if(y==0){
@@ -92,20 +94,12 @@ public class AddOrderController   {
             Manager.getTables().get(i).addOrder(order);
             invalidInput.setVisible(true);
             invalidInput.setText("Your order will be ready soon");
+            printOrderData.setVisible(true);
+            printOrderData.getChildren().add(new Text(Order.printOrder(Manager.getTables().get(i))));
         }
         else{
             invalidInput.setVisible(true);
             invalidInput.setText("Table number doesn't exist,please enter another number");
         }
-        y = true;
     }
-    boolean y = true;
-    public void showOrderData(MouseEvent mouseEvent) {
-        if(y){
-            y = false;
-            printOrderData.setVisible(true);
-            printOrderData.getChildren().add(new Text(Order.printOrders()));
-        }
-    }
-
 }
