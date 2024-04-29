@@ -69,7 +69,7 @@ public class AddOrderController   {
         }
         if(t){
             invalidInput.setVisible(true);
-            invalidInput.setText("Item added.");
+            invalidInput.setText("Item added");
             MenuItem mi = Services.Order.addMeal(Integer.parseInt(itemID.getText()));
             order.getMeals().add(mi);
             order.setCost(order.getCost() + mi.getPrice());
@@ -96,6 +96,7 @@ public class AddOrderController   {
             invalidInput.setText("Your order will be ready soon");
             printOrderData.setVisible(true);
             printOrderData.getChildren().add(new Text(Order.printOrder(Manager.getTables().get(i))));
+            order = new Order();
         }
         else{
             invalidInput.setVisible(true);
