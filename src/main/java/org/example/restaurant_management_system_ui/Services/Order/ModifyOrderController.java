@@ -94,7 +94,7 @@ public class ModifyOrderController {
             Manager.getTables().get(i).getOrder().getMeals().add(mi);
             Manager.getTables().get(i).getOrder().setCost(Manager.getTables().get(i).getOrder().getCost() +  mi.getPrice());
             printOrderData.getChildren().clear();
-            printOrderData.getChildren().add(new Text(Order.printOrders()));
+            printOrderData.getChildren().add(new Text(Order.printOrder(Manager.getTables().get(i))));
             invalidInput.setText("Your order has been modified");
         }
         else{
@@ -132,7 +132,7 @@ public class ModifyOrderController {
             Manager.getTables().get(i).getOrder().setCost(Manager.getTables().get(i).getOrder().getCost() - order.getMeals().get(j).getPrice());
             Manager.getTables().get(i).getOrder().getMeals().remove(j);
             printOrderData.getChildren().clear();
-            printOrderData.getChildren().add(new Text(Order.printOrders()));
+            printOrderData.getChildren().add(new Text(Order.printOrder(Manager.getTables().get(i))));
             invalidInput.setText("Your order has been modified");
         }
         else{
