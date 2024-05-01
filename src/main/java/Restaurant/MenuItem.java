@@ -1,6 +1,11 @@
 package Restaurant;
 
-public class MenuItem {
+import java.util.Arrays;
+import java.util.Collections;
+
+import static Restaurant.Restaurant.menuItems;
+
+public class MenuItem implements Comparable {
     private final String title;
     private final int ID;
     private static int count;
@@ -25,7 +30,36 @@ public class MenuItem {
         this.price = price;
         this.menuSection = menuSection;
     }
-    public void updatePrice(double p){
+
+    public static void sortMenuItems() {
+        MenuItem[] arrMenuItems = new MenuItem[menuItems.size()];
+        menuItems.toArray(arrMenuItems);
+        Arrays.sort(arrMenuItems);
+        menuItems.clear();
+        menuItems.addAll(Arrays.asList(arrMenuItems));
+    }
+
+    @Override
+    public int compareTo(Object m) {
+        int returnValue = 0;
+//        if (0) {
+            if (this.getTitle().compareTo(((MenuItem) m).getTitle()) > 0) {
+                returnValue = 1;
+            } else if (this.getTitle().compareTo(((MenuItem) m).getTitle()) < 0) {
+                returnValue = -1;
+            }
+//        }
+//        else {
+//            if (this.getPrice() > ((MenuItem) m).getPrice()) {
+//                returnValue = 1;
+//            } else if (this.getPrice() < ((MenuItem) m).getPrice()) {
+//                returnValue = -1;
+//            }
+//        }
+        return returnValue;
+    }
+
+    public void updatePrice(double p) {
         setPrice(p);
     }
 
@@ -36,8 +70,9 @@ public class MenuItem {
     public int getID() {
         return ID;
     }
+
     public String print() {
-        return (menuSection.print()+
-         "Title of menu item : " + title + " , ID : " + ID + " , Price : " + price + '\n');
+        return (menuSection.print() +
+                "Title of menu item : " + title + " , ID : " + ID + " , Price : " + price + '\n');
     }
 }

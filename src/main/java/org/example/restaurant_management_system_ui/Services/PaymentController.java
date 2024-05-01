@@ -80,7 +80,5 @@ public class PaymentController {
         } catch (Exception e) {
             addErrorMessage.setVisible(true);
         }
-
-
     }
 }

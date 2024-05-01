@@ -13,7 +13,6 @@ public class Menu {
 
     public Menu() {
     }
-
     public String print() {
         return ( "Title of menu : " + title + '\n');
     }

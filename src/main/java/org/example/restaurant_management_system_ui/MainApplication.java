@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class MainApplication extends Application {
     @Override
-    public void start(Stage stage)  throws IOException  {
+    public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("start.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setScene(startScene);
@@ -39,23 +39,25 @@ public class MainApplication extends Application {
         //media.setCycleCount(MediaPlayer.INDEFINITE);
         //media.setVolume(.1);
         //media.play();
-        Manager owner=new Manager("Moustafa  ",20,"el-obour city","01097963663",10000,"high");
+        Manager owner = new Manager("Moustafa  ", 20, "el-obour city", "01097963663", 10000, "high");
         owner.addEmployee(owner);
-        Staff kareem=new Staff("kareem ",20,"el-obour city","01097963663",10000,"high");
+        Staff kareem = new Staff("kareem ", 20, "el-obour city", "01097963663", 10000, "high");
         owner.addEmployee(kareem);
-        Staff mayar=new Staff("mayar ",20,"el-obour city","01097963663",10000,"high");
+        Staff mayar = new Staff("mayar ", 20, "el-obour city", "01097963663", 10000, "high");
         owner.addEmployee(mayar);
         owner.addMenu(new Menu("main menu"));
-        owner.addMenuSection(new MenuSection(Manager.getMenus().get(0),"Grilled"));
-        owner.addMenuSection(new MenuSection(Manager.getMenus().get(0),"Fried" ));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0),"chicken",100));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0),"meat",150));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0),"kebab",300));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"fried chicken",150));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"fish",75));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1),"meat",200));
-        for (int i=0;i<5;i++) {
-            owner.addTable(new Table());}
+        owner.addMenuSection(new MenuSection(Manager.getMenus().get(0), "Grilled"));
+        owner.addMenuSection(new MenuSection(Manager.getMenus().get(0), "Fried"));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "chicken", 100));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "meat", 150));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "kebab", 300));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1), "fried chicken", 150));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1), "fish", 75));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1), "meat", 200));
+        MenuItem.sortMenuItems();
+        for (int i = 0; i < 5; i++) {
+            owner.addTable(new Table());
+        }
         for (Table t : Manager.getTables()) {
             if (!t.isReserved()) {
                 Manager.getAvailableTables().add(t);
