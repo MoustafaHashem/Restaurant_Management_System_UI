@@ -54,7 +54,7 @@ public class EmployeeController {
         String oldPassword = Manager.getEmployees().get(ii).getPassword();
         Manager.getEmployees().get(ii).setPassword(newPassword.getText());
         String newPassword1 = Manager.getEmployees().get(ii).getPassword();
-        if (oldPassword.compareTo(newPassword1)==0) {
+        if (oldPassword.compareTo(newPassword1) == 0) {
             addErrorMessage.setText("Invalid input. please try again.");
             addErrorMessage.setVisible(true);
         } else {
@@ -96,18 +96,19 @@ public class EmployeeController {
         reservationData.getChildren().clear();
         addErrorMessage.setVisible(false);
         try {
-        String name = reservationName.getText();
-        int size = Manager.getTables().size();
-        int i;
-        for (i = 0; i < size; i++) {
-            if (name.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName()) == 0) break;
-        }
-        if (i == size) addErrorMessage.setVisible(true);
-        else reservationData.getChildren().add(new Text(("Reservation Name: "+Manager.getTables().get(i).getCustomer().getName()
-                + "\nReservation ID: " + Manager.getTables().get(i).getReservation().getReservationId()
-                + "\nNumber of people: " + Manager.getTables().get(i).getReservation().getNumberOfPeople()
-                + "\nReservation date: " + Manager.getTables().get(i).getReservation().getDate()
-                +"\n************************************************************\n")));
+            String name = reservationName.getText();
+            int size = Manager.getTables().size();
+            int i;
+            for (i = 0; i < size; i++) {
+                if (name.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName()) == 0) break;
+            }
+            if (i == size) addErrorMessage.setVisible(true);
+            else
+                reservationData.getChildren().add(new Text(("Reservation Name: " + Manager.getTables().get(i).getCustomer().getName()
+                        + "\nReservation ID: " + Manager.getTables().get(i).getReservation().getReservationId()
+                        + "\nNumber of people: " + Manager.getTables().get(i).getReservation().getNumberOfPeople()
+                        + "\nReservation date: " + Manager.getTables().get(i).getReservation().getDate()
+                        + "\n************************************************************\n")));
         } catch (Exception e) {
             addErrorMessage.setVisible(true);
         }
@@ -121,11 +122,11 @@ public class EmployeeController {
         int size = Manager.getTables().size();
         for (i = 0; i < size; i++) {
             if (Manager.getTables().get(i).isReserved()) {
-                accumulator += "Reservation Name: "+Manager.getTables().get(i).getCustomer().getName()
+                accumulator += "Reservation Name: " + Manager.getTables().get(i).getCustomer().getName()
                         + "\nReservation ID: " + Manager.getTables().get(i).getReservation().getReservationId()
                         + "\nNumber of people: " + Manager.getTables().get(i).getReservation().getNumberOfPeople()
                         + "\nReservation date: " + Manager.getTables().get(i).getReservation().getDate()
-                        +"\n************************************************************\n";
+                        + "\n************************************************************\n";
             }
         }
         reservationData.getChildren().add(new Text(accumulator));
@@ -160,6 +161,7 @@ public class EmployeeController {
     }
 
     boolean x = true;
+
     public void showDataEntered() {
         if (x) {
             profileDateText.getChildren().add(new Text(Manager.getEmployees().get(ii).print()));

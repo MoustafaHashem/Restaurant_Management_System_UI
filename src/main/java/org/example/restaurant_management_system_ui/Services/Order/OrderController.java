@@ -21,28 +21,32 @@ public class OrderController {
     public Text returnText;
     public AnchorPane changeorder;
 
-    public void hide1(MouseEvent event) { returnText.setText("");}
+    public void hide1(MouseEvent event) {
+        returnText.setText("");
+    }
 
-    public void show1(MouseEvent event) { returnText.setText("Return"); }
+    public void show1(MouseEvent event) {
+        returnText.setText("Return");
+    }
 
     public void press(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
     public void makeOrderPress(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("addOrder.fxml"));
         Scene addOrderScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(addOrderScene);
     }
 
     public void changeOrderPress(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("modifyOrder.fxml"));
         Scene modifyOrderScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(modifyOrderScene);
     }
 }

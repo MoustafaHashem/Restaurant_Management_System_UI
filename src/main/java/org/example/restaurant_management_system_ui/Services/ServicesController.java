@@ -20,39 +20,39 @@ public class ServicesController {
     public ImageView returnImage;
     public Text returnText;
 
-    public void reservationPress( ) throws IOException {
+    public void reservationPress() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
-    public void orderPress( ) throws IOException {
+    public void orderPress() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("order.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
-    public void paymentPress( ) throws IOException {
+    public void paymentPress() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("payment.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
-    public void press( ) throws IOException {
+    public void press() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("start.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
-    public void show1( ) {
+    public void show1() {
         returnText.setText("Return");
     }
 
-    public void hide1( ) {
+    public void hide1() {
         returnText.setText("");
     }
 }

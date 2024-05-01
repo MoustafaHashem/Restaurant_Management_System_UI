@@ -42,18 +42,18 @@ public class PaymentController {
     public void press(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
         Scene sceneServices = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnImage.getScene().getWindow();
+        Stage mainStage = (Stage) returnImage.getScene().getWindow();
         mainStage.setScene(sceneServices);
     }
 
-    public void buttonPress( ) {
+    public void buttonPress() {
         text3.setVisible(false);
         text1.setVisible(false);
         text2.setVisible(false);
         addErrorMessage.setVisible(false);
         reservationnametext.setVisible(false);
         costText.setVisible(false);
-        double cost=0;
+        double cost = 0;
         try {
             int tableNum = Integer.parseInt(tableNumber.getText());
             int i;
@@ -65,10 +65,9 @@ public class PaymentController {
             }
             if (i == size) {
                 addErrorMessage.setVisible(true);
-            }
-            else {
-                String s=Manager.getTables().get(i).getCustomer().getName();
-                cost = Bill.payment(tableNum,promocode.getText());
+            } else {
+                String s = Manager.getTables().get(i).getCustomer().getName();
+                cost = Bill.payment(tableNum, promocode.getText());
                 reservationnametext.setText(s);
                 costText.setText(Double.toString(cost));
                 reservationnametext.setVisible(true);

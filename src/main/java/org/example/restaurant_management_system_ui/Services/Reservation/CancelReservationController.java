@@ -23,50 +23,46 @@ public class CancelReservationController {
     public ImageView returnImage;
     public Text returnText;
 
-    public void press( ) throws IOException {
+    public void press() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
-    public void show1( ) {
+    public void show1() {
         returnText.setText("Return");
     }
 
-    public void hide1( ) {
+    public void hide1() {
         returnText.setText("");
     }
 
 
-    public void clickCancelReservation( ) {
-        if(Objects.equals(cancelReservationNameInput.getText(), "")){
+    public void clickCancelReservation() {
+        if (Objects.equals(cancelReservationNameInput.getText(), "")) {
             showMessageToUser.setText("You must fill the text field with the reservation name in order to cancel your reservation");
             showMessageToUser.setVisible(true);
-        }
-        else if(!isString(cancelReservationNameInput.getText())){
+        } else if (!isString(cancelReservationNameInput.getText())) {
             showMessageToUser.setText("Invalid input type: input must be a name (String)");
             showMessageToUser.setVisible(true);
         }
-            String reservationName= cancelReservationNameInput.getText();
-            int i;
-            for(i=0; i< Manager.getTables().size(); i++)
-            {
+        String reservationName = cancelReservationNameInput.getText();
+        int i;
+        for (i = 0; i < Manager.getTables().size(); i++) {
 
 
-                if(reservationName.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName())==0)
-                    break;
-            }
-            if(i==Reservation.getReservations().size())
-            {
+            if (reservationName.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName()) == 0)
+                break;
+        }
+        if (i == Reservation.getReservations().size()) {
             showMessageToUser.setText("No such name  matches an existing reservation");
             showMessageToUser.setVisible(true);
-            }
-            else {
-                Reservation.cancelReservation(Manager.getTables().get(i).getTableNum());
-                showMessageToUser.setText("Reservation cancelled :(");
-                showMessageToUser.setVisible(true);
-            }
+        } else {
+            Reservation.cancelReservation(Manager.getTables().get(i).getTableNum());
+            showMessageToUser.setText("Reservation cancelled :(");
+            showMessageToUser.setVisible(true);
+        }
     }
 
 }

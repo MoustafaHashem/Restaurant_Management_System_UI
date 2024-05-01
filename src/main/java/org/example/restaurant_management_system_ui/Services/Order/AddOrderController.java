@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AddOrderController   {
+public class AddOrderController {
 
     public TextFlow printMenuItemData;
     public Text invalidInput;
@@ -36,69 +36,76 @@ public class AddOrderController   {
         printOrderData.setVisible(false);
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("order.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
-    public void show1(MouseEvent event) {returnText.setText("Return");}
-
-    public void hide1(MouseEvent event) {returnText.setText("");}
-
-
-    boolean x=true;
-    public void showData( ) {
-        if(x){
-            x=false;
-            for(int j=0;j< Manager.getMenuItems().size();j++)
-                printMenuItemData.getChildren().add(new Text(Manager.getMenuItems().get(j).print()));}
+    public void show1(MouseEvent event) {
+        returnText.setText("Return");
     }
+
+    public void hide1(MouseEvent event) {
+        returnText.setText("");
+    }
+
+
+    boolean x = true;
+
+    public void showData() {
+        if (x) {
+            x = false;
+            for (int j = 0; j < Manager.getMenuItems().size(); j++)
+                printMenuItemData.getChildren().add(new Text(Manager.getMenuItems().get(j).print()));
+        }
+    }
+
     Order order = new Order();
     boolean t = false;
     boolean t1 = false;
     int i;
+
     public void pressAddItem(ActionEvent actionEvent) {
         invalidInput.setVisible(false);
         int x = Manager.getMenuItems().size();
         t = false;
-        for (int j = 0; j <x; j++) {
+        for (int j = 0; j < x; j++) {
             int z = itemID.getText().compareTo(String.valueOf(Manager.getMenuItems().get(j).getID()));
-            if(z==0){
-                t=true;
+            if (z == 0) {
+                t = true;
                 break;
             }
         }
-        if(t){
+        if (t) {
             invalidInput.setVisible(true);
             invalidInput.setText("Item added");
             MenuItem mi = Services.Order.addMeal(Integer.parseInt(itemID.getText()));
             order.getMeals().add(mi);
             order.setCost(order.getCost() + mi.getPrice());
-        }
-        else{
+        } else {
             invalidInput.setVisible(true);
             invalidInput.setText("ID number doesn't exist,please enter another number");
         }
         //invalidInput.setVisible(false);
     }
+
     public void pressOrder(ActionEvent actionEvent) {
         invalidInput.setVisible(false);
         printOrderData.getChildren().clear();
-        for ( i = 0; i < Manager.getTables().size(); i++) {
+        for (i = 0; i < Manager.getTables().size(); i++) {
             int y = tableNo.getText().compareTo((String.valueOf(Manager.getTables().get(i).getTableNum())));
-            if(y==0){
-                t1=true;
+            if (y == 0) {
+                t1 = true;
                 break;
             }
         }
-        if(t1 && t) {
+        if (t1 && t) {
             Manager.getTables().get(i).addOrder(order);
             invalidInput.setVisible(true);
             invalidInput.setText("Your order will be ready soon");
             printOrderData.setVisible(true);
             printOrderData.getChildren().add(new Text(Order.printOrder(Manager.getTables().get(i))));
             order = new Order();
-        }
-        else{
+        } else {
             invalidInput.setVisible(true);
             invalidInput.setText("Table number doesn't exist,please enter another number");
         }

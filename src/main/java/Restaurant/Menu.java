@@ -1,7 +1,7 @@
 package Restaurant;
 
 public class Menu {
-    private  String title;
+    private String title;
 
     public String getTitle() {
         return title;
@@ -13,7 +13,8 @@ public class Menu {
 
     public Menu() {
     }
+
     public String print() {
-        return ( "Title of menu : " + title + '\n');
+        return ("Title of menu : " + title + '\n');
     }
 }

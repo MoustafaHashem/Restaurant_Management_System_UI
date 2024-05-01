@@ -43,11 +43,11 @@ public class MenuItem implements Comparable {
     public int compareTo(Object m) {
         int returnValue = 0;
 //        if (0) {
-            if (this.getTitle().compareTo(((MenuItem) m).getTitle()) > 0) {
-                returnValue = 1;
-            } else if (this.getTitle().compareTo(((MenuItem) m).getTitle()) < 0) {
-                returnValue = -1;
-            }
+        if (this.getTitle().compareTo(((MenuItem) m).getTitle()) > 0) {
+            returnValue = 1;
+        } else if (this.getTitle().compareTo(((MenuItem) m).getTitle()) < 0) {
+            returnValue = -1;
+        }
 //        }
 //        else {
 //            if (this.getPrice() > ((MenuItem) m).getPrice()) {

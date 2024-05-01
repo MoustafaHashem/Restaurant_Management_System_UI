@@ -9,34 +9,37 @@ public class Manager extends Staff implements Restaurant {
         super();
     }
 
-    public Manager(String name, int age, String address, String phone, int salary, String rank ) {
+    public Manager(String name, int age, String address, String phone, int salary, String rank) {
         super(name, age, address, phone, salary, rank);
     }
-    @Override
-    public void addMenu(Menu m){getMenus().add(m);}
 
     @Override
-    public void addMenuSection(MenuSection ms){
+    public void addMenu(Menu m) {
+        getMenus().add(m);
+    }
+
+    @Override
+    public void addMenuSection(MenuSection ms) {
         getMenuSections().add(ms);
     }
 
     @Override
-    public void addMenuItem(MenuItem mi){
+    public void addMenuItem(MenuItem mi) {
         getMenuItems().add(mi);
     }
 
     @Override
-    public void addTable(Table t){
+    public void addTable(Table t) {
         getTables().add(t);
     }
 
     @Override
-    public void addEmployee(Staff e){
+    public void addEmployee(Staff e) {
         getEmployees().add(e);
     }
 
     @Override
-    public void removeEmployee(String id){
+    public void removeEmployee(String id) {
         int size = getEmployees().size();
         int i;
         for (i = 0; i < size; i++) {
@@ -50,6 +53,7 @@ public class Manager extends Staff implements Restaurant {
     public static ArrayList<Staff> getEmployees() {
         return employees;
     }
+
     public static ArrayList<Table> getTables() {
         return tables;
     }
@@ -57,9 +61,11 @@ public class Manager extends Staff implements Restaurant {
     public static ArrayList<Menu> getMenus() {
         return menus;
     }
+
     public static ArrayList<MenuSection> getMenuSections() {
         return menuSections;
     }
+
     public static ArrayList<MenuItem> getMenuItems() {
         return menuItems;
     }

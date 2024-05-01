@@ -9,12 +9,12 @@ import java.util.ArrayList;
 
 public class Table {
 
-    private  int tableNum;
+    private int tableNum;
     private static int count = 1;
     private boolean isReserved;
     protected Order order;
     private Reservation reservation;
-    private Customer customer=new Customer();
+    private Customer customer = new Customer();
 
     public static void setCount(int count) {
         Table.count = count;
@@ -41,31 +41,34 @@ public class Table {
         this.customer = customer;
     }
 
-    public Table(){
+    public Table() {
         this.tableNum = count++;
         this.isReserved = false;
         this.reservation = new Reservation();
         this.order = new Order();
     }
-    public Table(int tableNum,boolean isReserved,Reservation reservation){
+
+    public Table(int tableNum, boolean isReserved, Reservation reservation) {
         this.tableNum = count++;
         this.isReserved = false;
         this.reservation = new Reservation();
     }
 
-        public void setTable(Table table) {
-            for (int i = 0; i < Manager.getTables().size(); i++) {
-                if (table.getTableNum() == this.getTableNum()) {
-                    this.isReserved = false;
-                    this.reservation = table.getReservation();
-                    this.customer = table.getCustomer();
-                }
+    public void setTable(Table table) {
+        for (int i = 0; i < Manager.getTables().size(); i++) {
+            if (table.getTableNum() == this.getTableNum()) {
+                this.isReserved = false;
+                this.reservation = table.getReservation();
+                this.customer = table.getCustomer();
             }
         }
+    }
+
     public int getTableNum() {
         return tableNum;
     }
-    public boolean isReserved(){
+
+    public boolean isReserved() {
         return isReserved;
     }
 
@@ -76,25 +79,28 @@ public class Table {
     public Reservation getReservation() {
         return reservation;
     }
+
     public void removeReservation() {
-          this.reservation=null;
-          this.isReserved=false;
-          this.order=null;
-          this.customer=null;
+        this.reservation = null;
+        this.isReserved = false;
+        this.order = null;
+        this.customer = null;
     }
 
-    public void addReservation (Reservation reservation){
+    public void addReservation(Reservation reservation) {
         this.reservation = reservation;
         isReserved = true;
     }
-    public void addOrder (Order order){
+
+    public void addOrder(Order order) {
         this.order = order;
     }
+
     public String print() {
-        return ( "Table number : " + tableNum + " , Is Reserved ? " + isReserved + '\n');
+        return ("Table number : " + tableNum + " , Is Reserved ? " + isReserved + '\n');
     }
 
     public void setIsReserved(boolean b) {
-        this.isReserved=b;
+        this.isReserved = b;
     }
 }

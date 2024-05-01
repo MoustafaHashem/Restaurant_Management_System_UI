@@ -30,7 +30,7 @@ public class ChangeReservationController {
     public void press(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
@@ -45,6 +45,7 @@ public class ChangeReservationController {
     public LocalDate getDateInputFromDatePicker() {
         return dateInput.getValue();
     }
+
     public static boolean isInteger(String str) {
         if (str == null) {
             return false;
@@ -65,7 +66,8 @@ public class ChangeReservationController {
         }
         return true;
     }
-    public static boolean isString(String str){
+
+    public static boolean isString(String str) {
         if (str == null) {
             return false;
         }
@@ -73,7 +75,7 @@ public class ChangeReservationController {
         if (length == 0) {
             return false;
         }
-        for (int i=0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             char c = str.charAt(i);
             if (!((c <= 90 && c >= 65) || (c <= 122 && c >= 97))) {
                 return false;
@@ -81,12 +83,12 @@ public class ChangeReservationController {
         }
         return true;
     }
-    public void presschangeButton( ) {
-        if(Objects.equals(reservationNameInput.getText(), "") || Objects.equals(numberOfPeopleInput.getText(), "") || getDateInputFromDatePicker()==null){
+
+    public void presschangeButton() {
+        if (Objects.equals(reservationNameInput.getText(), "") || Objects.equals(numberOfPeopleInput.getText(), "") || getDateInputFromDatePicker() == null) {
             showMessageToUser.setText("All fields must be filled first in order to change a reservation");
             showMessageToUser.setVisible(true);
-        }
-        else {
+        } else {
             if (!isInteger(numberOfPeopleInput.getText())) {
                 showMessageToUser.setText("Invalid input type: input must be a positive integer");
                 showMessageToUser.setVisible(true);
@@ -96,32 +98,27 @@ public class ChangeReservationController {
                 showMessageToUser.setVisible(true);
             }
         }
-            int i;
+        int i;
         String reservationName = reservationNameInput.getText();
-            for(i=0; i< Manager.getTables().size(); i++)
-            {
-                if(reservationName.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName())==0)
-                    break;
-            }
-            int RID=Manager.getTables().get(i).getReservation().getReservationId();
-            if(i==Manager.getTables().size())
-            {
-                showMessageToUser.setText("No such id matches an existing reservation");
+        for (i = 0; i < Manager.getTables().size(); i++) {
+            if (reservationName.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName()) == 0)
+                break;
+        }
+        int RID = Manager.getTables().get(i).getReservation().getReservationId();
+        if (i == Manager.getTables().size()) {
+            showMessageToUser.setText("No such id matches an existing reservation");
+            showMessageToUser.setVisible(true);
+        } else {
+            if ((getDateInputFromDatePicker().compareTo(LocalDate.now()) < 0)) {
+                showMessageToUser.setText("Date desired to change the reservation to must be after current date (not a passed date)");
                 showMessageToUser.setVisible(true);
-            }
-            else{
-                if((getDateInputFromDatePicker().compareTo(LocalDate.now())<0))
+            } else {
                 {
-                    showMessageToUser.setText("Date desired to change the reservation to must be after current date (not a passed date)");
+                    Reservation.changeReservation(RID, getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
+                    showMessageToUser.setText("Reservation changed successfully");
                     showMessageToUser.setVisible(true);
                 }
-                else{
-                    {
-                        Reservation.changeReservation(RID, getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
-                        showMessageToUser.setText("Reservation changed successfully");
-                        showMessageToUser.setVisible(true);
-                    }
-                }
+            }
         }
     }
 }

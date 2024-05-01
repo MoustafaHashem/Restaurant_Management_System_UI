@@ -11,16 +11,17 @@ import java.util.Scanner;
 
 
 public class Reservation {
-    private  int reservationId;
-    private static int count=0;
+    private int reservationId;
+    private static int count = 0;
     private LocalDate date;
     private int numberOfPeople;
-    private  static final ArrayList<Reservation> reservations=new ArrayList<>();
+    private static final ArrayList<Reservation> reservations = new ArrayList<>();
+
     public Reservation() {
     }
 
     public Reservation(LocalDate date, int numberOfPeople) {
-        this.reservationId=++count;
+        this.reservationId = ++count;
         this.date = date;
         this.numberOfPeople = numberOfPeople;
     }
@@ -52,17 +53,22 @@ public class Reservation {
     public void setNumberOfPeople(int numberOfPeople) {
         this.numberOfPeople = numberOfPeople;
     }
-    public static void cancelReservation(int tableID){
+
+    public static void cancelReservation(int tableID) {
         int i;
-        for (i = 0; i < Manager.getTables().size(); i++) { if (Manager.getTables().get(i).getTableNum() == tableID){
-            break;}}
+        for (i = 0; i < Manager.getTables().size(); i++) {
+            if (Manager.getTables().get(i).getTableNum() == tableID) {
+                break;
+            }
+        }
         reservations.remove(Manager.getTables().get(i).getReservation());
-        Table t=new Table();
+        Table t = new Table();
         t.setTableNum(tableID);
-        Table.setCount(Table.getCount()-1);
-        Manager.getAvailableTables().add(tableID-1,t);
+        Table.setCount(Table.getCount() - 1);
+        Manager.getAvailableTables().add(tableID - 1, t);
     }
-    public  static void changeReservation(int id,LocalDate d,int n){
+
+    public static void changeReservation(int id, LocalDate d, int n) {
         int size = reservations.size();
         int i;
         for (i = 0; i < size; i++) {
@@ -73,7 +79,8 @@ public class Reservation {
         reservations.get(i).setDate(d);
 //        System.out.println("Number of people and date changed");
     }
-    public static int makeReservation(int tableToBeReserved,String name , int age,String address ,String phone,LocalDate date, int numberOfPeople){
+
+    public static int makeReservation(int tableToBeReserved, String name, int age, String address, String phone, LocalDate date, int numberOfPeople) {
 
         Reservation r;
 
@@ -85,15 +92,16 @@ public class Reservation {
             c.checkIn();
             Manager.getTables().get(tableToBeReserved - 1).setCustomer(c);
             int i;
-            for (i = 0; i < Manager.getTables().size(); i++) { if (Manager.getTables().get(i).getTableNum() == tableToBeReserved){
-                break;}}
+            for (i = 0; i < Manager.getTables().size(); i++) {
+                if (Manager.getTables().get(i).getTableNum() == tableToBeReserved) {
+                    break;
+                }
+            }
 
             Manager.getAvailableTables().remove(Manager.getTables().get(i));
 
             return 1;
-        }
-        else
-        {
+        } else {
             return -1;
         }
     }

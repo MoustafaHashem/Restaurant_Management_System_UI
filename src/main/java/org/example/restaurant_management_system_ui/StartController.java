@@ -22,14 +22,14 @@ public class StartController {
     public void click() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
         Scene sceneServices = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)start.getScene().getWindow();
+        Stage mainStage = (Stage) start.getScene().getWindow();
         mainStage.setScene(sceneServices);
     }
 
     public void clickStaff() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("staff.fxml"));
         Scene sceneStaff = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)start.getScene().getWindow();
+        Stage mainStage = (Stage) start.getScene().getWindow();
         mainStage.setScene(sceneStaff);
     }
 

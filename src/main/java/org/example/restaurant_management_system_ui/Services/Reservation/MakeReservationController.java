@@ -96,50 +96,46 @@ public class MakeReservationController {
         return dateInput.getValue();
     }
 
-public void pressAvailableTablesList() {
-        x=true;
+    public void pressAvailableTablesList() {
+        x = true;
 
         for (int i = 0; availableTablesList.getItems().size() > i; i++) {
             int finalI = i;
             availableTablesList.getItems().get(finalI).setOnAction(event -> availableTablesList.setText(availableTablesList.getItems().get(finalI).getText()));
         }
-}
+    }
 
-        public void submitReservationInput () throws IllegalArgumentException {
-            if (Objects.equals(nameInput.getText(), "") || Objects.equals(addressInput.getText(), "") || getDateInputFromDatePicker() == null || Objects.equals(phoneInput.getText(), "") || Objects.equals(ageInput.getText(), "") || Objects.equals(numberOfPeopleInput.getText(), "")) {
-                showMessageToUser.setText("All fields must be filled first in order to change a reservation");
-                showMessageToUser.setVisible(true);
-            }
-            else if (!isInteger(numberOfPeopleInput.getText())) {
-                showMessageToUser.setText("Invalid input type: input must be a positive integer");
-                showMessageToUser.setVisible(true);
-            }
-            else if(!isInteger(ageInput.getText())) {
-                showMessageToUser.setText("Invalid input type: input must be a positive integer");
-                showMessageToUser.setVisible(true);
-            }
-            else if(!isString(nameInput.getText())) {
-                showMessageToUser.setText("Invalid input type: input must be a name (String)");showMessageToUser.setVisible(true);
-            }
-            else if(!isInteger(phoneInput.getText())) {
-                showMessageToUser.setText("Invalid input type: input must be a phone number (positive integers)");
-                showMessageToUser.setVisible(true);
-            }
-            else  {
-                x = true;
-                try {
-                    int TN = Integer.parseInt(String.valueOf(availableTablesList.getText().charAt(6)));
-                    if (Reservation.makeReservation(TN, nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
-                        showMessageToUser.setText("No available tables at the moment to make a reservation");
-                        showMessageToUser.setVisible(true);
-                    }
-                    showMessageToUser.setText("Reservation made successfully ;)");
-                    showMessageToUser.setVisible(true);
-                    availableTablesList.setText("availableTablesList");
-                } catch (IllegalArgumentException ex) {
-                    showMessageToUser.setText("Invalid input type: please re-enter data");
+    public void submitReservationInput() throws IllegalArgumentException {
+        if (Objects.equals(nameInput.getText(), "") || Objects.equals(addressInput.getText(), "") || getDateInputFromDatePicker() == null || Objects.equals(phoneInput.getText(), "") || Objects.equals(ageInput.getText(), "") || Objects.equals(numberOfPeopleInput.getText(), "")) {
+            showMessageToUser.setText("All fields must be filled first in order to change a reservation");
+            showMessageToUser.setVisible(true);
+        } else if (!isInteger(numberOfPeopleInput.getText())) {
+            showMessageToUser.setText("Invalid input type: input must be a positive integer");
+            showMessageToUser.setVisible(true);
+        } else if (!isInteger(ageInput.getText())) {
+            showMessageToUser.setText("Invalid input type: input must be a positive integer");
+            showMessageToUser.setVisible(true);
+        } else if (!isString(nameInput.getText())) {
+            showMessageToUser.setText("Invalid input type: input must be a name (String)");
+            showMessageToUser.setVisible(true);
+        } else if (!isInteger(phoneInput.getText())) {
+            showMessageToUser.setText("Invalid input type: input must be a phone number (positive integers)");
+            showMessageToUser.setVisible(true);
+        } else {
+            x = true;
+            try {
+                int TN = Integer.parseInt(String.valueOf(availableTablesList.getText().charAt(6)));
+                if (Reservation.makeReservation(TN, nameInput.getText(), Integer.parseInt(ageInput.getText()), addressInput.getText(), phoneInput.getText(), getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText())) == -1) {
+                    showMessageToUser.setText("No available tables at the moment to make a reservation");
                     showMessageToUser.setVisible(true);
                 }
+                showMessageToUser.setText("Reservation made successfully ;)");
+                showMessageToUser.setVisible(true);
+                availableTablesList.setText("availableTablesList");
+            } catch (IllegalArgumentException ex) {
+                showMessageToUser.setText("Invalid input type: please re-enter data");
+                showMessageToUser.setVisible(true);
             }
         }
+    }
 }

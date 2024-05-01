@@ -18,7 +18,7 @@ import org.example.restaurant_management_system_ui.MainApplication;
 import java.io.IOException;
 
 
-public class StaffController   {
+public class StaffController {
     public ImageView returnImage;
     public Text returnText;
     public Text returnText2;
@@ -32,7 +32,7 @@ public class StaffController   {
     public void press() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("start.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnImage.getScene().getWindow();
+        Stage mainStage = (Stage) returnImage.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
@@ -44,19 +44,20 @@ public class StaffController   {
         returnText.setText("");
     }
 
-    public void show2( ) {
+    public void show2() {
         returnText2.setText("Staff Area");
     }
-    public void hide2( ) {
+
+    public void hide2() {
         returnText2.setText("");
     }
 
     public void showP() {
-        if(showPassword.isSelected()){
+        if (showPassword.isSelected()) {
             passwordShowed.setText(password.getText());
             password.setVisible(false);
             passwordShowed.setVisible(true);
-        }else {
+        } else {
             password.setText(passwordShowed.getText());
             passwordShowed.setVisible(false);
             password.setVisible(true);
@@ -64,31 +65,32 @@ public class StaffController   {
     }
 
     public static int ii;
+
     public void pressLogin() throws IOException {
-        int x=1;
-        for (ii=0;ii<Manager.getEmployees().size();ii++){
-            int y= email.getText().compareToIgnoreCase(Manager.getEmployees().get(ii).getEmail());
-            int z=password.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
-            int w=passwordShowed.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
-            if(y==0&&(z==0||w==0)){
-                x=0;
-                break;}
+        int x = 1;
+        for (ii = 0; ii < Manager.getEmployees().size(); ii++) {
+            int y = email.getText().compareToIgnoreCase(Manager.getEmployees().get(ii).getEmail());
+            int z = password.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
+            int w = passwordShowed.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
+            if (y == 0 && (z == 0 || w == 0)) {
+                x = 0;
+                break;
+            }
         }
-        if(x==0&&ii==0){
+        if (x == 0 && ii == 0) {
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manager.fxml"));
             Scene managerScene = new Scene(fxmlLoader.load(), 1280, 720);
-            Stage mainStage=(Stage)returnImage.getScene().getWindow();
+            Stage mainStage = (Stage) returnImage.getScene().getWindow();
             mainStage.setScene(managerScene);
         } else if (x == 0) {
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("employee.fxml"));
             Scene employeeScene = new Scene(fxmlLoader.load(), 1280, 720);
-            Stage mainStage=(Stage)returnImage.getScene().getWindow();
+            Stage mainStage = (Stage) returnImage.getScene().getWindow();
             mainStage.setScene(employeeScene);
-        }else {
+        } else {
             incorrect.setText("E-mail or password is incorrect\nTry again ");
         }
     }
-
 
 
     public void errorText1() {

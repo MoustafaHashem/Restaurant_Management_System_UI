@@ -29,28 +29,28 @@ public class ReservationController {
     public void press(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("start.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)returnText.getScene().getWindow();
+        Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
     public void goToMakeReservation(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("makeReservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)makeReservationButton.getScene().getWindow();
+        Stage mainStage = (Stage) makeReservationButton.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
     public void goToCancelReservation(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("cancelReservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)cancelReservationButton.getScene().getWindow();
+        Stage mainStage = (Stage) cancelReservationButton.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
     public void goToChangeReservation(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("changeReservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
-        Stage mainStage=(Stage)changeReservationButton.getScene().getWindow();
+        Stage mainStage = (Stage) changeReservationButton.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 }
