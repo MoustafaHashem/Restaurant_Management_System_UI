@@ -43,18 +43,18 @@ public class MenuItem implements Comparable {
     public int compareTo(Object m) {
         int returnValue = 0;
 //        if (0) {
-        if (this.getTitle().compareTo(((MenuItem) m).getTitle()) > 0) {
-            returnValue = 1;
-        } else if (this.getTitle().compareTo(((MenuItem) m).getTitle()) < 0) {
-            returnValue = -1;
-        }
-//        }
-//        else {
-//            if (this.getPrice() > ((MenuItem) m).getPrice()) {
+//            if (this.getTitle().compareTo(((MenuItem) m).getTitle()) > 0) {
 //                returnValue = 1;
-//            } else if (this.getPrice() < ((MenuItem) m).getPrice()) {
+//            } else if (this.getTitle().compareTo(((MenuItem) m).getTitle()) < 0) {
 //                returnValue = -1;
 //            }
+//        }
+//        else {
+            if (this.getPrice() > ((MenuItem) m).getPrice()) {
+                returnValue = 1;
+            } else if (this.getPrice() < ((MenuItem) m).getPrice()) {
+                returnValue = -1;
+            }
 //        }
         return returnValue;
     }
@@ -73,6 +73,6 @@ public class MenuItem implements Comparable {
 
     public String print() {
         return (menuSection.print() +
-                "Title of menu item : " + title + " , ID : " + ID + " , Price : " + price + '\n');
+                "Menu item: " + title + " , ID: " + ID + " , Price: " + price + '\n');
     }
 }

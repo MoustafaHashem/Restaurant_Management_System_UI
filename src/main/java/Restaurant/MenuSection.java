@@ -19,6 +19,6 @@ public class MenuSection {
 
     public String print() {
         return (menu.print() +
-                "Title of menu section : " + title + '\n');
+                "Menu section: " + title + '\n');
     }
 }

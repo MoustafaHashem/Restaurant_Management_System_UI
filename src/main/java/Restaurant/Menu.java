@@ -15,6 +15,6 @@ public class Menu {
     }
 
     public String print() {
-        return ("Title of menu : " + title + '\n');
+        return ("Menu: " + title + '\n');
     }
 }
