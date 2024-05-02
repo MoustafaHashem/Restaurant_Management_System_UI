@@ -27,7 +27,7 @@ public class ReservationController {
     }
 
     public void press(MouseEvent mouseEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("start.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(reservationScene);
