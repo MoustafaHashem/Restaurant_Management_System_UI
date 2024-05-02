@@ -50,12 +50,22 @@ public class AddOrderController {
 
 
     boolean x = true;
-
     public void showData() {
         if (x) {
             x = false;
-            for (int j = 0; j < Manager.getMenuItems().size(); j++)
-                printMenuItemData.getChildren().add(new Text(Manager.getMenuItems().get(j).print()));
+            for (int j = 0; j < Manager.getMenus().size(); j++) {
+                printMenuItemData.getChildren().add(new Text(Manager.getMenuItems().get(j).getMenuSection().getMenu().print()));
+                for (int k = 0; k < Manager.getMenuSections().size(); k++) {
+                    if (Manager.getMenus().get(j) == Manager.getMenuSections().get(k).getMenu()) {
+                        printMenuItemData.getChildren().add(new Text(Manager.getMenuSections().get(k).printSection()));
+                    }
+                    for (int l = 0; l < Manager.getMenuItems().size(); l++) {
+                        if (Manager.getMenuSections().get(k) == Manager.getMenuItems().get(l).getMenuSection()) {
+                            printMenuItemData.getChildren().add(new Text(Manager.getMenuItems().get(l).printItem()));
+                        }
+                    }
+                }
+            }
         }
     }
 

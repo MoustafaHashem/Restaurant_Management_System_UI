@@ -41,19 +41,20 @@ public class MainApplication extends Application {
         //media.play();
         Manager owner = new Manager("Moustafa  ", 20, "el-obour city", "01097963663", 10000, "high");
         owner.addEmployee(owner);
-        Staff kareem = new Staff("kareem ", 20, "el-obour city", "01097963663", 10000, "high");
+        Staff kareem = new Staff("kareem ", 20, "el-obour city", "01097963663", 1000000, "high");
         owner.addEmployee(kareem);
         Staff mayar = new Staff("mayar ", 20, "el-obour city", "01097963663", 10000, "high");
         owner.addEmployee(mayar);
-        owner.addMenu(new Menu("main menu"));
+        owner.addMenu(new Menu("Main menu"));
         owner.addMenuSection(new MenuSection(Manager.getMenus().get(0), "Grilled"));
         owner.addMenuSection(new MenuSection(Manager.getMenus().get(0), "Fried"));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "chicken", 100));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "meat", 150));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "kebab", 300));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1), "fried chicken", 150));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1), "fish", 75));
-        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1), "meat", 200));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "Chicken", 100));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "Meat", 150));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "Kebab", 300));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(0), "Salmon", 150));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1), "Fried chicken", 150));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1), "Fish", 75));
+        owner.addMenuItem(new MenuItem(Manager.getMenuSections().get(1), "Meat", 200));
         MenuItem.sortMenuItems();
         for (int i = 0; i < 5; i++) {
             owner.addTable(new Table());

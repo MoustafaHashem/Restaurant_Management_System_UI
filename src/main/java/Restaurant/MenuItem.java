@@ -63,7 +63,7 @@ public class MenuItem implements Comparable {
         setPrice(p);
     }
 
-    public MenuSection getMenuItem() {
+    public MenuSection getMenuSection() {
         return menuSection;
     }
 
@@ -71,8 +71,12 @@ public class MenuItem implements Comparable {
         return ID;
     }
 
+    public String printItem() {
+        return ("Item: " + title + " , ID: " + ID + " , Price: " + price + '\n');
+    }
+
     public String print() {
         return (menuSection.print() +
-                "Menu item: " + title + " , ID: " + ID + " , Price: " + price + '\n');
+                "Item: " + title + " , ID: " + ID + " , Price: " + price + '\n');
     }
 }

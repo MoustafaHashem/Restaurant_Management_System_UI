@@ -17,8 +17,12 @@ public class MenuSection {
         this.menu = menu;
     }
 
+    public String printSection() {
+        return ("Section: " + title + '\n');
+    }
+
     public String print() {
         return (menu.print() +
-                "Menu section: " + title + '\n');
+                "Section: " + title + '\n');
     }
 }

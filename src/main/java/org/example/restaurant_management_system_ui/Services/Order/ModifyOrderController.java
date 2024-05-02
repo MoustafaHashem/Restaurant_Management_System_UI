@@ -51,8 +51,19 @@ public class ModifyOrderController {
     public void showData() {
         if (x) {
             x = false;
-            for (int i = 0; i < Manager.getMenuItems().size(); i++)
-                printMenuList.getChildren().add(new Text(Manager.getMenuItems().get(i).print()));
+            for (int j = 0; j < Manager.getMenus().size(); j++) {
+                printMenuList.getChildren().add(new Text(Manager.getMenuItems().get(j).getMenuSection().getMenu().print()));
+                for (int k = 0; k < Manager.getMenuSections().size(); k++) {
+                    if (Manager.getMenus().get(j) == Manager.getMenuSections().get(k).getMenu()) {
+                        printMenuList.getChildren().add(new Text(Manager.getMenuSections().get(k).printSection()));
+                    }
+                    for (int l = 0; l < Manager.getMenuItems().size(); l++) {
+                        if (Manager.getMenuSections().get(k) == Manager.getMenuItems().get(l).getMenuSection()) {
+                            printMenuList.getChildren().add(new Text(Manager.getMenuItems().get(l).printItem()));
+                        }
+                    }
+                }
+            }
         }
     }
 
