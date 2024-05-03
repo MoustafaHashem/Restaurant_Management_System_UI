@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import static org.example.restaurant_management_system_ui.Staff.StaffController.ii;
 
@@ -55,7 +56,7 @@ public class EmployeeController {
         Manager.getEmployees().get(ii).setPassword(newPassword.getText());
         String newPassword1 = Manager.getEmployees().get(ii).getPassword();
         if (oldPassword.compareTo(newPassword1) == 0) {
-            addErrorMessage.setText("Invalid input. please try again.");
+            addErrorMessage.setText("The password entered is the same as the last, please enter a new password");
             addErrorMessage.setVisible(true);
         } else {
             Manager.getEmployees().get(ii).setPassword(newPassword.getText());
@@ -79,7 +80,14 @@ public class EmployeeController {
                     break;
                 }
             }
-            if (i == size) addErrorMessage.setVisible(true);
+            if (Objects.equals(tableNumber.getText(), "")){
+                addErrorMessage.setVisible(true);
+                addErrorMessage.setText("Please enter a table number");
+            }
+            else if (i == size) {
+                addErrorMessage.setVisible(true);
+                addErrorMessage.setText("Table doesn't exist, please enter another number");
+            }
             else orderData.getChildren().add(new Text((Manager.getTables().get(i).getOrder().print())));
         } catch (Exception e) {
             addErrorMessage.setVisible(true);
@@ -102,7 +110,14 @@ public class EmployeeController {
             for (i = 0; i < size; i++) {
                 if (name.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName()) == 0) break;
             }
-            if (i == size) addErrorMessage.setVisible(true);
+            if (Objects.equals(reservationName.getText(), "")) {
+                addErrorMessage.setVisible(true);
+                addErrorMessage.setText("Please enter reservation name");
+            }
+            else if (i == size){
+                addErrorMessage.setVisible(true);
+                addErrorMessage.setText("Reservation doesn't exist, please try again");
+            }
             else
                 reservationData.getChildren().add(new Text(("Reservation Name: " + Manager.getTables().get(i).getCustomer().getName()
                         + "\nReservation ID: " + Manager.getTables().get(i).getReservation().getReservationId()

@@ -72,9 +72,13 @@ public class StaffController {
             int y = email.getText().compareToIgnoreCase(Manager.getEmployees().get(ii).getEmail());
             int z = password.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
             int w = passwordShowed.getText().compareTo(Manager.getEmployees().get(ii).getPassword());
-            if (y == 0 && (z == 0 || w == 0)) {
+            if (y == 0 && z == 0 || w==0) {
                 x = 0;
                 break;
+            }else if(y == 0){
+                x=2;
+            }else if( z == 0 || w==0){
+                x=3;
             }
         }
         if (x == 0 && ii == 0) {
@@ -88,7 +92,14 @@ public class StaffController {
             Stage mainStage = (Stage) returnImage.getScene().getWindow();
             mainStage.setScene(employeeScene);
         } else {
-            incorrect.setText("E-mail or password is incorrect\nTry again ");
+            if(x==2){
+                incorrect.setText("Password is incorrect\nTry again ");
+            }else if (x==3){
+                incorrect.setText("E-mail is incorrect\nTry again ");
+            }
+            else{
+                incorrect.setText("E-mail and password are incorrect\nTry again ");
+            }
         }
     }
 

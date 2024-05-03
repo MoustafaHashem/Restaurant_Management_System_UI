@@ -25,7 +25,7 @@
       <Image url="@../../../Images/2.png" />
    </ImageView>
    <Text fx:id="logoutText" layoutX="1167.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="110.936767578125" />
-   <Text fx:id="addErrorMessage" layoutX="278.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" wrappingWidth="164.0" />
+   <Text fx:id="addErrorMessage" layoutX="278.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation doesn't exist, please try again" textAlignment="CENTER" visible="false" wrappingWidth="164.0" />
    <ScrollPane layoutX="855.0" layoutY="223.0">
       <content>
          <TextFlow fx:id="reservationData" prefHeight="251.0" prefWidth="369.0" />

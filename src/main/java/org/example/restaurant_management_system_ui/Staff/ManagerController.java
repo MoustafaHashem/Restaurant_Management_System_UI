@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Objects;
 
 import static Restaurant.MenuItem.sortMenuItems;
 
@@ -315,8 +317,12 @@ public class ManagerController {
             Manager.getMenuSections().add(new Restaurant.MenuSection(Manager.getMenus().get(x), titleMS.getText()));
             addErrorMessage.setText("Added done");
             addErrorMessage.setVisible(true);
-        } else {
-            addErrorMessage.setText("Invalid input. please try again.");
+        }else if(Objects.equals(titleMS.getText(), "")){
+            addErrorMessage.setText("All fields must be filled first in order to add a section");
+            addErrorMessage.setVisible(true);
+        }
+        else {
+            addErrorMessage.setText("Please select a menu.");
             addErrorMessage.setVisible(true);
         }
     }
@@ -327,6 +333,27 @@ public class ManagerController {
             int finalI = i;
             chooseMenuSection.getItems().get(i).setOnAction(event -> addErrorMessage.setText(Manager.getMenuSections().get(finalI).getTitle()));
         }
+    }
+
+    public static boolean isInteger(String str) {
+        if (str == null) {
+            return false;
+        }
+        int length = str.length();
+        if (length == 0) {
+            return false;
+        }
+        int i = 0;
+        if (str.charAt(0) == '-') {
+            return false;
+        }
+        for (; i < length; i++) {
+            char c = str.charAt(i);
+            if (c < '0' || c > '9') {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void addMIPress() {
@@ -343,28 +370,41 @@ public class ManagerController {
                 addErrorMessage.setVisible(true);
                 Restaurant.MenuItem.sortMenuItems(); //Need testing
             } catch (NumberFormatException e) {
-                addErrorMessage.setText("Invalid input. please try again.");
+                addErrorMessage.setText("Section not chosen, please try again");
                 addErrorMessage.setVisible(true);
             }
-        } else {
-            addErrorMessage.setText("Invalid input. please try again.");
+        } else if(Objects.equals(titleMi.getText(), "") || Objects.equals(price.getText(), "")){
+                addErrorMessage.setText("All fields must be filled first in order to add an item");
+                addErrorMessage.setVisible(true);
+        }
+        else {
+            addErrorMessage.setText("It is required to put a positive number in price ");
             addErrorMessage.setVisible(true);
         }
     }
 
     public void updatePress() {
         printMenuItemData.getChildren().clear();
-        try {
-            int i;
-            for (i = 0; i <= Manager.getMenuItems().size(); i++) {
-                int z = IDUpdatePrice.getText().compareTo(Integer.toString(Manager.getMenuItems().get(i).getID()));
-                if (z == 0) break;
+        if (Objects.equals(IDUpdatePrice.getText(), "") || Objects.equals(newPrice.getText(), "")) {
+            addErrorMessage1.setText("All fields must be filled first in order to update price");
+            addErrorMessage1.setVisible(true);
+        }else if(!isInteger(newPrice.getText())){
+            addErrorMessage1.setText("Invalid input type: input must be a positive integer");
+            addErrorMessage1.setVisible(true);
+        }else {
+            try {
+                int i;
+                for (i = 0; i <= Manager.getMenuItems().size(); i++) {
+                    int z = IDUpdatePrice.getText().compareTo(Integer.toString(Manager.getMenuItems().get(i).getID()));
+                    if (z == 0) break;
+                }
+                Manager.getMenuItems().get(i).setPrice(Integer.parseInt(newPrice.getText()));
+                addErrorMessage1.setText("Updated done");
+                addErrorMessage1.setVisible(true);
+            } catch (Exception e) {
+                addErrorMessage1.setVisible(true);
+                addErrorMessage1.setText("ID not available, please enter another ID");
             }
-            Manager.getMenuItems().get(i).setPrice(Integer.parseInt(newPrice.getText()));
-            addErrorMessage1.setText("Updated done");
-            addErrorMessage1.setVisible(true);
-        } catch (Exception e) {
-            addErrorMessage1.setVisible(true);
         }
     }
 
@@ -390,7 +430,7 @@ public class ManagerController {
         Manager.getEmployees().get(0).setPassword(newPassword.getText());
         String newPassword1 = Manager.getEmployees().get(0).getPassword();
         if (oldPassword.compareTo(newPassword1) == 0) {
-            addErrorMessage.setText("Invalid input. please try again.");
+            addErrorMessage.setText("The password entered is the same as the last, please enter a new password");
             addErrorMessage.setVisible(true);
         } else {
             Manager.getEmployees().get(0).setPassword(newPassword.getText());
