@@ -34,15 +34,14 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) {
-        MediaPlayer media=new MediaPlayer(new Media(new File("src/main/resources/Music/French_Accordion_Traditionell_Musette.mp3").toURI().toString()));
-        //M7D4 Y2FL EL O3'NYA >:(
+        //MediaPlayer media=new MediaPlayer(new Media(new File("src/main/resources/Music/French_Accordion_Traditionell_Musette.mp3").toURI().toString()));
         //MediaPlayer media=new MediaPlayer(new Media(new File("src/main/resources/Music/Le+festib+(mp3cut.net)_out.mp3").toURI().toString()));
-        media.setCycleCount(MediaPlayer.INDEFINITE);
-        media.setVolume(.1);
-        media.play();
-        Manager owner = new Manager("Batman  ", 20, "Gotham city", "01229082038", 5000000, "high");
+        //media.setCycleCount(MediaPlayer.INDEFINITE);
+        //media.setVolume(.1);
+        //media.play();
+        Manager owner = new Manager("Moustafa  ", 20, "el-obour city", "01097963663", 10000, "high");
         owner.addEmployee(owner);
-        Staff kareem = new Staff("kareem ", 20, "el-obour city", "01097963663", 5, "high");
+        Staff kareem = new Staff("kareem ", 20, "el-obour city", "01097963663", 1000000, "high");
         owner.addEmployee(kareem);
         Staff mayar = new Staff("mayar ", 20, "el-obour city", "01097963663", 10000, "high");
         owner.addEmployee(mayar);
