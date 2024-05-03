@@ -25,18 +25,20 @@ public class PaymentController {
     public TextField tableNumber;
     public AnchorPane anchor;
     public Text addErrorMessage;
-    public Text text3;
-    public Text reservationnametext;
+    //public Text text3;
+    //public Text reservationnametext;
     public ImageView returnImage;
     public Text returnText;
+    public ImageView returnImage1;
+    public Text returnText1;
 
 
     public void show1(MouseEvent event) {
-        returnText.setText("Return");
+        returnText1.setText("Return");
     }
 
     public void hide1(MouseEvent event) {
-        returnText.setText("");
+        returnText1.setText("");
     }
 
     public void press(MouseEvent mouseEvent) throws IOException {
@@ -47,11 +49,11 @@ public class PaymentController {
     }
 
     public void buttonPress() {
-        text3.setVisible(false);
+       // text3.setVisible(false);
         text1.setVisible(false);
         text2.setVisible(false);
         addErrorMessage.setVisible(false);
-        reservationnametext.setVisible(false);
+        //reservationnametext.setVisible(false);
         costText.setVisible(false);
         double cost = 0;
         try {
@@ -68,16 +70,23 @@ public class PaymentController {
             } else {
                 String s = Manager.getTables().get(i).getCustomer().getName();
                 cost = Bill.payment(tableNum, promocode.getText());
-                reservationnametext.setText(s);
+               // reservationnametext.setText(s);
                 costText.setText(Double.toString(cost));
-                reservationnametext.setVisible(true);
+                //reservationnametext.setVisible(true);
                 costText.setVisible(true);
-                text3.setVisible(true);
+                //text3.setVisible(true);
                 text1.setVisible(true);
                 text2.setVisible(true);
             }
         } catch (Exception e) {
             addErrorMessage.setVisible(true);
         }
+    }
+
+    public void pressReturnImage(MouseEvent mouseEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
+        Scene sceneServices = new Scene(fxmlLoader.load(), 1280, 720);
+        Stage mainStage = (Stage) returnImage1.getScene().getWindow();
+        mainStage.setScene(sceneServices);
     }
 }

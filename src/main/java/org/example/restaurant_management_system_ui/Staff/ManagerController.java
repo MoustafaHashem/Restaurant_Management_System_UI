@@ -371,7 +371,7 @@ public class ManagerController {
     public void removeTablePress() {
         addErrorMessage.setVisible(false);
         printTableData.getChildren().clear();
-        Manager.getTables().remove(Manager.getTables().size() - 1);
+        Manager.getTables().removeLast();
         addErrorMessage.setText("Removed done");
         addErrorMessage.setVisible(true);
     }
