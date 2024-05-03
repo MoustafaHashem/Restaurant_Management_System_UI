@@ -84,8 +84,10 @@ public class ModifyOrderController {
                 invalidInput.setVisible(true);
                 invalidInput.setText("Invalid input, please try again");
             }
+        }if(i==x) {
+            invalidInput.setText("Invalid input, please try again");
         }
-        order = Manager.getTables().get(i).getOrder();
+        else{order = Manager.getTables().get(i).getOrder();
         for (j = 0; j < Manager.getMenuItems().size(); j++) {
             int a = oldMeal.getText().compareTo(String.valueOf(order.getMeals().get(j).getID()));
             if (a == 0) {
@@ -96,7 +98,7 @@ public class ModifyOrderController {
                 invalidInput.setText("Your old meal wasn't ordered, please enter a meal you ordered");
             }
         }
-        for (int k = 0; j < Manager.getMenuItems().size(); j++) {
+        for ( j = 0; j < Manager.getMenuItems().size(); j++) {
             int a = newMeal.getText().compareTo(String.valueOf(order.getMeals().get(j).getID()));
             if (a != 0) {
                 invalidInput.setVisible(true);
@@ -116,7 +118,7 @@ public class ModifyOrderController {
             invalidInput.setText("Your order has been modified");
         } else {
             invalidInput.setText("Invalid input, please try again");
-        }
+        }}
     }
 
     public void pressRemoveButton(ActionEvent actionEvent) {
@@ -133,7 +135,10 @@ public class ModifyOrderController {
                 invalidInput.setText("Invalid input, please try again");
             }
         }
-        order = Manager.getTables().get(i).getOrder();
+        if(i==x) {
+            invalidInput.setText("Invalid input, please try again");
+        }
+        else{ order = Manager.getTables().get(i).getOrder();
         for (j = 0; j < Manager.getMenuItems().size(); j++) {
             int a = removeItem.getText().compareTo(String.valueOf(order.getMeals().get(j).getID()));
             if (a == 0) {
@@ -153,6 +158,6 @@ public class ModifyOrderController {
             invalidInput.setText("Your order has been modified");
         } else {
             invalidInput.setText("Invalid input, please try again");
-        }
+        }}
     }
 }

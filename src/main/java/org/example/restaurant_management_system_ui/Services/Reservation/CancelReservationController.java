@@ -55,7 +55,7 @@ public class CancelReservationController {
             if (reservationName.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName()) == 0)
                 break;
         }
-        if (i == Reservation.getReservations().size()) {
+        if (i == Manager.getTables().size()) {
             showMessageToUser.setText("No such name  matches an existing reservation");
             showMessageToUser.setVisible(true);
         } else {

@@ -104,16 +104,17 @@ public class ChangeReservationController {
             if (reservationName.compareToIgnoreCase(Manager.getTables().get(i).getCustomer().getName()) == 0)
                 break;
         }
-        int RID = Manager.getTables().get(i).getReservation().getReservationId();
+
+
         if (i == Manager.getTables().size()) {
-            showMessageToUser.setText("No such id matches an existing reservation");
+            showMessageToUser.setText("No such name matches an existing reservation");
             showMessageToUser.setVisible(true);
         } else {
             if ((getDateInputFromDatePicker().compareTo(LocalDate.now()) < 0)) {
                 showMessageToUser.setText("Date desired to change the reservation to must be after current date (not a passed date)");
                 showMessageToUser.setVisible(true);
             } else {
-                {
+                {int RID = Manager.getTables().get(i).getReservation().getReservationId();
                     Reservation.changeReservation(RID, getDateInputFromDatePicker(), Integer.parseInt(numberOfPeopleInput.getText()));
                     showMessageToUser.setText("Reservation changed successfully");
                     showMessageToUser.setVisible(true);
