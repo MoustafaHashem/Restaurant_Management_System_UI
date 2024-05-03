@@ -65,7 +65,7 @@ public class PaymentController {
                     break;
                 }
             }
-            if (i == size) {
+            if (i == size||(Manager.getTables().get(i).getReservation().getReservationId()==0)) {
                 addErrorMessage.setVisible(true);
             } else {
                 String s = Manager.getTables().get(i).getCustomer().getName();
