@@ -4,6 +4,7 @@ package Services;
 import Human.Manager;
 import Restaurant.Table;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public abstract class Bill extends Table {
@@ -16,6 +17,7 @@ public abstract class Bill extends Table {
         int x = Manager.getTables().size();
         int y;
 
+
         for (y = 0; y < x; y++) {
             if (tableNum == Manager.getTables().get(y).getTableNum()) {
                 flag = true;
@@ -23,9 +25,11 @@ public abstract class Bill extends Table {
             }
         }
         double cost = Manager.getTables().get(y).getOrder().getCost();
-        for (String promocode : promocodes) {
-            if (promo.equals(promocode)) cost = cost * 0.75;
+        for (int i=0;i<promocodes.length;i++) {
+            if (Objects.equals(promo, promocodes[i]))
+            {cost = cost/2;
             break;
+            }
         }
 
 
