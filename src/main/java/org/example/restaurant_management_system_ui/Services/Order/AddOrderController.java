@@ -73,13 +73,14 @@ public class AddOrderController {
     boolean t = false;
     boolean t1 = false;
     int i;
+    int z;
 
     public void pressAddItem(ActionEvent actionEvent) {
         invalidInput.setVisible(false);
         int x = Manager.getMenuItems().size();
         t = false;
         for (int j = 0; j < x; j++) {
-            int z = itemID.getText().compareTo(String.valueOf(Manager.getMenuItems().get(j).getID()));
+            z = itemID.getText().compareTo(String.valueOf(Manager.getMenuItems().get(j).getID()));
             if (z == 0) {
                 t = true;
                 break;
@@ -91,33 +92,39 @@ public class AddOrderController {
             MenuItem mi = Services.Order.addMeal(Integer.parseInt(itemID.getText()));
             order.getMeals().add(mi);
             order.setCost(order.getCost() + mi.getPrice());
-        } else {
+        } else  {
             invalidInput.setVisible(true);
             invalidInput.setText("ID number doesn't exist,please enter another number");
         }
+
         //invalidInput.setVisible(false);
     }
-
-    public void pressOrder(ActionEvent actionEvent) {
+    int y;
+    public void pressOrder( ) {
         invalidInput.setVisible(false);
         printOrderData.getChildren().clear();
         for (i = 0; i < Manager.getTables().size(); i++) {
-            int y = tableNo.getText().compareTo((String.valueOf(Manager.getTables().get(i).getTableNum())));
-            if (y == 0) {
+             y = tableNo.getText().compareTo((String.valueOf(Manager.getTables().get(i).getTableNum())));
+            if (y == 0&&Manager.getTables().get(i).getReservation().getReservationId()!=0) {
                 t1 = true;
                 break;
             }
         }
         if (t1 && t) {
+
             Manager.getTables().get(i).addOrder(order);
             invalidInput.setVisible(true);
             invalidInput.setText("Your order will be ready soon");
             printOrderData.setVisible(true);
             printOrderData.getChildren().add(new Text(Order.printOrder(Manager.getTables().get(i))));
             order = new Order();
-        } else {
+        } else if(y==0) {
             invalidInput.setVisible(true);
             invalidInput.setText("Table number doesn't exist,please enter another number");
+        }
+        else {
+            invalidInput.setVisible(true);
+            invalidInput.setText("No reservation in this table");
         }
     }
 }
