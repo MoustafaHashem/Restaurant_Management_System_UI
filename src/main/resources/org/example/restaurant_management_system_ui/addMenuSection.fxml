@@ -48,7 +48,7 @@
          </font>
       </Text>
       <Text fx:id="addErrorMessage" layoutX="116.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid input. please try again." textAlignment="CENTER" visible="false" wrappingWidth="164.0" />
-      <MenuButton fx:id="chooseMenu" layoutX="129.0" layoutY="175.0" mnemonicParsing="false" onAction="#menuChoosed" onMouseClicked="#menuChoosed" onMouseEntered="#addListMInMS" prefHeight="26.0" prefWidth="143.0" text="Menus" />
+      <MenuButton fx:id="chooseMenu" layoutX="129.0" layoutY="175.0" mnemonicParsing="false" onAction="#menuChosen" onMouseClicked="#menuChosen" onMouseEntered="#addListMInMS" prefHeight="26.0" prefWidth="143.0" text="Menus" />
       <Text layoutX="34.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose menu" />
       <ImageView fitHeight="521.0" fitWidth="295.0" layoutX="340.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
          <Image url="@../../../Images/7.png" />

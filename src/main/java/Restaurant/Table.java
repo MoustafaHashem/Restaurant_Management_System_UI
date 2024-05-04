@@ -28,7 +28,6 @@ public class Table {
         return count;
     }
 
-
     public void setTableNum(int tableNum) {
         this.tableNum = tableNum;
     }

@@ -64,7 +64,7 @@
       <Text fx:id="addErrorMessage" layoutX="119.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0"
             text="Invalid input. please try again." textAlignment="CENTER" visible="false" wrappingWidth="164.0"/>
       <MenuButton fx:id="chooseMenuSection" layoutX="129.0" layoutY="225.0" mnemonicParsing="false"
-                  onAction="#menuSectionChoosed" onMouseClicked="#menuSectionChoosed" onMouseEntered="#addListMSInMI"
+                  onAction="#menuSectionChosen" onMouseClicked="#menuSectionChosen" onMouseEntered="#addListMSInMI"
                   prefHeight="26.0" prefWidth="143.0" text="Menu sections"/>
       <Text layoutX="-24.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose menu section"/>
       <TextField fx:id="price" layoutX="126.0" layoutY="172.0"/>

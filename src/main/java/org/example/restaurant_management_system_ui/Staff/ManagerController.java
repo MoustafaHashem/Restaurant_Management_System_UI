@@ -14,10 +14,7 @@ import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Objects;
-
-import static Restaurant.MenuItem.sortMenuItems;
 
 public class ManagerController {
     public Button addEmployee;
@@ -298,7 +295,7 @@ public class ManagerController {
         addErrorMessage.setVisible(true);
     }
 
-    public void menuChoosed() {
+    public void menuChosen() {
         addErrorMessage.setVisible(false);
         for (int i = 0; chooseMenu.getItems().size() > i; i++) {
             int finalI = i;
@@ -317,17 +314,16 @@ public class ManagerController {
             Manager.getMenuSections().add(new Restaurant.MenuSection(Manager.getMenus().get(x), titleMS.getText()));
             addErrorMessage.setText("Added done");
             addErrorMessage.setVisible(true);
-        }else if(Objects.equals(titleMS.getText(), "")){
+        } else if (Objects.equals(titleMS.getText(), "")) {
             addErrorMessage.setText("All fields must be filled first in order to add a section");
             addErrorMessage.setVisible(true);
-        }
-        else {
+        } else {
             addErrorMessage.setText("Please select a menu.");
             addErrorMessage.setVisible(true);
         }
     }
 
-    public void menuSectionChoosed() {
+    public void menuSectionChosen() {
         addErrorMessage.setVisible(false);
         for (int i = 0; chooseMenuSection.getItems().size() > i; i++) {
             int finalI = i;
@@ -373,11 +369,10 @@ public class ManagerController {
                 addErrorMessage.setText("Section not chosen, please try again");
                 addErrorMessage.setVisible(true);
             }
-        } else if(Objects.equals(titleMi.getText(), "") || Objects.equals(price.getText(), "")){
-                addErrorMessage.setText("All fields must be filled first in order to add an item");
-                addErrorMessage.setVisible(true);
-        }
-        else {
+        } else if (Objects.equals(titleMi.getText(), "") || Objects.equals(price.getText(), "")) {
+            addErrorMessage.setText("All fields must be filled first in order to add an item");
+            addErrorMessage.setVisible(true);
+        } else {
             addErrorMessage.setText("It is required to put a positive number in price ");
             addErrorMessage.setVisible(true);
         }
@@ -388,10 +383,10 @@ public class ManagerController {
         if (Objects.equals(IDUpdatePrice.getText(), "") || Objects.equals(newPrice.getText(), "")) {
             addErrorMessage1.setText("All fields must be filled first in order to update price");
             addErrorMessage1.setVisible(true);
-        }else if(!isInteger(newPrice.getText())){
+        } else if (!isInteger(newPrice.getText())) {
             addErrorMessage1.setText("Invalid input type: input must be a positive integer");
             addErrorMessage1.setVisible(true);
-        }else {
+        } else {
             try {
                 int i;
                 for (i = 0; i <= Manager.getMenuItems().size(); i++) {
