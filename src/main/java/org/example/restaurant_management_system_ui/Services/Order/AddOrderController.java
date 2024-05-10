@@ -5,7 +5,6 @@ import Restaurant.MenuItem;
 import Services.Order;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -17,8 +16,6 @@ import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class AddOrderController {
 
@@ -116,7 +113,7 @@ public class AddOrderController {
             invalidInput.setVisible(true);
             invalidInput.setText("Your order will be ready soon");
             printOrderData.setVisible(true);
-            printOrderData.getChildren().add(new Text(Order.printOrder(Manager.getTables().get(i))));
+            printOrderData.getChildren().add(new Text(Order.print(Manager.getTables().get(i))));
             order = new Order();
         } else if(y==0) {
             invalidInput.setVisible(true);

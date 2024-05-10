@@ -131,7 +131,7 @@ public class Order {
         return String.valueOf(s);
     }
 
-    public static String printOrder(Table t) {
+    public static String print(Table t) {
         StringBuilder s = new StringBuilder();
         s.append("Order -> table #").append(t.getTableNum()).append("\nMeals : ");
         for (int i = 0; i < t.getOrder().meals.size(); i++) {
