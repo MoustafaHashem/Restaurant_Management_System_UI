@@ -2,21 +2,21 @@ package org.example.restaurant_management_system_ui.Services.Reservation;
 
 import Human.Manager;
 import Services.Reservation;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
 
-import java.awt.Label;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
+
 
 import static org.example.restaurant_management_system_ui.Services.Reservation.ChangeReservationController.isInteger;
 import static org.example.restaurant_management_system_ui.Services.Reservation.ChangeReservationController.isString;
@@ -68,30 +68,7 @@ public class MakeReservationController {
         }
     }
 
-    //    public AtomicReference<String> pressAvailableTablesList() {
-//        x=true;
-//        String[] menuButtonItems = new String[Manager.getAvailableTables().size()];
-//        for(int i=0;i<Manager.getAvailableTables().size();i++)
-//        {
-//            menuButtonItems[i]=availableTablesList.getItems().get(i).toString();
-//        }
-//          AtomicReference<String> returnValue = null;
-//        for (String s : menuButtonItems) {
-//            availableTablesList.setOnAction(e -> {
-//             returnValue.set(s);
-//            });
-//        }
-//        return returnValue;
-//    }
-//    public LocalDate getDateInputFromDatePicker()
-//    {
-//        AtomicReference<LocalDate> date = null;
-//        dateInput = new DatePicker(LocalDate.now());
-//        dateInput.setOnAction(event -> {
-//             date.set(dateInput.getValue());
-//        });
-//        return date.get();
-//    }
+
     public LocalDate getDateInputFromDatePicker() {
         return dateInput.getValue();
     }

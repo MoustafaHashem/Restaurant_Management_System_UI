@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;

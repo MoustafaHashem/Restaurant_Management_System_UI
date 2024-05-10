@@ -26,9 +26,6 @@ public class Staff extends Person {
         super();
     }
 
-    public LocalDate getJoinedDate() {
-        return joinedDate;
-    }
 
     public String getEmployeeID() {
         return employeeID;
@@ -47,17 +44,11 @@ public class Staff extends Person {
         // else "exception handling";
     }
 
-    public int getSalary() {
-        return salary;
-    }
 
     public void setSalary(int salary) {
         this.salary = salary;
     }// for manger only
 
-    public String getRank() {
-        return rank;
-    }
 
     public void setRank(String rank) {
         this.rank = rank;

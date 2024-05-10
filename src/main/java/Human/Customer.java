@@ -17,17 +17,7 @@ public class Customer extends Person {
         this.customerId = count++;
     }
 
-    public int getCustomerId() {
-        return customerId;
-    }
 
-    public LocalDate getCheckInDate() {
-        return checkInDate;
-    }
-
-    public LocalDate getCheckOutDate() {
-        return checkOutDate;
-    }
 
     @Override
     public String print() {
@@ -36,10 +26,10 @@ public class Customer extends Person {
     }
 
     public void checkIn() {
-        checkInDate = LocalDate.now();
+        this.checkInDate = LocalDate.now();
     }
 
     public void checkOut() {
-        checkOutDate = LocalDate.now();
+        this.checkOutDate = LocalDate.now();
     }
 }

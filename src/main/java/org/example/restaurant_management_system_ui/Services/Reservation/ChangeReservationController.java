@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.restaurant_management_system_ui.MainApplication;
@@ -27,14 +27,14 @@ public class ChangeReservationController {
     public ImageView returnImage;
     public Text returnText;
 
-    public void press(MouseEvent mouseEvent) throws IOException {
+    public void press( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("reservation.fxml"));
         Scene reservationScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage = (Stage) returnText.getScene().getWindow();
         mainStage.setScene(reservationScene);
     }
 
-    public void show1(MouseEvent mouseEvent) {
+    public void show1( ) {
         returnText.setText("Return");
     }
 

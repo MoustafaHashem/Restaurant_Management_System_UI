@@ -3,7 +3,7 @@ package org.example.restaurant_management_system_ui.Staff;
 
 import Human.Manager;
 import Services.Order;
-import Services.Reservation;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -132,19 +132,15 @@ public class EmployeeController {
     public void printAllReservationPress() { //need testing
         addErrorMessage.setVisible(false);
         reservationData.getChildren().clear();
-        String accumulator = "";
+        StringBuilder accumulator = new StringBuilder();
         int i;
         int size = Manager.getTables().size();
         for (i = 0; i < size; i++) {
             if (Manager.getTables().get(i).isReserved()) {
-                accumulator += "Reservation Name: " + Manager.getTables().get(i).getCustomer().getName()
-                        + "\nReservation ID: " + Manager.getTables().get(i).getReservation().getReservationId()
-                        + "\nNumber of people: " + Manager.getTables().get(i).getReservation().getNumberOfPeople()
-                        + "\nReservation date: " + Manager.getTables().get(i).getReservation().getDate()
-                        + "\n************************************************************\n";
+                accumulator.append("Reservation Name: ").append(Manager.getTables().get(i).getCustomer().getName()).append("\nReservation ID: ").append(Manager.getTables().get(i).getReservation().getReservationId()).append("\nNumber of people: ").append(Manager.getTables().get(i).getReservation().getNumberOfPeople()).append("\nReservation date: ").append(Manager.getTables().get(i).getReservation().getDate()).append("\n************************************************************\n");
             }
         }
-        reservationData.getChildren().add(new Text(accumulator));
+        reservationData.getChildren().add(new Text(accumulator.toString()));
     }
 
     public void profileButtonPress() throws IOException {

@@ -1,13 +1,13 @@
 package org.example.restaurant_management_system_ui.Services;
 
 import Human.Manager;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import Services.Bill;
@@ -25,23 +25,23 @@ public class PaymentController {
     public TextField tableNumber;
     public AnchorPane anchor;
     public Text addErrorMessage;
-    //public Text text3;
-    //public Text reservationnametext;
+
+
     public ImageView returnImage;
     public Text returnText;
     public ImageView returnImage1;
     public Text returnText1;
 
 
-    public void show1(MouseEvent event) {
+    public void show1( ) {
         returnText1.setText("Return");
     }
 
-    public void hide1(MouseEvent event) {
+    public void hide1( ) {
         returnText1.setText("");
     }
 
-    public void press(MouseEvent mouseEvent) throws IOException {
+    public void press( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
         Scene sceneServices = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage = (Stage) returnImage.getScene().getWindow();
@@ -53,9 +53,9 @@ public class PaymentController {
         text1.setVisible(false);
         text2.setVisible(false);
         addErrorMessage.setVisible(false);
-        //reservationnametext.setVisible(false);
+
         costText.setVisible(false);
-        double cost = 0;
+        double cost ;
         try {
             int tableNum = Integer.parseInt(tableNumber.getText());
             int i;
@@ -68,13 +68,13 @@ public class PaymentController {
             if (i == size||(Manager.getTables().get(i).getReservation().getReservationId()==0)) {
                 addErrorMessage.setVisible(true);
             } else {
-                String s = Manager.getTables().get(i).getCustomer().getName();
+
                 cost = Bill.payment(tableNum, promocode.getText());
-               // reservationnametext.setText(s);
+
                 costText.setText(Double.toString(cost));
-                //reservationnametext.setVisible(true);
+
                 costText.setVisible(true);
-                //text3.setVisible(true);
+
                 text1.setVisible(true);
                 text2.setVisible(true);
             }
@@ -83,7 +83,7 @@ public class PaymentController {
         }
     }
 
-    public void pressReturnImage(MouseEvent mouseEvent) throws IOException {
+    public void pressReturnImage( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));
         Scene sceneServices = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage = (Stage) returnImage1.getScene().getWindow();

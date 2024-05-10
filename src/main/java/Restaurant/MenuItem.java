@@ -1,7 +1,7 @@
 package Restaurant;
 
 import java.util.Arrays;
-import java.util.Collections;
+
 
 import static Restaurant.Restaurant.menuItems;
 
@@ -59,9 +59,6 @@ public class MenuItem implements Comparable {
         return returnValue;
     }
 
-    public void updatePrice(double p) {
-        setPrice(p);
-    }
 
     public MenuSection getMenuSection() {
         return menuSection;

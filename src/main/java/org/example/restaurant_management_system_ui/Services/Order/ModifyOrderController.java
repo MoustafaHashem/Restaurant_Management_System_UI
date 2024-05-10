@@ -3,13 +3,13 @@ package org.example.restaurant_management_system_ui.Services.Order;
 import Human.Manager;
 import Restaurant.MenuItem;
 import Services.Order;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -30,18 +30,18 @@ public class ModifyOrderController {
     public ImageView returnImage;
     public Text returnText;
 
-    public void press(MouseEvent event) throws IOException {
+    public void press( ) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("order.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
         Stage mainStage = (Stage) returnImage.getScene().getWindow();
         mainStage.setScene(startScene);
     }
 
-    public void show1(MouseEvent event) {
+    public void show1( ) {
         returnText.setText("Return");
     }
 
-    public void hide1(MouseEvent event) {
+    public void hide1( ) {
         returnText.setText("");
     }
 
@@ -70,7 +70,7 @@ public class ModifyOrderController {
     boolean t2 = false;
     Order order = new Order();
 
-    public void pressButton(ActionEvent actionEvent) {
+    public void pressButton( ) {
         invalidInput.setVisible(false);
         int x = Manager.getTables().size();
         int i, j;
@@ -120,7 +120,7 @@ public class ModifyOrderController {
         }}
     }
 
-    public void pressRemoveButton(ActionEvent actionEvent) {
+    public void pressRemoveButton( ) {
         invalidInput.setVisible(false);
         int x = Manager.getTables().size();
         int i, j;

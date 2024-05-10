@@ -3,13 +3,13 @@ package org.example.restaurant_management_system_ui.Services.Order;
 import Human.Manager;
 import Restaurant.MenuItem;
 import Services.Order;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -29,7 +29,7 @@ public class AddOrderController {
     public Text returnText;
     public ImageView returnImage1;
 
-    public void press(MouseEvent event) throws IOException {
+    public void press( ) throws IOException {
         printOrderData.setVisible(false);
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("order.fxml"));
         Scene startScene = new Scene(fxmlLoader.load(), 1280, 720);
@@ -37,11 +37,11 @@ public class AddOrderController {
         mainStage.setScene(startScene);
     }
 
-    public void show1(MouseEvent event) {
+    public void show1( ) {
         returnText.setText("Return");
     }
 
-    public void hide1(MouseEvent event) {
+    public void hide1( ) {
         returnText.setText("");
     }
 
@@ -72,7 +72,7 @@ public class AddOrderController {
     int i;
     int z;
 
-    public void pressAddItem(ActionEvent actionEvent) {
+    public void pressAddItem( ) {
         invalidInput.setVisible(false);
         int x = Manager.getMenuItems().size();
         t = false;

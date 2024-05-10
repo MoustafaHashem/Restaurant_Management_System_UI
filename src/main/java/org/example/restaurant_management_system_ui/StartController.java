@@ -17,7 +17,7 @@ public class StartController {
     public ImageView staff;
     public Text text;
 
-    public ImageView Customer;
+
 
     public void click() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("services.fxml"));

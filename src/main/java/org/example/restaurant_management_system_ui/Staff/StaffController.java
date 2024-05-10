@@ -77,7 +77,7 @@ public class StaffController {
                 break;
             }else if(y == 0){
                 x=2;
-            }else if( z == 0 || w==0){
+            }else if( z == 0 ){
                 x=3;
             }
         }
