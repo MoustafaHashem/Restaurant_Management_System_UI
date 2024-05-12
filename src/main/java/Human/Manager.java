@@ -46,7 +46,7 @@ public class Manager extends Staff implements Restaurant {
             if (0 == getEmployees().get(i).getEmployeeID().compareTo(id))
                 break;
         }
-        // if i = size exception handling
+
         getEmployees().remove(i);
     }
 

@@ -65,7 +65,7 @@ public class Reservation {
         Table t = new Table();
         t.setTableNum(tableID);
         Table.setCount(Table.getCount() - 1);
-        Manager.getAvailableTables().add(tableID - 1, t);
+        Manager.getAvailableTables().add(tableID - 1, t); //or .append
     }
 
     public static void changeReservation(int id, LocalDate d, int n) {

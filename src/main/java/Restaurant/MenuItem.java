@@ -42,14 +42,15 @@ public class MenuItem implements Comparable {
     @Override
     public int compareTo(Object m) {
         int returnValue = 0;
-//        if (0) {
+//Version1: sorting alphabetically
 //            if (this.getTitle().compareTo(((MenuItem) m).getTitle()) > 0) {
 //                returnValue = 1;
 //            } else if (this.getTitle().compareTo(((MenuItem) m).getTitle()) < 0) {
 //                returnValue = -1;
 //            }
 //        }
-//        else {
+
+//Version2: sorting by price
             if (this.getPrice() > ((MenuItem) m).getPrice()) {
                 returnValue = 1;
             } else if (this.getPrice() < ((MenuItem) m).getPrice()) {

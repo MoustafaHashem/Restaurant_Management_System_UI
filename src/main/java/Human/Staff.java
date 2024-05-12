@@ -41,9 +41,16 @@ public class Staff extends Person {
 
     public void setPassword(String password) {
         if (checkPassword(password)) this.password = password;
-        // else "exception handling";
+
     }
 
+    public int getSalary() {
+        return salary;
+    }
+
+    public String getRank() {
+        return rank;
+    }
 
     public void setSalary(int salary) {
         this.salary = salary;

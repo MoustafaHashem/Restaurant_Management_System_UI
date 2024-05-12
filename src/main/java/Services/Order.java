@@ -30,24 +30,18 @@ public class Order {
 
 
     public static MenuItem addMeal(int ID) {
-        //  System.out.println("search for meal");
+
         int size = Manager.getMenuItems().size();
         int i;
         for (i = 0; i < size; i++) {
-            //   System.out.println("chek id ");
+
             if (Manager.getMenuItems().get(i).getID() == ID)
                 break;
         }
-        // System.out.println("chek 1 ");
+
         return Manager.getMenuItems().get(i);
 
     }
-
-
-
-
-
-
 
     public static String printOrders() {
         ArrayList<Order> orders = new ArrayList<>();

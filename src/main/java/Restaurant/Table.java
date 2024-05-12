@@ -15,12 +15,15 @@ public class Table {
     protected Order order;
     private Reservation reservation;
     private Customer customer = new Customer();
-
+    public Table() {
+        this.tableNum = count++;
+        this.isReserved = false;
+        this.reservation = new Reservation();
+        this.order = new Order();
+    }
     public static void setCount(int count) {
         Table.count = count;
     }
-
-
 
     public static int getCount() {
         return count;
@@ -29,32 +32,15 @@ public class Table {
     public void setTableNum(int tableNum) {
         this.tableNum = tableNum;
     }
-
+    public int getTableNum() {
+        return tableNum;
+    }
     public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
-
-    public Table() {
-        this.tableNum = count++;
-        this.isReserved = false;
-        this.reservation = new Reservation();
-        this.order = new Order();
-    }
-
-
-
-
-
-    public int getTableNum() {
-        return tableNum;
-    }
-
-    public boolean isReserved() {
-        return isReserved;
     }
 
     public Order getOrder() {
@@ -64,6 +50,12 @@ public class Table {
     public Reservation getReservation() {
         return reservation;
     }
+
+    public boolean isReserved() {
+        return isReserved;
+    }
+
+
 
     public void removeReservation() {
         this.reservation = null;
