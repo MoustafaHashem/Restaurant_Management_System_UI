@@ -14,7 +14,7 @@ Welcome to **The Restaurant Management System**, a robust and efficient software
 
 ## Getting Started :rocket:
 
-To get started with **The Restaurant Management System**, clone the repository and follow the instructions in the README file.
+To get started with **The Restaurant Management System**, clone the repository.
 
 We hope this system brings a significant improvement to your restaurant operations. Your feedback and contributions are always welcome!
 
