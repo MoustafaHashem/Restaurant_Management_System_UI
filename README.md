@@ -1,3 +1,5 @@
+---
+
 # The Restaurant Management System :fork_and_knife:
 
 Welcome to **The Restaurant Management System**, a robust and efficient software application developed using the power of Java. This system is designed to streamline various restaurant operations, enhancing efficiency and productivity.
@@ -15,5 +17,12 @@ Welcome to **The Restaurant Management System**, a robust and efficient software
 To get started with **The Restaurant Management System**, clone the repository and follow the instructions in the README file.
 
 We hope this system brings a significant improvement to your restaurant operations. Your feedback and contributions are always welcome!
+
+## **Team Members**
+- Moustafa Ahmed Hashem &nbsp; &nbsp; 2100467
+- Kareem Ehab Ibrahim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2100913
+- Karen Maurice William &nbsp; &ensp; &ensp; &ensp;2100748
+- Mayar Walid Said &nbsp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;2100953
+- Michael George Naem &ensp; &ensp; &ensp;&ensp;2100709
 
 ![image](https://github.com/MoustafaHashem/Restaurant_Management_System_UI/assets/43302105/725f228d-39d9-4b36-89e6-9ae3af47c253)
